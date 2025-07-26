@@ -1,105 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF‑8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tilo Café</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5; }
-    header { background: #fff; padding: 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 2em; }
-    .banner { padding: 15px; background: #ffe; margin-bottom: 10px; }
-    .banner p { margin: 5px 0; }
-    .categories { display: flex; overflow-x: auto; background: #fff; padding: 10px; }
-    .categories button { margin-right: 8px; padding: 10px 15px; border: none; border-radius: 5px; background: #eee; }
-    .item-list { padding: 10px; }
-    .item { background: #fff; padding: 10px; margin-bottom: 10px; border-radius: 5px; display: flex; }
-    .item img { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; margin-right: 10px; }
-    .item div { flex: 1; }
-    .item h3 { margin: 0; }
-    .item p { margin: 5px 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #fafafa;
+      color: #333;
+    }
+    header {
+      background: #ffffff;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    header img {
+      width: 120px;
+      height: auto;
+    }
+    .banner {
+      text-align: center;
+      padding: 10px;
+      font-size: 1.5rem;
+      color: #555;
+    }
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px;
+    }
+    .categories button {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .categories button:hover {
+      background-color: #555;
+    }
+    .item-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      padding: 20px;
+    }
+    .item {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      width: 280px;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .item:hover {
+      transform: scale(1.02);
+    }
+    .item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .item h3 {
+      margin: 10px;
+    }
+    .item p {
+      margin: 0 10px 10px;
+      font-weight: bold;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+    }
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+    .modal:target {
+      display: block;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: #fff;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <img src="logo.png" alt="Logo Tilo Café" />
+  </header>
+  <div class="banner">¡Bienvenidos a Tilo Café!</div>
+  <div class="categories">
+    <button onclick="filterCategory('Café')">Café</button>
+    <button onclick="filterCategory('Pastelería')">Pastelería</button>
+    <button onclick="filterCategory('Promo')">Promoción Café</button>
+    <button onclick="filterCategory('Tartas')">Tartas</button>
+    <button onclick="filterCategory('Burritos')">Burritos</button>
+    <button onclick="filterCategory('Sándwiches')">Sándwiches</button>
+    <button onclick="filterCategory('Menú')">Menú del Día</button>
+    <button onclick="filterCategory('Sugerencia')">Sugerencia del Día</button>
+  </div>
 
-<header>
-  <h1>Tilo Café</h1>
-</header>
+  <div class="item-list" id="product-list">
+    <div class="item" data-category="Café">
+      <a href="#img1"><img src="img/cafe1.jpg" alt="Café 1"></a>
+      <h3>Café Espresso</h3>
+      <p>$800</p>
+    </div>
+    <div class="item" data-category="Pastelería">
+      <a href="#img2"><img src="img/torta1.jpg" alt="Torta"></a>
+      <h3>Torta de Chocolate</h3>
+      <p>$1200</p>
+    </div>
+    <!-- Agregar más productos aquí -->
+  </div>
 
-<div class="banner">
-  <p><b>Sugerencia del Día:</b> Brownie tibio con helado de vainilla.</p>
-  <p><b>Menú del Día:</b> Milanesa napolitana + papas + bebida chica a $3.500.</p>
-</div>
+  <!-- MODALS -->
+  <div id="img1" class="modal">
+    <a href="#" class="close">&times;</a>
+    <img class="modal-content" src="img/cafe1.jpg">
+  </div>
+  <div id="img2" class="modal">
+    <a href="#" class="close">&times;</a>
+    <img class="modal-content" src="img/torta1.jpg">
+  </div>
 
-<div class="categories">
-  <button data-cat="cafeteria">☕ Cafetería</button>
-  <button data-cat="pasteleria">🍰 Pastelería</button>
-  <button data-cat="promoCafe">💥 Promoción Café</button>
-  <button data-cat="tartas">🥧 Tartas</button>
-  <button data-cat="burritos">🌯 Burritos</button>
-  <button data-cat="sandwiches">🥪 Sándwiches</button>
-  <button data-cat="entradas">🥖 Entradas</button>
-  <button data-cat="burgers">🍔 Lomitos & Burgers</button>
-  <button data-cat="omelettes">🧆 Omelettes / Tortillas</button>
-  <button data-cat="almuerzo">🍽️ Almuerzo & Cena</button>
-  <button data-cat="postres">🧁 Postres</button>
-  <button data-cat="refrescos">🧃 Refrescos</button>
-  <button data-cat="kids">👶 Menú Kids</button>
-</div>
-
-<div class="item-list" id="item-list">
-  <p>Seleccioná una categoría para ver los platos.</p>
-</div>
-
-<script>
-  const items = {
-    cafeteria: [
-      { img:'https://via.placeholder.com/80', name:'Café expreso', desc:'Café solo, 50 ml.', price:'$1.200' },
-      { img:'https://via.placeholder.com/80', name:'Capuchino', desc:'Espresso + leche espumada', price:'$2.000' },
-    ],
-    pasteleria: [
-      { img:'https://via.placeholder.com/80', name:'Medialuna', desc:'Manteca o dulce de leche', price:'$400' },
-      { img:'https://via.placeholder.com/80', name:'Muffin de chocolate', desc:'Con chips de chocolate', price:'$700' },
-    ],
-    promoCafe: [
-      { img:'https://via.placeholder.com/80', name:'Café + Medialuna', desc:'Combo express', price:'$1.500' },
-    ],
-    tartas: [],
-    burritos: [],
-    sandwiches: [],
-    entradas: [],
-    burgers: [],
-    omelettes: [],
-    almuerzo: [],
-    postres: [],
-    refrescos: [],
-    kids: [],
-  };
-
-  document.querySelectorAll('.categories button').forEach(btn =>
-    btn.addEventListener('click', () => {
-      const cat = btn.dataset.cat;
-      const list = items[cat];
-      const container = document.getElementById('item-list');
-      container.innerHTML = '';
-      if (list.length === 0) {
-        container.innerHTML = '<p>No hay ítems en esta categoría aún.</p>';
-      } else {
-        list.forEach(it => {
-          const div = document.createElement('div');
-          div.className = 'item';
-          div.innerHTML = `<img src="${it.img}" alt="${it.name}">
-                           <div>
-                             <h3>${it.name} - ${it.price}</h3>
-                             <p>${it.desc}</p>
-                           </div>`;
-          container.appendChild(div);
-        });
-      }
-    })
-  );
-</script>
-
+  <script>
+    function filterCategory(category) {
+      const items = document.querySelectorAll('.item');
+      items.forEach(item => {
+        item.style.display = item.dataset.category === category || category === 'Todos' ? 'block' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
-# Carta
