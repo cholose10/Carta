@@ -87,7 +87,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.8);
+      background-color: rgba(86, 20, 20, 0.8);
     }
     .modal-content {
       margin: auto;
@@ -111,7 +111,8 @@
 </head>
 <body>
   <header>
-    <img src="imagen.png" alt="Logo Tilo Café" />
+  <img src="logo.png" alt="Logo Tilo Café" />
+
   </header>
   <div class="banner">¡Bienvenidos a Tilo Café!</div>
   <div class="categories">
