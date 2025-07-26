@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+8<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -114,7 +114,7 @@
   <img src="logo.png" alt="Logo Tilo Café" />
 
   </header>
-  <div class="banner">¡Bienvenidos a Tilo Café!</div>
+  <div class="banner">¡Bienvenidos a Tilo Café de Aguero!</div>
   <div class="categories">
     <button onclick="filterCategory('Café')">Café</button>
     <button onclick="filterCategory('Pastelería')">Pastelería</button>
