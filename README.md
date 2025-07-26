@@ -111,10 +111,9 @@
 </head>
 <body>
   <header>
-    <img src="<img width="1080" height="1321" alt="Imagen de WhatsApp 2025-07-20 a las 12 02 07_3cb77340" src="https://github.com/user-attachments/assets/42d8759d-201b-449e-835d-0f5b2a314e12" />
-" alt="Logo Tilo Café" />
+    <img src="imagen.png" alt="Logo Tilo Café" />
   </header>
-  <div class="banner">¡Bienvenidos a Tilo Café de Aguero!</div>
+  <div class="banner">¡Bienvenidos a Tilo Café!</div>
   <div class="categories">
     <button onclick="filterCategory('Café')">Café</button>
     <button onclick="filterCategory('Pastelería')">Pastelería</button>
