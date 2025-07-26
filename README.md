@@ -1,4 +1,4 @@
-8<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -114,7 +114,7 @@
   <img src="logo.png" alt="Logo Tilo Café" />
 
   </header>
-  <div class="banner">¡Bienvenidos a Tilo Café de Aguero!</div>
+  <div class="banner">¡Bienvenidos a Tilo Café Aguero!</div>
   <div class="categories">
     <button onclick="filterCategory('Café')">Café</button>
     <button onclick="filterCategory('Pastelería')">Pastelería</button>
@@ -133,7 +133,7 @@
       <p>$800</p>
     </div>
     <div class="item" data-category="Pastelería">
-      <a href="#img2"><img src="img/torta1.jpg" alt="Torta"></a>
+      <a href="#img2"><img src="Chocola.jpg" alt="Torta"></a>
       <h3>Torta de Chocolate</h3>
       <p>$1200</p>
     </div>
@@ -143,7 +143,7 @@
   <!-- MODALS -->
   <div id="img1" class="modal">
     <a href="#" class="close">&times;</a>
-    <img class="modal-content" src="img/cafe1.jpg">
+    <img class="modal-content" src="Chocola.jpg">
   </div>
   <div id="img2" class="modal">
     <a href="#" class="close">&times;</a>
