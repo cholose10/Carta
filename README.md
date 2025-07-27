@@ -8,11 +8,11 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #39b889;
+      background: #7bd5b4;
       color: #333;
     }
     header {
-      background: #fff;
+      background: #c7bdbd;
       text-align: center;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -36,7 +36,7 @@
     }
     .categories button {
       padding: 10px 20px;
-      background-color: #333;
+      background-color: #040404;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -87,7 +87,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(92, 12, 12, 0.8);
+      background-color: rgba(135, 11, 11, 0.8);
     }
     .modal-content {
       margin: auto;
@@ -128,7 +128,7 @@
 
   <div class="item-list" id="product-list">
     <div class="item" data-category="Café">
-      <a href="#img1"><img src="imgh /café.jpg" alt="Café 1"></a>
+      <a href="#img1"><img src="img/café.jpg" alt="Café 1"></a>
       <h3>Café Espresso</h3>
       <p>$800</p>
     </div>
@@ -143,7 +143,7 @@
   <!-- MODALS -->
   <div id="img1" class="modal">
     <a href="#" class="close">&times;</a>
-    <img class="modal-content" src="café.jpg">
+    <img class="modal-content" src="img/café.jpg">
   </div>
   <div id="img2" class="modal">
     <a href="#" class="close">&times;</a>
