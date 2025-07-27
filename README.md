@@ -12,7 +12,7 @@
       color: #333;
     }
     header {
-      background: #a3cc9a;
+      background: #fff;
       text-align: center;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
