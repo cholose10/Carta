@@ -137,6 +137,11 @@
       <h3>Torta de Chocolate</h3>
       <p>$1200</p>
     </div>
+    <div class="item" data-category="Pastelería">
+      <a href="#img2"><img src="lemon.jpg" alt="Torta de limon "></a>
+      <h3>Torta de Chocolate</h3>
+      <p>$1200</p>
+    </div>
     <!-- Agregar más productos aquí -->
   </div>
 
@@ -148,6 +153,10 @@
   <div id="img2" class="modal">
     <a href="#" class="close">&times;</a>
     <img class="modal-content" src="Chocola.jpg">
+  </div>
+  <div id="img2" class="modal">
+    <a href="#" class="close">&times;</a>
+    <img class="modal-content" src="lemon.jpg">
   </div>
 
   <script>
