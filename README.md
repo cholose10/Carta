@@ -138,8 +138,8 @@
       <p>$1200</p>
     </div>
     <div class="item" data-category="Pastelería">
-      <a href="#img2"><img src="lemon.jpg" alt="Torta de limon "></a>
-      <h3>Torta de Chocolate</h3>
+      <a href="#img2"><img src="lemon.jpg" alt="Torta"></a>
+      <h3>Torta de limon</h3>
       <p>$1200</p>
     </div>
     <!-- Agregar más productos aquí -->
