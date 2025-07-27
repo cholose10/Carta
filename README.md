@@ -12,7 +12,7 @@
       color: #333;
     }
     header {
-      background: #ffffff;
+      background: #a3cc9a;
       text-align: center;
       padding: 20px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -87,7 +87,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(86, 20, 20, 0.8);
+      background-color: rgba(92, 12, 12, 0.8);
     }
     .modal-content {
       margin: auto;
