@@ -128,7 +128,7 @@
 
   <div class="item-list" id="product-list">
     <div class="item" data-category="Café">
-      <a href="#img1"><img src="cafe.jpg" alt="Café 1"></a>
+      <a href="#img1"><img src="cafe.jpg" alt="Café"></a>
       <h3>Café Espresso</h3>
       <p>$800</p>
     </div>
@@ -147,7 +147,7 @@
   </div>
   <div id="img2" class="modal">
     <a href="#" class="close">&times;</a>
-    <img class="modal-content" src="img/torta.jpg">
+    <img class="modal-content" src="Chocola.jpg">
   </div>
 
   <script>
