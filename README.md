@@ -147,7 +147,7 @@
   </div>
   <div id="img2" class="modal">
     <a href="#" class="close">&times;</a>
-    <img class="modal-content" src="img/torta1.jpg">
+    <img class="modal-content" src="img/torta.jpg">
   </div>
 
   <script>
