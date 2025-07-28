@@ -4,7 +4,7 @@
     "nombre": "Capuchino",
     "descripcion": "Café espresso con leche espumada",
     "precio": "$1800",
-    "imagen": "img/cafe.jpg"
+    "imagen": "img/café.jpg"
   },
   {
     "categoria": "Pastelería",
