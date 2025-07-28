@@ -4,13 +4,13 @@
     "nombre": "Capuchino",
     "descripcion": "Café espresso con leche espumada",
     "precio": "$1800",
-    "imagen": "img/capuchino.jpg"
+    "imagen": "img/cafe.jpg"
   },
   {
     "categoria": "Pastelería",
     "nombre": "Tarta de Frutilla",
     "descripcion": "Base de masa dulce con crema pastelera y frutillas frescas",
     "precio": "$2500",
-    "imagen": "img/tarta-frutilla.jpg"
+    "imagen": "img/lemon.jpg"
   }
 ]
