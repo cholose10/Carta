@@ -6,93 +6,142 @@
   <title>Carta Tilo Café</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background: #fafafa;
+      background: #f5f5f5;
       color: #333;
+      line-height: 1.6;
     }
+    
     header {
       background: #ffffff;
       text-align: center;
-      padding: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    header img {
-      width: 120px;
-      height: auto;
+    
+    .logo-placeholder {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-weight: bold;
     }
+    
     .banner {
       text-align: center;
-      padding: 10px;
+      padding: 15px;
+      background: #6b4e3d;
+      color: white;
       font-size: 1.5rem;
-      color: #555;
+      margin-bottom: 20px;
     }
+    
     .categories {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 10px;
-      padding: 10px;
+      padding: 15px;
+      background: white;
+      margin: 0 20px 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
+    
     .categories button {
       padding: 10px 20px;
-      background-color: #333;
+      background-color: #8c6b56;
       color: #fff;
       border: none;
-      border-radius: 10px;
+      border-radius: 20px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: all 0.3s;
+      font-weight: 500;
     }
-    .categories button:hover {
-      background-color: #555;
+    
+    .categories button:hover, .categories button.active {
+      background-color: #6b4e3d;
+      transform: translateY(-2px);
     }
+    
     .item-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 0 20px 20px;
     }
+    
     .item {
       background: #fff;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       overflow: hidden;
-      width: 280px;
-      cursor: pointer;
-      transition: transform 0.2s ease;
+      transition: all 0.3s ease;
     }
+    
     .item:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-    .item img {
+    
+    .item-img {
       width: 100%;
       height: 180px;
-      object-fit: cover;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
     }
+    
+    .item-content {
+      padding: 15px;
+    }
+    
     .item h3 {
-      margin: 10px;
+      margin: 0 0 10px;
+      color: #6b4e3d;
+      font-size: 1.3rem;
     }
+    
     .item p {
-      margin: 0 10px 10px;
+      margin: 0 0 10px;
+      color: #666;
+      font-size: 0.95rem;
     }
+    
     .item .price {
       font-weight: bold;
-      color: #000;
+      color: #8c6b56;
+      font-size: 1.2rem;
     }
-  </style>.logo-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  max-height: 200px; /* o más si querés que se vea más grande */
-}
+    
+    @media (max-width: 768px) {
+      .item-list {
+        grid-template-columns: 1fr;
+      }
+      
+      .banner {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
-  <img src="img/logo (1).png" alt="Logo Tilo Café" class="logo-banner" />
-</header>
-  <div class="banner">¡Bienvenidos a Tilo Café Aguero 2298!</div>
+    <div class="logo-placeholder">
+      Logo Tilo Café
+      <!-- Reemplaza este div con <img src="img/logo.png" alt="Logo Tilo Café"> cuando tengas la imagen -->
+    </div>
+  </header>
+  
+  <div class="banner">¡Bienvenidos a Tilo Café Agüero 2298!</div>
 
   <div class="categories" id="category-buttons">
     <!-- Botones de categorías se generan automáticamente -->
@@ -103,44 +152,100 @@
   </div>
 
   <script>
-    let productos = [];
+    // Datos de productos (puedes reemplazar esto con un fetch a un archivo JSON)
+    const productos = [
+      {
+        nombre: "Capuchino",
+        descripcion: "Café espresso con leche espumada",
+        precio: "$1800",
+        categoria: "Café",
+        imagen: "https://via.placeholder.com/300x180?text=Capuchino"
+      },
+      {
+        nombre: "Café Americano",
+        descripcion: "Café negro fuerte",
+        precio: "$1500",
+        categoria: "Café",
+        imagen: "https://via.placeholder.com/300x180?text=Americano"
+      },
+      {
+        nombre: "Medialuna",
+        descripcion: "Clásica medialuna de manteca",
+        precio: "$1200",
+        categoria: "Pastelería",
+        imagen: "https://via.placeholder.com/300x180?text=Medialuna"
+      },
+      {
+        nombre: "Torta Chocolate",
+        descripcion: "Torta de chocolate con relleno cremoso",
+        precio: "$2200",
+        categoria: "Pastelería",
+        imagen: "https://via.placeholder.com/300x180?text=Torta+Chocolate"
+      }
+    ];
 
-    fetch('productos.json')
-      .then(response => response.json())
-      .then(data => {
-        productos = data;
-        renderCategories();
-        renderProducts('Todos');
-      });
-
+    // Renderizar categorías
     function renderCategories() {
       const categorias = ['Todos', ...new Set(productos.map(p => p.categoria))];
       const container = document.getElementById('category-buttons');
       container.innerHTML = '';
+      
       categorias.forEach(cat => {
         const btn = document.createElement('button');
         btn.textContent = cat;
-        btn.onclick = () => renderProducts(cat);
+        btn.onclick = () => {
+          // Remover clase active de todos los botones
+          document.querySelectorAll('.categories button').forEach(b => b.classList.remove('active'));
+          // Agregar clase active al botón clickeado
+          btn.classList.add('active');
+          renderProducts(cat);
+        };
+        
+        // Activar el botón "Todos" por defecto
+        if (cat === 'Todos') {
+          btn.classList.add('active');
+        }
+        
         container.appendChild(btn);
       });
     }
 
+    // Renderizar productos
     function renderProducts(categoria) {
       const container = document.getElementById('product-list');
       container.innerHTML = '';
-      const filtrados = categoria === 'Todos' ? productos : productos.filter(p => p.categoria === categoria);
+      
+      const filtrados = categoria === 'Todos' 
+        ? productos 
+        : productos.filter(p => p.categoria === categoria);
+      
+      if (filtrados.length === 0) {
+        container.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No hay productos en esta categoría</p>';
+        return;
+      }
+      
       filtrados.forEach(p => {
         const item = document.createElement('div');
         item.className = 'item';
         item.innerHTML = `
-          <img src="${p.imagen}" alt="${p.nombre}">
-          <h3>${p.nombre}</h3>
-          <p>${p.descripcion}</p>
-          <p class="price">${p.precio}</p>
+          <div class="item-img">
+            ${p.imagen ? `<img src="${p.imagen}" alt="${p.nombre}" style="width:100%; height:100%; object-fit:cover;">` : p.nombre}
+          </div>
+          <div class="item-content">
+            <h3>${p.nombre}</h3>
+            <p>${p.descripcion}</p>
+            <p class="price">${p.precio}</p>
+          </div>
         `;
         container.appendChild(item);
       });
     }
+
+    // Inicializar la página
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCategories();
+      renderProducts('Todos');
+    });
   </script>
 </body>
 </html>
