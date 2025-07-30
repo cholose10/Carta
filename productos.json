@@ -7,6 +7,13 @@
     "imagen": "img/cafe.jpg"
   },
   {
+    "categoria": "Cafetería",
+    "nombre": "Café jarrito",
+    "descripcion": "Café fuerte y corto",
+    "precio": "$800",
+    "imagen": "img/cafe.jpg"
+  },
+  {
     "categoria": "Desayunos y Meriendas",
     "nombre": "Combo medialuna",
     "descripcion": "Café con leche + 2 medialunas",
