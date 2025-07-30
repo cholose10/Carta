@@ -7,13 +7,6 @@
     "imagen": "img/cafe.jpg"
   },
   {
-    "categoria": "Cafetería",
-    "nombre": "Café jarrito",
-    "descripcion": "Café fuerte y corto",
-    "precio": "$800",
-    "imagen": "img/cl.jpg"
-  },
-  {
     "categoria": "Desayunos y Meriendas",
     "nombre": "Combo medialuna",
     "descripcion": "Café con leche + 2 medialunas",
@@ -52,41 +45,6 @@
     "categoria": "Refrescos",
     "nombre": "Coca-Cola 500ml",
     "descripcion": "Bebida fría",
-    "precio": "$900",
-    "imagen": "img/coca.jpg"
-  },
-  {
-    "categoria": "happy hour",
-    "nombre": "Coca-Cola 500ml",
-    "descripcion": "Bebida fría",
-    "precio": "$900",
-    "imagen": "img/coca.jpg"
-  },
-  {
-    "categoria": "vinos",
-    "nombre": "Copa de vino",
-    "descripcion": "Blanco/ tinto",
-    "precio": "$900",
-    "imagen": "img/coca.jpg"
-  },
-  {
-    "categoria": "cervesa",
-    "nombre": "Stelar",
-    "descripcion": "Bebida fría",
-    "precio": "$900",
-    "imagen": "img/coca.jpg"
-  },
-  {
-    "categoria": "Tragos",
-    "nombre": "ferne",
-    "descripcion": "Bebida fría",
-    "precio": "$900",
-    "imagen": "img/coca.jpg"
-  },
-  {
-    "categoria": "picadas",
-    "nombre": "Trio",
-    "descripcion": "picada",
     "precio": "$900",
     "imagen": "img/coca.jpg"
   },
