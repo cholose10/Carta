@@ -8,11 +8,11 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      background: #fffafa;
-      color: #68310f;
+      background: #fafafa;
+      color: #333;
     }
     header {
-      background: #837f7f;
+      background: #fff;
     }
     .banner-img {
       width: 100%;
@@ -24,7 +24,7 @@
       text-align: center;
       padding: 10px;
       font-size: 1.5rem;
-      color: #3d200d;
+      color: #555;
     }
     .categories {
       display: flex;
@@ -35,7 +35,7 @@
     }
     .categories button {
       padding: 10px 20px;
-      background-color: #68310f;
+      background-color: #333;
       color: #fff;
       border: none;
       border-radius: 10px;
@@ -43,7 +43,7 @@
       transition: background 0.3s;
     }
     .categories button:hover {
-      background-color: #4c2812;
+      background-color: #555;
     }
     .item-list {
       display: flex;
@@ -53,7 +53,7 @@
       padding: 20px;
     }
     .item {
-      background: #cccccc;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
@@ -83,7 +83,7 @@
 <body>
   <!-- FOTO GRANDE ARRIBA -->
   <header>
-    <img src="img/logo(1).png" alt="Tilo Café" class="banner-img" />
+    <img src="img/banner.jpg" alt="Tilo Café" class="banner-img" />
   </header>
 
   <div class="banner">¡Bienvenidos a Tilo Café Agüero 2298!</div>
@@ -121,12 +121,12 @@
       filtrados.forEach(p => {
         const item = document.createElement('div');
         item.className = 'item';
-        item.innerHTML = 
+        item.innerHTML = `
           <img src="${p.imagen}" alt="${p.nombre}">
           <h3>${p.nombre}</h3>
           <p>${p.descripcion}</p>
           <p class="price">${p.precio}</p>
-        ;
+        `;
         container.appendChild(item);
       });
     }
