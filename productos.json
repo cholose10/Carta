@@ -21,6 +21,13 @@
     "imagen": "img/lemon.jpg"
   },
   {
+    "categoria": "Desayunos y Meriendas",
+    "nombre": "french",
+    "descripcion": "tostada francesa con hervo, palta y cherris",
+    "precio": "$2600",
+    "imagen": "img/french.jpg"
+  },
+  {
     "categoria": "Pastelería",
     "nombre": "Tarta de frutilla",
     "descripcion": "Con crema pastelera y frutilla",
