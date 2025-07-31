@@ -11,21 +11,21 @@
     "nombre": "Combo medialuna",
     "descripcion": "Café con leche + 2 medialunas",
     "precio": "$1600",
-    "imagen": "cj.jpg"
+    "imagen": "jc.jpg"
   },
   {
     "categoria": "Pastelería",
     "nombre": "Tarta de frutilla",
     "descripcion": "Con crema pastelera y frutilla",
     "precio": "$2500",
-    "imagen": "img/tarta.jpg"
+    "imagen": "tarta.jpg"
   },
   {
     "categoria": "Sandwiches",
     "nombre": "Sándwich de jamón y queso",
     "descripcion": "En pan francés",
     "precio": "$2000",
-    "imagen": "img/sandwich.jpg"
+    "imagen": "sandwich.jpg"
   },
   {
     "categoria": "Tartas",
