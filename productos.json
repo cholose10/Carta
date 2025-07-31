@@ -4,14 +4,14 @@
     "nombre": "Café Espresso",
     "descripcion": "Café fuerte y corto",
     "precio": "$800",
-    "imagen": "img/cafe.jpg"
+    "imagen": "cafe.jpg"
   },
   {
     "categoria": "Desayunos y Meriendas",
     "nombre": "Combo medialuna",
     "descripcion": "Café con leche + 2 medialunas",
     "precio": "$1600",
-    "imagen": "img/cj.jpg"
+    "imagen": "cj.jpg"
   },
   {
     "categoria": "Pastelería",
