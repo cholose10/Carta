@@ -7,6 +7,13 @@
     "imagen": "img/cafe.jpg"
   },
   {
+    "categoria": "Cafetería",
+    "nombre": "Café con leche",
+    "descripcion": "Café fuerte y corto",
+    "precio": "$800",
+    "imagen": "img/cl.jpg"
+  },
+  {
     "categoria": "Desayunos y Meriendas",
     "nombre": "Combo medialuna",
     "descripcion": "Café con leche + 2 medialunas",
@@ -74,7 +81,14 @@
     "nombre": "Milanesa napolitana",
     "descripcion": "Con papas fritas",
     "precio": "$3200",
-    "imagen": "img/milanesa.jpg"
+    "imagen": "img/mila.jpg"
+  },
+  {
+    "categoria": "Milanesas",
+    "nombre": "Filet a la romana",
+    "descripcion": "filet con puer mixto",
+    "precio": "$3200",
+    "imagen": "img/file.jpg"
   },
   {
     "categoria": "Menú Kids",
