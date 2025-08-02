@@ -1,1 +1,9 @@
-
+[
+  {
+    "nombre": "Café expreso",
+    "descripcion": "cafe chico",
+    "precio": "3200",
+    "imagen": "img/cafe.jpg",
+    "categoria": "Cafetería"
+  }
+]
