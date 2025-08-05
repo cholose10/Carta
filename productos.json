@@ -1,9 +1,9 @@
 [
   {
-    "nombre": "Café expreso",
-    "descripcion": "chico",
-    "precio": "$3000",
-    "imagen": "img/cafe.jpg",
+    "nombre": "jarito",
+    "descripcion": "americanoi",
+    "precio": "$3200",
+    "imagen": "img/jc.jpg",
     "categoria": "cafetería "
   }
 ]
