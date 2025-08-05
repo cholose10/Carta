@@ -5,5 +5,12 @@
     "precio": "$3000",
     "imagen": "img/cafe.jpg",
     "categoria": "cafetería"
+  },
+  {
+    "nombre": "Expreso jarrito",
+    "descripcion": "Expreso Americano",
+    "precio": "$3500",
+    "imagen": "img/jc.jpg",
+    "categoria": "cafeterías"
   }
 ]
