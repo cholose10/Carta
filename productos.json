@@ -5,5 +5,11 @@
     "precio": "$3500",
     "imagen": "img/jc.jpg",
     "categoria": "Cafetería"
-  }
+  },
+  {
+    "nombre": "Café expreso",
+    "descripcion": "café chico",
+    "precio": "$3200",
+    "imagen": "img/cafe.jpg",
+  },
 ]
