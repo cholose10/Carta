@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "nombre": "Café expreso",
+    "descripcion": "café chico",
+    "precio": "$3000",
+    "imagen": "img/cafe.jpg",
+    "categoria": "cafetería"
+  }
+]
