@@ -147,11 +147,12 @@
     "imagen": "img/menu-dia.jpg"
   },
   {
+    "categoria": "cafetería "
     "nombre": "jarito",
     "descripcion": "americanoi",
     "precio": "$3200",
     "imagen": "img/jc.jpg",
-    "categoria": "cafetería "
+    
   },
   {
     "categoria": "Sugerencias del Día",
