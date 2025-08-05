@@ -1,16 +1,156 @@
 [
   {
-    "nombre": "Café expreso",
-    "descripcion": "café chico",
-    "precio": "$3000",
-    "imagen": "img/cafe.jpg",
-    "categoria": "cafetería"
+    "categoria": "Cafetería",
+    "nombre": "Café Espresso",
+    "descripcion": "Café fuerte y corto",
+    "precio": "$800",
+    "imagen": "img/cafe.jpg"
   },
   {
-    "nombre": "Expreso jarrito",
-    "descripcion": "Expreso Americano",
+    "categoria": "Desayunos y Meriendas",
+    "nombre": "Combo medialuna",
+    "descripcion": "Café con leche + 2 medialunas",
+    "precio": "$1600",
+    "imagen": "img/desayuno.jpg"
+  },
+  {
+    "categoria": "Pastelería",
+    "nombre": "Tarta de frutilla",
+    "descripcion": "Con crema pastelera y frutilla",
+    "precio": "$2500",
+    "imagen": "img/tarta.jpg"
+  },
+  {
+    "categoria": "Sandwiches",
+    "nombre": "Sándwich de jamón y queso",
+    "descripcion": "En pan francés",
+    "precio": "$2000",
+    "imagen": "img/sandwich.jpg"
+  },
+  {
+    "categoria": "Tartas",
+    "nombre": "Tarta de verdura",
+    "descripcion": "Acelga, ricota y huevo",
+    "precio": "$2200",
+    "imagen": "img/tarta-verdura.jpg"
+  },
+  {
+    "categoria": "Burritos",
+    "nombre": "Burrito de carne",
+    "descripcion": "Con guacamole y pico de gallo",
+    "precio": "$2800",
+    "imagen": "img/burrito.jpg"
+  },
+  {
+    "categoria": "Refrescos",
+    "nombre": "Coca-Cola 500ml",
+    "descripcion": "Bebida fría",
+    "precio": "$900",
+    "imagen": "img/coca.jpg"
+  },
+  {
+    "categoria": "Lomitos o Burgers",
+    "nombre": "Lomito completo",
+    "descripcion": "Con huevo, lechuga, tomate y jamón",
     "precio": "$3500",
-    "imagen": "img/jc.jpg",
-    "categoria": "cafeterías"
+    "imagen": "img/lomito.jpg"
+  },
+  {
+    "categoria": "Omelet / Tortillas",
+    "nombre": "Tortilla de papa",
+    "descripcion": "Tortilla clásica con cebolla",
+    "precio": "$2400",
+    "imagen": "img/tortilla.jpg"
+  },
+  {
+    "categoria": "Ensaladas",
+    "nombre": "Ensalada César",
+    "descripcion": "Lechuga, pollo, croutons y parmesano",
+    "precio": "$2600",
+    "imagen": "img/ensalada.jpg"
+  },
+  {
+    "categoria": "Milanesas",
+    "nombre": "Milanesa napolitana",
+    "descripcion": "Con papas fritas",
+    "precio": "$3200",
+    "imagen": "img/milanesa.jpg"
+  },
+  {
+    "categoria": "Menú Kids",
+    "nombre": "Hamburguesa kids",
+    "descripcion": "Con papas y jugo",
+    "precio": "$2100",
+    "imagen": "img/kids.jpg"
+  },
+  {
+    "categoria": "Especialidades",
+    "nombre": "Salmón grillado",
+    "descripcion": "Con verduras al vapor",
+    "precio": "$4500",
+    "imagen": "img/salmon.jpg"
+  },
+  {
+    "categoria": "Entradas",
+    "nombre": "Bruschetta",
+    "descripcion": "Pan con tomate y albahaca",
+    "precio": "$1500",
+    "imagen": "img/bruschetta.jpg"
+  },
+  {
+    "categoria": "Pizza",
+    "nombre": "Pizza muzzarella",
+    "descripcion": "Tradicional con orégano y aceitunas",
+    "precio": "$3100",
+    "imagen": "img/pizza.jpg"
+  },
+  {
+    "categoria": "Risottos",
+    "nombre": "Risotto de hongos",
+    "descripcion": "Arroz cremoso con champiñones",
+    "precio": "$3700",
+    "imagen": "img/risotto.jpg"
+  },
+  {
+    "categoria": "Pastas",
+    "nombre": "Sorrentinos de jamón y queso",
+    "descripcion": "Con salsa a elección",
+    "precio": "$3300",
+    "imagen": "img/sorrentinos.jpg"
+  },
+  {
+    "categoria": "Salsas",
+    "nombre": "Salsa 4 quesos",
+    "descripcion": "Ideal para pastas",
+    "precio": "$800",
+    "imagen": "img/salsa.jpg"
+  },
+  {
+    "categoria": "Grill",
+    "nombre": "Bife de chorizo",
+    "descripcion": "Con papas rústicas",
+    "precio": "$4200",
+    "imagen": "img/bife.jpg"
+  },
+  {
+    "categoria": "Postres",
+    "nombre": "Flan casero",
+    "descripcion": "Con dulce de leche",
+    "precio": "$1300",
+    "imagen": "img/flan.jpg"
+  },
+  {
+    "categoria": "Menú del Día",
+    "nombre": "Pollo al horno",
+    "descripcion": "Con arroz y ensalada",
+    "precio": "$3100",
+    "imagen": "img/menu-dia.jpg"
+  },
+  {
+    "categoria": "Sugerencias del Día",
+    "nombre": "Brownie tibio",
+    "descripcion": "Con helado de crema",
+    "precio": "$1900",
+    "imagen": "img/sugerencia.jpg"
   }
 ]
