@@ -1,172 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin GitHub - Tilo Café</title>
+  <meta charset="UTF-8">
+  <title>Admin Tilo Café</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 20px;
-      background: #fffafa;
-      color: #68310f;
-    }
-    form, .preview, .json-output {
-      max-width: 600px;
-      margin: 0 auto 30px auto;
-      padding: 10px;
-    }
-    input, select, button, textarea {
-      padding: 10px;
-      margin: 6px 0;
-      width: 100%;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-    button {
-      background-color: #68310f;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #4c2812;
-    }
-    .preview {
-      background: #cccccc;
-      border-radius: 10px;
-      padding: 10px;
-    }
-    .preview img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-    .json-output {
-      background: #f4f4f4;
-      border: 1px solid #ccc;
-      font-family: monospace;
-      white-space: pre-wrap;
-    }
+    body { font-family: sans-serif; background: #fffafa; padding: 20px; color: #333; }
+    input, textarea, select, button { display: block; margin: 10px 0; padding: 10px; width: 100%; max-width: 500px; }
+    button { background: #68310f; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #4c2812; }
+    .preview { border: 1px solid #ccc; border-radius: 10px; padding: 10px; margin-top: 20px; background: #f7f7f7; width: 100%; max-width: 500px; }
+    .preview img { width: 100%; max-height: 200px; object-fit: cover; }
+    label { font-weight: bold; }
   </style>
 </head>
 <body>
+  <h1>📋 Administrador de productos - Tilo Café</h1>
 
-<h1>Admin Tilo Café (conexión directa a GitHub)</h1>
+  <label>Nombre</label>
+  <input type="text" id="nombre">
 
-<form id="productForm">
-  <input type="text" id="nombre" placeholder="Nombre del producto" required />
-  <textarea id="descripcion" placeholder="Descripción" required></textarea>
-  <input type="text" id="precio" placeholder="Precio (ej: $2500)" required />
-  <input type="text" id="imagen" placeholder="img/archivo.jpg" required />
-  <select id="categoria" required>
-    <option value="">Categoría</option>
-    <option>Cafetería</option>
-    <option>Desayunos y Meriendas</option>
-    <option>Pastelería</option>
-    <option>Sandwiches</option>
-    <option>Tartas</option>
-    <option>Burritos</option>
-    <option>Refrescos</option>
-    <option>Lomitos o Burgers</option>
-    <option>Omelet / Tortillas</option>
-    <option>Ensaladas</option>
-    <option>Milanesas</option>
-    <option>Menú Kids</option>
-    <option>Especialidades</option>
-    <option>Entradas</option>
-    <option>Pizza</option>
-    <option>Risottos</option>
-    <option>Pastas</option>
-    <option>Salsas</option>
-    <option>Grill</option>
-    <option>Postres</option>
-    <option>Menú del Día</option>
-    <option>Sugerencias del Día</option>
-    <option>Vinos</option>
-    <option>Tragos</option>
-  </select>
-  <input type="password" id="token" placeholder="Token GitHub (secreto)" required />
-  <button type="submit">Agregar producto</button>
-</form>
+  <label>Descripción</label>
+  <textarea id="descripcion"></textarea>
 
-<div class="preview" id="preview" style="display: none;">
-  <img id="preview-img" src="" alt="">
-  <h3 id="preview-nombre"></h3>
-  <p id="preview-descripcion"></p>
-  <p id="preview-precio"></p>
-</div>
+  <label>Precio (sin $)</label>
+  <input type="number" id="precio" min="0">
 
-<button onclick="guardarEnGitHub()">Guardar en GitHub</button>
+  <label>Nombre del archivo de imagen (ej: cafe1.jpg)</label>
+  <input type="text" id="imagen">
 
-<div class="json-output" id="jsonOutput"></div>
+  <label>Categoría</label>
+  <input type="text" id="categoria">
 
-<script>
-let productos = [];
+  <button onclick="agregarProducto()">Agregar producto</button>
+  <button onclick="guardarJSON()">💾 Descargar productos.json</button>
 
-document.getElementById('productForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  const nuevo = {
-    nombre: nombre.value,
-    descripcion: descripcion.value,
-    precio: precio.value,
-    imagen: imagen.value,
-    categoria: categoria.value
-  };
-  productos.push(nuevo);
-  document.getElementById("preview").style.display = "block";
-  document.getElementById("preview-img").src = nuevo.imagen;
-  document.getElementById("preview-nombre").innerText = nuevo.nombre;
-  document.getElementById("preview-descripcion").innerText = nuevo.descripcion;
-  document.getElementById("preview-precio").innerText = nuevo.precio;
-  document.getElementById("productForm").reset();
-});
+  <div class="preview" id="preview" style="display:none;">
+    <h2>Vista previa</h2>
+    <img id="preview-img">
+    <h3 id="preview-nombre"></h3>
+    <p id="preview-descripcion"></p>
+    <p id="preview-precio" style="font-weight:bold;"></p>
+  </div>
 
-async function guardarEnGitHub() {
-  const token = document.getElementById("token").value.trim();
-  if (!token) return alert("Pegá tu token de GitHub para guardar.");
+  <script>
+    let productos = [];
 
-  const owner = "cholose10";
-  const repo = "Carta";
-  const path = "productos.json";
-  const branch = "main";
+    function agregarProducto() {
+      const nombre = document.getElementById("nombre").value;
+      const descripcion = document.getElementById("descripcion").value;
+      const precio = "$" + document.getElementById("precio").value;
+      const imagen = "img/" + document.getElementById("imagen").value;
+      const categoria = document.getElementById("categoria").value;
 
-  const jsonContent = JSON.stringify(productos, null, 2);
-  const base64Content = btoa(unescape(encodeURIComponent(jsonContent)));
+      const nuevo = { nombre, descripcion, precio, imagen, categoria };
+      productos.push(nuevo);
 
-  // Obtener el SHA actual del archivo
-  const url = `https://api.github.com/repos/${owner}/${repo}/contents/${path}`;
-  const res = await fetch(url, {
-    headers: {
-      Authorization: `token ${token}`
+      // Mostrar vista previa
+      document.getElementById("preview").style.display = "block";
+      document.getElementById("preview-img").src = imagen;
+      document.getElementById("preview-nombre").innerText = nombre;
+      document.getElementById("preview-descripcion").innerText = descripcion;
+      document.getElementById("preview-precio").innerText = precio;
+
+      // Limpiar campos
+      document.getElementById("nombre").value = "";
+      document.getElementById("descripcion").value = "";
+      document.getElementById("precio").value = "";
+      document.getElementById("imagen").value = "";
+      document.getElementById("categoria").value = "";
     }
-  });
-  const data = await res.json();
-  const sha = data.sha;
 
-  // Subir archivo actualizado
-  const subir = await fetch(url, {
-    method: "PUT",
-    headers: {
-      Authorization: `token ${token}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      message: "Actualización automática desde admin.html",
-      content: base64Content,
-      sha: sha,
-      branch: branch
-    })
-  });
-
-  if (subir.ok) {
-    alert("✅ El archivo productos.json fue guardado en GitHub.");
-    document.getElementById("jsonOutput").innerText = jsonContent;
-  } else {
-    alert("❌ Error al subir el archivo. Verificá tu token y que el archivo exista.");
-  }
-}
-</script>
-
+    function guardarJSON() {
+      const blob = new Blob([JSON.stringify(productos, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "productos.json";
+      link.click();
+    }
+  </script>
 </body>
 </html>
