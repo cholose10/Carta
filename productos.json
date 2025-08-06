@@ -26,5 +26,12 @@
     "precio": "$18000",
     "imagen": "img/cl.jpg",
     "categoria": "cafetería"
+  },
+  {
+    "nombre": "desayuno merienda",
+    "descripcion": "promo luna",
+    "precio": "$3200",
+    "imagen": "img/Chocola.jpg",
+    "categoria": "desayuno y morindas"
   }
 ]
