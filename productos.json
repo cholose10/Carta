@@ -5,5 +5,12 @@
     "precio": "$3200",
     "imagen": "img/cafe.jpg",
     "categoria": "cafetería"
+  },
+  {
+    "nombre": "Café expreso",
+    "descripcion": "americano",
+    "precio": "$3500",
+    "imagen": "img/jc.jpg",
+    "categoria": "cafetería"
   }
 ]
