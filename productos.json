@@ -19,5 +19,12 @@
     "precio": "$80000",
     "imagen": "img/chan.jpg",
     "categoria": "cafetería"
+  },
+  {
+    "nombre": "capuchino italiana",
+    "descripcion": "capuchino",
+    "precio": "$18000",
+    "imagen": "img/cl.jpg",
+    "categoria": "cafetería"
   }
 ]
