@@ -12,5 +12,12 @@
     "precio": "$3500",
     "imagen": "img/jc.jpg",
     "categoria": "cafetería"
+  },
+  {
+    "nombre": "capuchino",
+    "descripcion": "capu",
+    "precio": "$80000",
+    "imagen": "img/chan.jpg",
+    "categoria": "cafetería"
   }
 ]
