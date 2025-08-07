@@ -26,5 +26,12 @@
     "precio": "$8700",
     "imagen": "img/",
     "categoria": "Desayuno y Meriendas"
+  },
+  {
+    "nombre": "Avocado",
+    "descripcion": "Un tostón con huevo revuelto cremon de palta y semillas",
+    "precio": "$14500",
+    "imagen": "img/20250806_094923.jpg",
+    "categoria": "Desayuno y Meriendas"
   }
 ]
