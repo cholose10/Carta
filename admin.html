@@ -28,11 +28,8 @@
   <label>Nombre de la imagen (ej: cafe1.jpg)</label>
   <input type="text" id="imagen">
 
-  <label>Categoría</label>
-  <select id="categoria">
-    <option value="">Cargando categorías...</option>
-  </select>
-  <input type="text" id="nueva-categoria" placeholder="Otra categoría..." style="display:none;"/>
+  <label>Categoría (escribí a mano)</label>
+  <input type="text" id="categoria" placeholder="Ej: Cafetería, Tartas, Sandwiches...">
 
   <button onclick="agregarProducto()">Agregar producto</button>
 
@@ -52,58 +49,45 @@
   <script>
     let productos = [];
 
-    async function cargarCategorias() {
+    async function cargarProductos() {
       const token = localStorage.getItem("githubToken") || "";
       const res = await fetch("https://api.github.com/repos/cholose10/Carta/contents/productos.json", {
         headers: { Authorization: "token " + token }
       });
       const data = await res.json();
-      if (!data.content) return;
-
-      const json = JSON.parse(atob(data.content));
-      productos = json;
-
-      const categoriasUnicas = [...new Set(json.map(p => p.categoria))].sort();
-
-      const select = document.getElementById("categoria");
-      select.innerHTML = categoriasUnicas.map(cat => `<option value="${cat}">${cat}</option>`).join("");
-      select.innerHTML += '<option value="otra">➕ Otra (escribir nueva)</option>';
+      if (data.content) {
+        productos = JSON.parse(atob(data.content));
+      }
     }
 
-    document.getElementById("categoria").addEventListener("change", function() {
-      document.getElementById("nueva-categoria").style.display = this.value === "otra" ? "block" : "none";
-    });
-
     function agregarProducto() {
-      let categoria = document.getElementById("categoria").value;
-      if (categoria === "otra") {
-        categoria = document.getElementById("nueva-categoria").value.trim();
-        if (!categoria) return alert("Debes escribir la nueva categoría.");
-        categoria = categoria.charAt(0).toUpperCase() + categoria.slice(1).toLowerCase();
-      }
-
-      const nombre = document.getElementById("nombre").value;
-      const descripcion = document.getElementById("descripcion").value;
+      const nombre = document.getElementById("nombre").value.trim();
+      const descripcion = document.getElementById("descripcion").value.trim();
       const precio = "$" + document.getElementById("precio").value;
-      const imagen = "img/" + document.getElementById("imagen").value;
+      const imagen = "img/" + document.getElementById("imagen").value.trim();
+      const categoria = document.getElementById("categoria").value.trim();
+
+      if (!nombre || !descripcion || !precio || !imagen || !categoria) {
+        alert("Por favor completá todos los campos.");
+        return;
+      }
 
       const nuevo = { nombre, descripcion, precio, imagen, categoria };
       productos.push(nuevo);
 
-      // Mostrar vista previa
+      // Vista previa
       document.getElementById("preview").style.display = "block";
       document.getElementById("preview-img").src = imagen;
       document.getElementById("preview-nombre").innerText = nombre;
       document.getElementById("preview-descripcion").innerText = descripcion;
       document.getElementById("preview-precio").innerText = precio;
 
+      // Limpiar
       document.getElementById("nombre").value = "";
       document.getElementById("descripcion").value = "";
       document.getElementById("precio").value = "";
       document.getElementById("imagen").value = "";
-      document.getElementById("nueva-categoria").value = "";
-      document.getElementById("nueva-categoria").style.display = "none";
-      document.getElementById("categoria").selectedIndex = 0;
+      document.getElementById("categoria").value = "";
     }
 
     async function guardarEnGitHub() {
@@ -131,7 +115,7 @@
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          message: "Actualización desde admin con select de categorías",
+          message: "Actualización desde admin manual",
           content,
           sha,
           branch: "main"
@@ -145,7 +129,7 @@
       }
     }
 
-    cargarCategorias();
+    cargarProductos();
   </script>
 </body>
 </html>
