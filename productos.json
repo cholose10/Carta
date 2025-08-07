@@ -225,12 +225,8 @@
   },
   {
     "nombre": "Yogurt ",
-    "descripcion": "Yogurt $4.500
-
-Yogurt con granola $7.000
-
-Yogurt Forte (con frutas y granola) $10.500",
-    "precio": "$8000",
+    "descripcion": "Yogurt $4.500Yogurt con granola $7.000Yogurt Forte (con frutas y granola) $10.500",
+    "precio": "$....",
     "imagen": "img/medialunas.jpg",
     "categoria": "Pastelería"
   }
