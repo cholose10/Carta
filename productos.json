@@ -12,5 +12,12 @@
     "precio": "$3200",
     "imagen": "img/jc.jpg",
     "categoria": "Cafetería"
+  },
+  {
+    "nombre": "café doble",
+    "descripcion": "café doble",
+    "precio": "$80000",
+    "imagen": "img/20250806_112815.jpg",
+    "categoria": "cafetería"
   }
 ]
