@@ -1,24 +1,24 @@
 [
   {
-    "nombre": "CafÃ© expreso",
-    "descripcion": "cafÃ© chico",
+    "nombre": "Café expreso",
+    "descripcion": "café chico",
     "precio": "$3000",
     "imagen": "img/cafe.jpg",
-    "categoria": "CafeterÃ­a"
+    "categoria": "Cafetería"
   },
   {
     "nombre": "Jarrito",
     "descripcion": "Americano expreso",
     "precio": "$3200",
     "imagen": "img/jc.jpg",
-    "categoria": "CafeterÃ­a"
+    "categoria": "Cafetería"
   },
   {
-    "nombre": "cafÃ© doble",
-    "descripcion": "cafÃ© doble",
+    "nombre": "café doble",
+    "descripcion": "café doble",
     "precio": "$80000",
     "imagen": "img/20250806_112815.jpg",
-    "categoria": "CafeterÃ­a"
+    "categoria": "Cafetería"
   },
   {
     "nombre": "Promo Media",
@@ -29,7 +29,7 @@
   },
   {
     "nombre": "Avocado",
-    "descripcion": "Un tostÃ³n con huevo revuelto cremon de palta y semillas",
+    "descripcion": "Un toston con huevo revuelto cremon de palta y semillas",
     "precio": "$14500",
     "imagen": "img/20250806_094923.jpg",
     "categoria": "Desayuno y Meriendas"
@@ -40,5 +40,5 @@
     "precio": "$4900",
     "imagen": "img/",
     "categoria": "Cafetería"
-  }
+  },
 ]
