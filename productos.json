@@ -18,6 +18,13 @@
     "descripcion": "café doble",
     "precio": "$80000",
     "imagen": "img/20250806_112815.jpg",
-    "categoria": "Cafetería"
+    "categoria": "cafetería"
+  },
+  {
+    "nombre": "Promo Media",
+    "descripcion": "café con leche y 3 lunas y un vasito de exprimido",
+    "precio": "$8700",
+    "imagen": "img/",
+    "categoria": "Desayuno y Meriendas"
   }
 ]
