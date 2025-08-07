@@ -1,44 +1,237 @@
 [
   {
-    "nombre": "Café expreso",
-    "descripcion": "café chico",
-    "precio": "$3000",
-    "imagen": "img/cafe.jpg",
-    "categoria": "Cafetería"
-  },
-  {
-    "nombre": "Jarrito",
-    "descripcion": "Americano expreso",
+    "nombre": "Café expresso",
+    "descripcion": "Café tradicional chico",
     "precio": "$3200",
-    "imagen": "img/jc.jpg",
+    "imagen": "img/cafe1.jpg",
     "categoria": "Cafetería"
   },
   {
-    "nombre": "café doble",
-    "descripcion": "café doble",
-    "precio": "$80000",
-    "imagen": "img/20250806_112815.jpg",
+    "nombre": "Café expresso jarito",
+    "descripcion": "Café americano",
+    "precio": "$3500",
+    "imagen": "img/cafe1.jpg",
     "categoria": "Cafetería"
   },
   {
-    "nombre": "Promo Media",
-    "descripcion": "café con leche y 3 lunas y un vasito de exprimido",
-    "precio": "$8700",
-    "imagen": "img/",
-    "categoria": "Desayuno y Meriendas"
+    "nombre": "Café descafeinado",
+    "descripcion": "Café descafeinado",
+    "precio": "$3700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
   },
   {
-    "nombre": "Avocado",
-    "descripcion": "Un toston con huevo revuelto cremon de palta y semillas",
-    "precio": "$14500",
-    "imagen": "img/20250806_094923.jpg",
-    "categoria": "Desayuno y Meriendas"
+    "nombre": "Café con leche",
+    "descripcion": "Café Café con leche taradicional",
+    "precio": "$4100",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+   {
+    "nombre": "Café expresso Doble",
+    "descripcion": "Café expresso Doble",
+    "precio": "$4700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
   },
   {
-    "nombre": "Capuchino Italiana",
-    "descripcion": "café, leche, crema y canela y chocolate en polvo",
+    "nombre": "Capuccino",
+    "descripcion": "Café, leche, canela y cacao",
     "precio": "$4900",
-    "imagen": "img/",
+    "imagen": "img/cafe1.jpg",
     "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Capuccino a la italiana",
+    "descripcion": "Café, leche, crema, canela y cacao",
+    "precio": "$5000",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Café MOKA",
+    "descripcion": " cacao intenso, café, leche espumada",
+    "precio": "$5450",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+   {
+    "nombre": "Café CARAMEL",
+    "descripcion": "caramelo, café, leche espumada",
+    "precio": "$5450",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+   {
+    "nombre": "Té con leche",
+    "descripcion": "te inti zen",
+    "precio": "$4100",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Submarino",
+    "descripcion": "leche espumada y berra de chocolate",
+    "precio": "$4700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Leche caliente o fría",
+    "descripcion": "leche descremada",
+    "precio": "$2800",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "CAFE TILO",
+    "descripcion": "café, baileys, leche evaporada y chocolate rallado ",
+    "precio": "$6700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "CE COFFE",
+    "descripcion": "doble shot con hielo ",
+    "precio": "$4700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "LATTE ICE COFFE",
+    "descripcion": "leche fría con doble shot de café y hielo ",
+    "precio": "$4700",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "FRAPPUCCINO GUITO",
+    "descripcion": "base de leche ",
+    "precio": "$6400",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "FRAPPUCCINO GUITO",
+    "descripcion": "base de Café",
+    "precio": "$6400",
+    "imagen": "img/cafe1.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Adicionales",
+    "descripcion": "Crema$300, Leche de almendras $350-450, Saborizante vainilla o avellanas $350",
+    "precio": "$....",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Adicionales de café"
+  },
+  {
+    "nombre": "Medialunas",
+    "descripcion": "Medialunas 100% manteca",
+    "precio": "$2000",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Chaman Roll",
+    "descripcion": "roll de canela",
+    "precio": "$4400",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Pan de chocolate",
+    "descripcion": "masa de croissant con chocolate belga",
+    "precio": "$4700",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Cookies",
+    "descripcion": "cookces vinilla con chocolate, chocolate+chocolate",
+    "precio": "$4600",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Brownie con nueces blancas",
+    "descripcion": "Brownie sin TACC",
+    "precio": "$6500",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Chipá relleno",
+    "descripcion": "Chipá relleno de queso",
+    "precio": "$3500",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Scon de queso",
+    "descripcion": "Scon de queso",
+    "precio": "$4200",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Budín",
+    "descripcion": "zanahoria y canela o limón y amapolas",
+    "precio": "$5300",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Alfajor de chocolate",
+    "descripcion": "Alfajor de chocolate",
+    "precio": "$4300",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Alfajor de maicena",
+    "descripcion": "Alfajor de maicena (sin TACC)",
+    "precio": "$4300",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Alfajor de almendras ",
+    "descripcion": "Alfajor de almendras ",
+    "precio": "$5200",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Mini tarta ",
+    "descripcion": "Mini tarta duces",
+    "precio": "$9000",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Medialuna caliente de jamón y queso",
+    "descripcion": "Medialuna caliente de jamón y queso",
+    "precio": "$4200",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Plato con frutas de estación",
+    "descripcion": "Plato con frutas de estación",
+    "precio": "$8000",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
+  },
+  {
+    "nombre": "Yogurt ",
+    "descripcion": "Yogurt $4.500
+
+Yogurt con granola $7.000
+
+Yogurt Forte (con frutas y granola) $10.500",
+    "precio": "$8000",
+    "imagen": "img/medialunas.jpg",
+    "categoria": "Pastelería"
   }
 ]
