@@ -1,44 +1,9 @@
 [
   {
-    "nombre": "Café expreso",
-    "descripcion": "ch",
-    "precio": "$3200",
-    "imagen": "img/cafe.jpg",
-    "categoria": "cafetería"
-  },
-  {
-    "nombre": "Café expreso",
-    "descripcion": "americano",
-    "precio": "$3500",
-    "imagen": "img/jc.jpg",
-    "categoria": "cafetería"
-  },
-  {
-    "nombre": "capuchino",
-    "descripcion": "capu",
-    "precio": "$80000",
-    "imagen": "img/chan.jpg",
-    "categoria": "cafetería"
-  },
-  {
-    "nombre": "capuchino italiana",
-    "descripcion": "capuchino",
-    "precio": "$18000",
-    "imagen": "img/cl.jpg",
-    "categoria": "cafetería"
-  },
-  {
-    "nombre": "desayuno merienda",
-    "descripcion": "promo luna",
-    "precio": "$3200",
-    "imagen": "img/Chocola.jpg",
-    "categoria": "desayuno y morindas"
-  },
-  {
-    "nombre": "te",
-    "descripcion": "te chy",
-    "precio": "$80000",
-    "imagen": "img/te.jpg",
+    "nombre": "café doble",
+    "descripcion": "café doble",
+    "precio": "$6000",
+    "imagen": "img/20250806_112815.jpg",
     "categoria": "cafetería"
   }
 ]
