@@ -1,9 +1,9 @@
 [
   {
-    "nombre": "café doble",
-    "descripcion": "café doble",
-    "precio": "$6000",
-    "imagen": "img/20250806_112815.jpg",
-    "categoria": "cafetería"
+    "nombre": "Café expreso",
+    "descripcion": "café chico",
+    "precio": "$3000",
+    "imagen": "img/cafe.jpg",
+    "categoria": "Cafetería"
   }
 ]
