@@ -123,56 +123,56 @@
     "descripcion": "3 medialunas caseras",
     "precio": "$8700",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "TOSTADAS",
     "descripcion": "Pan negro o blanco con queso crema y mermelada casera",
     "precio": "$9400",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "TOMELETTE DE CLARAS",
     "descripcion": "Omelette con queso y tomate (con FRITOLIN) y frutas de estación",
     "precio": "$14700",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "AVOCADO",
     "descripcion": "tostada con huevos revueltos, crema de palta y semillas",
     "precio": "$14500",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "REVUELTO",
     "descripcion": "Huevos revueltos con jamón y queso, una tostada para acompañar",
     "precio": "$13200",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "PROTEICO",
     "descripcion": "Pancake 100% harina de almendras, queso crema y fruta de estación más dip de miel",
     "precio": "$14700",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "FRENCH TOAST",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, queso crema, frutas de estación y dip de miel",
     "precio": "$14200",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "FRENCH TOAST SALADO",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, con bacon, palta y huevo revuelto",
     "precio": "$14200",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Desayunos y meriendas"
+    "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "Adicionales",
