@@ -146,24 +146,27 @@
       });
     }
 
-    // --- Función de traducción ---
-    const translateBtn = document.getElementById('translateBtn');
+    // --- Función de traducción solo si NO es Chrome ---
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if (!isChrome) {
+      const translateBtn = document.getElementById('translateBtn');
 
-    document.addEventListener('mouseup', (e) => {
-      const selection = window.getSelection().toString().trim();
-      if (selection) {
-        translateBtn.style.left = e.pageX + 'px';
-        translateBtn.style.top = e.pageY + 'px';
-        translateBtn.style.display = 'block';
-        translateBtn.onclick = () => {
-          const url = `https://translate.google.com/?sl=es&tl=en&text=${encodeURIComponent(selection)}&op=translate`;
-          window.open(url, '_blank');
+      document.addEventListener('mouseup', (e) => {
+        const selection = window.getSelection().toString().trim();
+        if (selection) {
+          translateBtn.style.left = e.pageX + 'px';
+          translateBtn.style.top = e.pageY + 'px';
+          translateBtn.style.display = 'block';
+          translateBtn.onclick = () => {
+            const url = `https://translate.google.com/?sl=es&tl=en&text=${encodeURIComponent(selection)}&op=translate`;
+            window.open(url, '_blank');
+            translateBtn.style.display = 'none';
+          };
+        } else {
           translateBtn.style.display = 'none';
-        };
-      } else {
-        translateBtn.style.display = 'none';
-      }
-    });
+        }
+      });
+    }
   </script>
 </body>
 </html>
