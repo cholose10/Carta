@@ -467,5 +467,173 @@
     "precio": "$13.700",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "Omelettes/Tortillas"
+  },
+  {
+    "nombre": "FRESCA",
+    "descripcion": "TRúcula, manzana verde, pepino, tomates cherries, nueces.",
+    "precio": "$18.200",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "CASA CON POLLO",
+    "descripcion": "Mix de verdes, croutones, pollo, parmesano y aderezo César",
+    "precio": "$16.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "CASA CON POLLO crujiente",
+    "descripcion": "TMix de verdes, croutones, pollo crujiente, parmesano y aderezo César.",
+    "precio": "$17.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "CASA Con langostinos rebozados",
+    "descripcion": "TMix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo César.",
+    "precio": "$18.500",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "STRACCIATELLA mozzarella italiana",
+    "descripcion": "Mix de verdes, tomates cherries, jamón crudo, mozzarella, tiras de tortilla",
+    "precio": "$28.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "COBB SALAD",
+    "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de pollo.",
+    "precio": "$16.800",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS"
+  },
+  {
+    "nombre": "SOJA",
+    "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$19.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
+  },
+  {
+    "nombre": "ESPINACA",
+    "descripcion": "Crema de espinaca y queso gratinado Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$21.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
+  },
+  {
+    "nombre": "SUIZA",
+    "descripcion": "Salsa blanca y queso gratinado Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$21.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
+  },
+  {
+    "nombre": "NAPOLITANA",
+    "descripcion": "Salsa de tomate, jamón y queso Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$22.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
+  },
+  {
+    "nombre": "SMOKE",
+    "descripcion": "Salsa de tomate, mermelada de bacon, cheddar Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$22.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
+  },
+  {
+    "nombre": "Filet de Merluza a la romana",
+    "descripcion": "con puré mixto",
+    "precio": "$17.500",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "Otros platos"
+  },
+  {
+    "nombre": "Empanadas",
+    "descripcion": "carne o jamón y queso",
+    "precio": "$17.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENTRADITAS"
+  },
+  {
+    "nombre": "Rabas a la romana",
+    "descripcion": "Rabas a la romana",
+    "precio": "$23.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENTRADITAS"
+  },
+  {
+    "nombre": "Mozzarellas rebozadas",
+    "descripcion": "Mozzarellas rebozadas",
+    "precio": "$16.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENTRADITAS"
+  },
+  {
+    "nombre": "Nachos",
+    "descripcion": "Nachos de carne con cheddar y pollo",
+    "precio": "$18.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENTRADITAS"
+  },
+  {
+    "nombre": "Farinata recomendado",
+    "descripcion": "Fainá con stracciatella, jamón crudo, tomates y albahaca.",
+    "precio": "$20.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENTRADITAS"
+  },
+  {
+    "nombre": "NAPOLITANA",
+    "descripcion": "Salsa de tomate, stracciatella, jamón y rodajas de tomate.",
+    "precio": "$26.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "PIZZAS (Estilo napolitano)"
+  },
+  {
+    "nombre": "PARMA",
+    "descripcion": "Salsa de tomate, stracciatella, burrata, jamón crudo, albahaca.",
+    "precio": "$32.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "PIZZAS (Estilo napolitano)"
+  },
+  {
+    "nombre": "MARGARITA",
+    "descripcion": "Salsa de tomate, stracciatella, hojas de albahaca.",
+    "precio": "$23.500",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "PIZZAS (Estilo napolitano)"
+  },
+  {
+    "nombre": "RISOTTOS de pollo!",
+    "descripcion": "con pollo, calabaza y verduras.",
+    "precio": "$23.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "RISOTTOS"
+  },
+  {
+    "nombre": "RISOTTOS Langostinos !",
+    "descripcion": "con verdura, noeces y almendras.",
+    "precio": "$25.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "RISOTTOS"
+  },
+  {
+    "nombre": "RISOTTOS Lomo!",
+    "descripcion": "con verduras.",
+    "precio": "$27.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "RISOTTOS"
+  },
+  {
+    "nombre": "porcion de faina",
+    "descripcion": "recomendada para acompañar una pizza",
+    "precio": "$5000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "PIZZAS (Estilo napolitano)"
   }
 ]
