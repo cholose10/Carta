@@ -31,7 +31,7 @@
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "$4700",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/doble.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -185,7 +185,7 @@
     "nombre": "Medialunas",
     "descripcion": "Medialunas 100% manteca",
     "precio": "$2000",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Lumas.jpg",
     "categoria": "Pastelería"
   },
   {
@@ -458,7 +458,7 @@
     "nombre": "Omelette de queso y champignones",
     "descripcion": "Omelette de queso y champignones",
     "precio": "$15.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Omecham.jpg",
     "categoria": "Omelettes/Tortillas"
   },
   {
