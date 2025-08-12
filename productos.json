@@ -683,35 +683,35 @@
     "descripcion": "salsa banca con Pollo",
     "precio": "$7.500",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PASTAS"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Alfredo langostinos",
     "descripcion": "salsa banca con langostinos",
     "precio": "$9.500",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PASTAS"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Boloñesa",
     "descripcion": "salsa con carne",
     "precio": "$7.700",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PASTAS"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Pesto con nuez",
     "descripcion": "nuez, ajo y perejil",
     "precio": "$6.800",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PASTAS"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Carbonara",
     "descripcion": "Crema, panceta y verdeo",
     "precio": "$7.700",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PASTAS"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Pollo (pechuga)",
