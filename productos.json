@@ -711,70 +711,71 @@
     "descripcion": "Con frita, pure, esnsalada o arroz",
     "precio": "$19.500",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Matambre de cerdo",
     "descripcion": "Con frita, pure, esnsalada o arroz",
     "precio": "$22.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Con frita, pure, esnsalada o arroz",
     "precio": "$28.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Bife de lomo",
     "descripcion": "Con frita, pure, esnsalada o arroz",
     "precio": "$30.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Salmón rosado",
     "descripcion": "Con frita, pure, esnsalada o arroz",
     "precio": "$32.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Pollo (pechuga)",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
     "precio": "$21.500",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA Especiales"
+    "categoria": "GRILL Especialess"
   },
   {
     "nombre": "Matambre de cerdo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
     "precio": "$24.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA Especiales"
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
     "precio": "$30.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA Especiales"
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "Bife de lomo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
     "precio": "$32.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA Especiales"
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "Salmón rosado",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
     "precio": "$34.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILLA Especiales"
+    "categoria": "GRILL Especiales"
   }
+  
   
 ]
