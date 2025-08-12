@@ -553,6 +553,13 @@
     "categoria": "Otros platos"
   },
   {
+    "nombre": "Revuelto de Gramajo",
+    "descripcion": "Papas fritas, panceta, cebolla morrón, arvejas y huevo frito",
+    "precio": "$17.000",
+    "imagen": "img/Rebuelto.jpg",
+    "categoria": "Otros platos"
+  },
+  {
     "nombre": "Empanadas",
     "descripcion": "carne o jamón y queso",
     "precio": "$17.000",
@@ -775,7 +782,13 @@
     "precio": "$34.000",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "GRILL Especiales"
+  },
+  {
+    "nombre": "Revuelto de Gramajo",
+    "descripcion": "Papas fritas, panceta, cebolla morrón, arvejas y huevo frito",
+    "precio": "$17.000",
+    "imagen": "img/Rebuelto.jpg",
+    "categoria": "Otros platos"
   }
-  
   
 ]
