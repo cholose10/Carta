@@ -52,7 +52,7 @@
     "nombre": "Café MOKA",
     "descripcion": " cacao intenso, café, leche espumada",
     "precio": "$5450",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/Moka.jpg.",
     "categoria": "Cafetería"
   },
    {
@@ -73,7 +73,7 @@
     "nombre": "Submarino",
     "descripcion": "leche espumada y berra de chocolate",
     "precio": "$4700",
-    "imagen": "img/Submarino.jpg",
+    "imagen": "img/Submarino .jpg",
     "categoria": "Cafetería"
   },
   {
