@@ -45,14 +45,14 @@
     "nombre": "Capuccino a la italiana",
     "descripcion": "Café, leche, crema, canela y cacao",
     "precio": "$5000",
-    "imagen": "img/italiano.jpg",
+    "imagen": "img/Italiano.jpg",
     "categoria": "Cafetería"
   },
   {
     "nombre": "Café MOKA",
     "descripcion": " cacao intenso, café, leche espumada",
     "precio": "$5450",
-    "imagen": "img/moka.jpg",
+    "imagen": "img/Moka.jpg",
     "categoria": "Cafetería"
   },
    {
