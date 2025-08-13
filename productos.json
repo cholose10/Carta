@@ -10,7 +10,7 @@
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
     "precio": "$3500",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/Americano.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -24,7 +24,7 @@
     "nombre": "Café con leche",
     "descripcion": "Café Café con leche taradicional",
     "precio": "$4100",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/cl.jpg",
     "categoria": "Cafetería"
   },
    {
@@ -38,14 +38,14 @@
     "nombre": "Capuccino",
     "descripcion": "Café, leche, canela y cacao",
     "precio": "$4900",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/Capuchino.jpg",
     "categoria": "Cafetería"
   },
   {
     "nombre": "Capuccino a la italiana",
     "descripcion": "Café, leche, crema, canela y cacao",
     "precio": "$5000",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/Italiano.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -73,7 +73,7 @@
     "nombre": "Submarino",
     "descripcion": "leche espumada y berra de chocolate",
     "precio": "$4700",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/Submarino.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -161,17 +161,17 @@
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
-    "nombre": "FRENCH TOAST",
+    "nombre": "FRENCH TOAST DULCE",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, queso crema, frutas de estación y dip de miel",
     "precio": "$14200",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Dulce.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "FRENCH TOAST SALADO",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, con bacon, palta y huevo revuelto",
     "precio": "$14200",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Salados.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
@@ -189,10 +189,10 @@
     "categoria": "Pastelería"
   },
   {
-    "nombre": "Chaman Roll",
+    "nombre": "Cinamon Roll(rol de canela)",
     "descripcion": "roll de canela",
     "precio": "$4400",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Rolcanela1.jpg",
     "categoria": "Pastelería"
   },
   {
@@ -304,7 +304,7 @@
     "nombre": "Tarta de BRÓCOLI",
     "descripcion": "Brócoli, queso sardo, muzarella, cebolla, masa integral",
     "precio": "$18000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Brócoli.jpg",
     "categoria": "Tartas (con ensaladita)"
   },
   {
@@ -479,14 +479,14 @@
     "nombre": "CASA CON POLLO",
     "descripcion": "Mix de verdes, croutones, pollo, parmesano y aderezo César",
     "precio": "$16.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Caesarpollo.jpg",
     "categoria": "ENSALADAS"
   },
   {
     "nombre": "CASA CON POLLO crujiente",
     "descripcion": "TMix de verdes, croutones, pollo crujiente, parmesano y aderezo César.",
     "precio": "$17.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Causarcranch.jpg",
     "categoria": "ENSALADAS"
   },
   {
@@ -507,7 +507,7 @@
     "nombre": "COBB SALAD",
     "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de pollo.",
     "precio": "$16.800",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Cobbsala.jpg",
     "categoria": "ENSALADAS"
   },
   {
@@ -616,6 +616,13 @@
     "categoria": "PIZZAS (Estilo napolitano)"
   },
   {
+    "nombre": "Champi",
+    "descripcion": "Salsa de tomate, stracciatella, hongos ycebollas salteadas.",
+    "precio": "$23.500",
+    "imagen": "img/Pizachampi.jpg",
+    "categoria": "PIZZAS (Estilo napolitano)"
+  },
+  {
     "nombre": "RISOTTOS de pollo!",
     "descripcion": "con pollo, calabaza y verduras.",
     "precio": "$23.000",
@@ -626,7 +633,7 @@
     "nombre": "RISOTTOS Langostinos !",
     "descripcion": "con verdura, noeces y almendras.",
     "precio": "$25.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Risotolangos.jpg",
     "categoria": "RISOTTOS"
   },
   {
@@ -647,7 +654,7 @@
     "nombre": "Spaghetti",
     "descripcion": "Spaghetti ",
     "precio": "$11.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Spa.jpg",
     "categoria": "PASTAS"
   },
   {
@@ -661,14 +668,14 @@
     "nombre": "Ravioles de espinaca y pollo o caprese",
     "descripcion": "Rellenos de espinaca y pollo o caprese.",
     "precio": "$13.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Ravioles.jpg",
     "categoria": "PASTAS"
   },
   {
     "nombre": "Sorrentinos de ossobuco al vino tinto",
     "descripcion": "Rellenos de ossobuco al vino tinto",
     "precio": "$11.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Sonren.jpg",
     "categoria": "PASTAS"
   },
   {
