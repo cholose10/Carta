@@ -192,14 +192,14 @@
     "nombre": "Cinamon Roll(rol de canela)",
     "descripcion": "roll de canela",
     "precio": "$4400",
-    "imagen": "img/Rolcanela1.jpg",
+    "imagen": "img/Rolcanela.jpg",
     "categoria": "PastelerÃ­a"
   },
   {
     "nombre": "Pan de chocolate",
     "descripcion": "masa de croissant con chocolate belga",
     "precio": "$4700",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Pchoco.jpg",
     "categoria": "PastelerÃ­a"
   },
   {
