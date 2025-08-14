@@ -90,9 +90,43 @@
       font-size: 0.9rem;
       z-index: 1000;
     }
+    /* Menú de idiomas */
+    #languageMenu {
+      position: absolute;
+      display: none;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      z-index: 1001;
+    }
+    #languageMenu button {
+      background: none;
+      border: none;
+      padding: 5px 10px;
+      width: 100%;
+      text-align: left;
+      cursor: pointer;
+    }
+    #languageMenu button:hover {
+      background: #eee;
+    }
+    /* Mensaje iPhone */
+    #iphoneTip {
+      display: none;
+      background: #fff4d1;
+      color: #5a4302;
+      padding: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      border-bottom: 1px solid #e0c77d;
+    }
   </style>
 </head>
 <body>
+  <!-- Mensaje para iPhone -->
+  <div id="iphoneTip">💡 En Safari podés traducir toda la página con el menú "Traducir".</div>
+
   <!-- FOTO GRANDE ARRIBA -->
   <header>
     <img src="img/logo1.png" alt="Tilo Café" class="banner-img" />
@@ -103,8 +137,14 @@
   <div class="categories" id="category-buttons"></div>
   <div class="item-list" id="product-list"></div>
 
-  <!-- Botón flotante para traducir -->
+  <!-- Botón flotante y menú de idiomas -->
   <div id="translateBtn">Traducir</div>
+  <div id="languageMenu">
+    <button data-lang="en">Inglés</button>
+    <button data-lang="pt">Portugués</button>
+    <button data-lang="fr">Francés</button>
+    <button data-lang="it">Italiano</button>
+  </div>
 
   <script>
     let productos = [];
@@ -146,24 +186,47 @@
       });
     }
 
-    // --- Función de traducción solo si NO es Chrome ---
-    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if (!isChrome) {
-      const translateBtn = document.getElementById('translateBtn');
+    // --- Detectar iPhone y mostrar mensaje ---
+    const isIphone = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if (isIphone) {
+      document.getElementById('iphoneTip').style.display = 'block';
+    }
 
+    // --- Función de traducción ---
+    const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    const translateBtn = document.getElementById('translateBtn');
+    const languageMenu = document.getElementById('languageMenu');
+    let selectedText = '';
+
+    if (!isChrome) {
       document.addEventListener('mouseup', (e) => {
         const selection = window.getSelection().toString().trim();
         if (selection) {
+          selectedText = selection;
           translateBtn.style.left = e.pageX + 'px';
           translateBtn.style.top = e.pageY + 'px';
           translateBtn.style.display = 'block';
-          translateBtn.onclick = () => {
-            const url = `https://translate.google.com/?sl=es&tl=en&text=${encodeURIComponent(selection)}&op=translate`;
-            window.open(url, '_blank');
-            translateBtn.style.display = 'none';
-          };
+          languageMenu.style.display = 'none';
         } else {
           translateBtn.style.display = 'none';
+          languageMenu.style.display = 'none';
+        }
+      });
+
+      translateBtn.onclick = (e) => {
+        e.stopPropagation();
+        languageMenu.style.left = translateBtn.style.left;
+        languageMenu.style.top = (parseInt(translateBtn.style.top) + 25) + 'px';
+        languageMenu.style.display = 'block';
+      };
+
+      languageMenu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'BUTTON') {
+          const lang = e.target.getAttribute('data-lang');
+          const url = `https://translate.google.com/?sl=es&tl=${lang}&text=${encodeURIComponent(selectedText)}&op=translate`;
+          window.open(url, '_blank');
+          translateBtn.style.display = 'none';
+          languageMenu.style.display = 'none';
         }
       });
     }
