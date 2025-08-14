@@ -658,6 +658,13 @@
     "categoria": "PASTAS"
   },
   {
+    "nombre": "Ñoquis",
+    "descripcion": "de papa ",
+    "precio": "$11.000",
+    "imagen": "img/Ñoquis.jpg",
+    "categoria": "PASTAS"
+  },
+  {
     "nombre": "Ã±oquis al huevo",
     "descripcion": "Ã±oquis al huevo ",
     "precio": "$11.000",
