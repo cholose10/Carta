@@ -518,10 +518,10 @@
     "categoria": "ENSALADAS"
   },
   {
-    "nombre": "SOlA",
+    "nombre": "SOJA",
     "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
     "precio": "$19.000",
-    "imagen": "img/20250721_132438.jpg",
+    "imagen": "img/tarta_brocoli.jpg",
     "categoria": "MILANESAS Ternera o Pollo - Pechuga"
   },
   {
@@ -864,7 +864,7 @@
     "nombre": "Matambrito a la PIZZA",
     "descripcion": "De cerdo, muzarella, tomate y orégano con papas fritas",
     "precio": "$25.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/20250815_132057.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
@@ -1146,12 +1146,5 @@
     "precio": "$17.000",
     "imagen": "img/20250721_132438.jpg",
     "categoria": "MENU KIDS"
-  },
-  {
-    "nombre": "SOlA",
-    "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "$19.000",
-    "imagen": "img/20250721_132438.jpg",
-    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
   }
 ]
