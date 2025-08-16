@@ -1146,5 +1146,12 @@
     "precio": "$17.000",
     "imagen": "img/20250721_132438.jpg",
     "categoria": "MENU KIDS"
+  },
+  {
+    "nombre": "Milanesa",
+    "descripcion": "DE CARNE CON PAPAS O PURE",
+    "precio": "$17.000",
+    "imagen": "img/Menukit.jpg",
+    "categoria": "MENU KIDS"
   }
 ]
