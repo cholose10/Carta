@@ -1,5 +1,12 @@
 [
   {
+    "nombre": "DEL DIA",
+    "descripcion": "MENU",
+    "precio": "$3200",
+    "imagen": "img/.jpg",
+    "categoria": "MENU DE DIA Y SUGERENCIAS"
+  },
+  {
     "nombre": "Café expresso",
     "descripcion": "Café tradicional chico",
     "precio": "$3200",
@@ -92,7 +99,7 @@
   },
   {
     "nombre": "CE COFFE",
-    "descripcion": "doble shot con hielo ",
+    "descripcion": "doble shot con hielo",
     "precio": "$4700",
     "imagen": "img/cafe1.jpg",
     "categoria": "Cafetería"
@@ -105,17 +112,17 @@
     "categoria": "Cafetería"
   },
   {
-    "nombre": "FRAPPUCCINO GUITO",
+    "nombre": "FRAPPUCCINO OREO",
     "descripcion": "base de leche ",
     "precio": "$6400",
     "imagen": "img/cafe1.jpg",
     "categoria": "Cafetería"
   },
   {
-    "nombre": "FRAPPUCCINO GUITO",
+    "nombre": "FRAPPUCCINO OREO",
     "descripcion": "base de Café",
     "precio": "$6400",
-    "imagen": "img/cafe1.jpg",
+    "imagen": "img/20250815_154308.jpg",
     "categoria": "Cafetería"
   },
   {
