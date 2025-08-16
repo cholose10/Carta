@@ -518,7 +518,7 @@
     "categoria": "ENSALADAS"
   },
   {
-    "nombre": "SOlA",
+    "nombre": "SOJA",
     "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
     "precio": "$19.000",
     "imagen": "img/tarta_brocoli.jpg",
@@ -1139,5 +1139,12 @@
     "precio": "$40.000",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "ESPUMANTES"
+  },
+  {
+    "nombre": "Milanesa",
+    "descripcion": "DE CARNE CON PAPAS O PURE",
+    "precio": "$17.000",
+    "imagen": "img/20250721_132438.jpg",
+    "categoria": "MENU KIDS"
   }
 ]
