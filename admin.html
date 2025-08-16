@@ -1,285 +1,168 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Administrador de productos - Tilo Café</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Carta Tilo Café</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f6f6;
-      margin: 0;
-      padding: 20px;
-      color: #333;
-    }
-    h1 {
-      text-align: center;
-      color: #5a3825;
-    }
-    form {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      max-width: 500px;
-      margin: auto;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    label {
-      font-weight: bold;
-      display: block;
-      margin-top: 10px;
-    }
-    input, textarea, select, button {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-size: 14px;
+    body { font-family: Arial, sans-serif; background:#f9f9f9; padding:20px; }
+    h1 { color:#45270a; }
+    label { display:block; margin-top:10px; }
+    input, textarea, select {
+      width:100%; padding:8px; margin-top:5px; border:1px solid #ccc; border-radius:5px;
     }
     button {
-      background: #8c6954;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      margin-top: 15px;
+      margin-top:10px; padding:10px 15px; border:none; border-radius:5px;
+      background:#8c6954; color:white; cursor:pointer;
     }
-    button:hover {
-      background: #6b4e3d;
-    }
-    .product-list {
-      margin-top: 30px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .product-item {
-      background: white;
-      padding: 10px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-    .product-info {
-      flex: 1;
-      margin-right: 10px;
-    }
-    .product-actions button {
-      margin-left: 5px;
-      background: #c0392b;
-    }
-    .product-actions button.edit {
-      background: #27ae60;
-    }
-    /* Vista previa */
+    button:hover { background:#6b4e3d; }
     .preview {
-      margin-top: 20px;
-      text-align: center;
+      margin-top:20px; padding:10px; border:1px solid #ccc; border-radius:10px; background:white;
+      max-width:300px;
     }
-    .preview .item {
-      background: #888;
-      border-radius: 12px;
-      overflow: hidden;
-      width: 280px;
-      display: inline-block;
-      text-align: left;
+    .preview img { width:100%; border-radius:10px; }
+    .product-list { margin-top:30px; }
+    .product-item {
+      padding:10px; border-bottom:1px solid #ddd; display:flex; justify-content:space-between; align-items:center;
     }
-    .preview img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .preview h3 {
-      margin: 10px;
-    }
-    .preview p {
-      margin: 0 10px 10px;
-    }
-    .preview .price {
-      font-weight: bold;
-      color: #000;
-    }
+    .product-item span { flex:1; }
+    .product-item button { margin-left:5px; }
   </style>
 </head>
 <body>
+  <h1>Panel de Administración - Carta</h1>
 
-  <h1>Administrador de productos - Tilo Café</h1>
+  <label for="token">🔑 Token GitHub (privado):</label>
+  <input type="password" id="token" placeholder="Pegá tu token aquí">
 
-  <form id="productForm">
-    <label>Nombre</label>
-    <input type="text" id="nombre" required>
+  <label>Nombre:</label>
+  <input type="text" id="nombre">
 
-    <label>Descripción</label>
-    <textarea id="descripcion" required></textarea>
+  <label>Descripción:</label>
+  <textarea id="descripcion"></textarea>
 
-    <label>Precio (solo número)</label>
-    <input type="number" id="precio" required>
+  <label>Precio (solo números):</label>
+  <input type="number" id="precio">
 
-    <label>Nombre de la imagen (ej: cafe1.jpg)</label>
-    <input type="text" id="imagen" required>
+  <label>Imagen (solo nombre, ej: cafe.jpg):</label>
+  <input type="text" id="imagen">
 
-    <label>Categoría</label>
-    <input type="text" id="categoria" required>
+  <label>Categoría:</label>
+  <input type="text" id="categoria">
 
-    <label>🔑 Token GitHub (privado, no se guarda)</label>
-    <input type="password" id="token" placeholder="Pegá tu token aquí" required>
-
-    <button type="submit">Guardar en GitHub</button>
-  </form>
+  <button onclick="guardarProducto()">💾 Guardar Producto</button>
 
   <!-- Vista previa -->
-  <div class="preview">
-    <h2>Vista previa</h2>
-    <div class="item">
-      <img id="prevImg" src="" alt="Vista previa">
-      <h3 id="prevNombre"></h3>
-      <p id="prevDescripcion"></p>
-      <p class="price" id="prevPrecio"></p>
-    </div>
+  <div class="preview" id="preview">
+    <h3>Vista previa</h3>
+    <img id="previewImg" src="" alt="">
+    <p><b id="previewNombre"></b></p>
+    <p id="previewDesc"></p>
+    <p id="previewPrecio"></p>
   </div>
 
-  <div class="product-list" id="productList"></div>
+  <!-- Lista de productos -->
+  <div class="product-list" id="product-list"></div>
 
   <script>
-    const repoOwner = "cholose10";
-    const repoName = "Carta";
+    const repo = "Carta";
+    const owner = "cholose10";
     const filePath = "productos.json";
-    const branchName = "main";
     let productos = [];
+    let editIndex = null;
 
-    // Vista previa dinámica
-    const campos = ["nombre","descripcion","precio","imagen"];
-    campos.forEach(campo => {
-      document.getElementById(campo).addEventListener("input", actualizarVistaPrevia);
-    });
-
-    function actualizarVistaPrevia() {
-      const nombre = document.getElementById("nombre").value;
-      const descripcion = document.getElementById("descripcion").value;
-      const precio = document.getElementById("precio").value;
-      const imagen = document.getElementById("imagen").value;
-
-      document.getElementById("prevNombre").textContent = nombre;
-      document.getElementById("prevDescripcion").textContent = descripcion;
-      document.getElementById("prevPrecio").textContent = precio ? "$" + precio : "";
-      document.getElementById("prevImg").src = imagen ? "img/" + imagen : "";
-    }
-
-    // Cargar productos
-    fetch(`https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branchName}/${filePath}`)
+    // Cargar productos existentes
+    fetch(filePath)
       .then(r => r.json())
       .then(data => {
         productos = data;
-        renderProducts();
+        renderProductos();
       });
 
-    // Mostrar lista
-    function renderProducts() {
-      const container = document.getElementById("productList");
-      container.innerHTML = "";
-      productos.forEach((p, index) => {
+    function actualizarVistaPrevia() {
+      document.getElementById("previewImg").src = "img/" + document.getElementById("imagen").value;
+      document.getElementById("previewNombre").textContent = document.getElementById("nombre").value;
+      document.getElementById("previewDesc").textContent = document.getElementById("descripcion").value;
+      document.getElementById("previewPrecio").textContent = "$" + document.getElementById("precio").value;
+    }
+
+    ["nombre","descripcion","precio","imagen"].forEach(id=>{
+      document.getElementById(id).addEventListener("input", actualizarVistaPrevia);
+    });
+
+    function guardarProducto() {
+      const token = document.getElementById("token").value.trim();
+      if (!token) { alert("Pegá tu token de GitHub"); return; }
+
+      const nuevo = {
+        nombre: document.getElementById("nombre").value,
+        descripcion: document.getElementById("descripcion").value,
+        precio: "$" + document.getElementById("precio").value,
+        imagen: "img/" + document.getElementById("imagen").value,
+        categoria: document.getElementById("categoria").value
+      };
+
+      if (editIndex !== null) {
+        productos[editIndex] = nuevo;
+        editIndex = null;
+      } else {
+        productos.push(nuevo);
+      }
+
+      subirAGitHub(productos, token);
+    }
+
+    function renderProductos() {
+      const container = document.getElementById("product-list");
+      container.innerHTML = "<h2>Productos</h2>";
+      productos.forEach((p,i)=>{
         const div = document.createElement("div");
         div.className = "product-item";
         div.innerHTML = `
-          <div class="product-info">
-            <strong>${p.nombre}</strong> - ${p.precio}<br>
-            <small>${p.categoria}</small>
-          </div>
-          <div class="product-actions">
-            <button class="edit" onclick="editProduct(${index})">✏️</button>
-            <button onclick="deleteProduct(${index})">🗑️</button>
-          </div>
+          <span><b>${p.nombre}</b> - ${p.precio} (${p.categoria})</span>
+          <button onclick="editarProducto(${i})">✏️ Editar</button>
+          <button onclick="eliminarProducto(${i})">🗑️ Eliminar</button>
         `;
         container.appendChild(div);
       });
     }
 
-    // Guardar o editar
-    let editingIndex = -1;
-    document.getElementById("productForm").addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const nombre = document.getElementById("nombre").value;
-      const descripcion = document.getElementById("descripcion").value;
-      const precio = "$" + document.getElementById("precio").value;
-      const imagen = "img/" + document.getElementById("imagen").value;
-      const categoria = document.getElementById("categoria").value;
-      const token = document.getElementById("token").value;
-
-      if (!token) {
-        alert("Debes ingresar tu token de GitHub.");
-        return;
-      }
-
-      const producto = { nombre, descripcion, precio, imagen, categoria };
-
-      if (editingIndex >= 0) {
-        productos[editingIndex] = producto;
-        editingIndex = -1;
-      } else {
-        productos.push(producto);
-      }
-
-      await saveToGitHub(token);
-      renderProducts();
-      document.getElementById("productForm").reset();
-      actualizarVistaPrevia();
-    });
-
-    // Editar
-    function editProduct(index) {
-      const p = productos[index];
+    function editarProducto(i) {
+      const p = productos[i];
       document.getElementById("nombre").value = p.nombre;
       document.getElementById("descripcion").value = p.descripcion;
       document.getElementById("precio").value = p.precio.replace("$","");
       document.getElementById("imagen").value = p.imagen.replace("img/","");
       document.getElementById("categoria").value = p.categoria;
-      editingIndex = index;
       actualizarVistaPrevia();
+      editIndex = i;
     }
 
-    // Eliminar
-    async function deleteProduct(index) {
-      const token = document.getElementById("token").value;
-      if (!token) {
-        alert("Debes ingresar tu token de GitHub para eliminar.");
-        return;
-      }
-      if (confirm("¿Seguro que quieres eliminar este producto?")) {
-        productos.splice(index, 1);
-        await saveToGitHub(token);
-        renderProducts();
-      }
+    function eliminarProducto(i) {
+      const token = document.getElementById("token").value.trim();
+      if (!token) { alert("Pegá tu token de GitHub"); return; }
+      if (!confirm("¿Eliminar este producto?")) return;
+      productos.splice(i,1);
+      subirAGitHub(productos, token);
     }
 
-    // Guardar en GitHub
-    async function saveToGitHub(token) {
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(productos, null, 2))));
-      const sha = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`)
-        .then(r => r.json())
-        .then(d => d.sha);
+    async function subirAGitHub(contenido, token) {
+      const url = `https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`;
+      const sha = await fetch(url).then(r=>r.json()).then(d=>d.sha);
+      const nuevo = btoa(unescape(encodeURIComponent(JSON.stringify(contenido,null,2))));
 
-      const res = await fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contents/${filePath}`, {
-        method: "PUT",
-        headers: {
-          "Authorization": `token ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: "Actualizar productos.json",
-          content: content,
-          sha: sha,
-          branch: branchName
+      await fetch(url, {
+        method:"PUT",
+        headers:{Authorization:"token "+token},
+        body:JSON.stringify({
+          message:"Actualizar productos.json",
+          content:nuevo,
+          sha:sha
         })
       });
 
-      if (res.ok) {
-        alert("Archivo guardado en GitHub con éxito.");
-      } else {
-        alert("Error al guardar en GitHub.");
-      }
+      alert("✅ Guardado en GitHub");
+      renderProductos();
     }
   </script>
 </body>
