@@ -1146,5 +1146,12 @@
     "precio": "$17.000",
     "imagen": "img/20250721_132438.jpg",
     "categoria": "MENU KIDS"
+  },
+  {
+    "nombre": "SOlA",
+    "descripcion": "Acompañadas con puré, fideos, ensalada o papas fritas",
+    "precio": "$19.000",
+    "imagen": "img/20250721_132438.jpg",
+    "categoria": "MILANESAS Ternera o Pollo - Pechuga"
   }
 ]
