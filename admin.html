@@ -21,6 +21,13 @@
 
 <h1>Admin Carta Tilo Café</h1>
 
+<!-- Campo para poner el token manual -->
+<div style="margin-bottom:15px; background:#ffe9d6; padding:10px; border-radius:8px;">
+  <label><strong>Token de GitHub:</strong></label>
+  <input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
+  <button onclick="setToken()">Usar Token</button>
+</div>
+
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
   <label>Nombre:</label>
@@ -65,12 +72,22 @@
 </table>
 
 <script>
-const TOKEN = "TU_TOKEN_AQUI";
+let TOKEN = ""; // ahora empieza vacío
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
+
+// Función para setear el token
+function setToken() {
+  TOKEN = document.getElementById("tokenInput").value.trim();
+  if (!TOKEN) {
+    alert("⚠️ Pegá tu token de GitHub para continuar");
+  } else {
+    loadProducts();
+  }
+}
 
 // Cargar productos desde GitHub
 async function loadProducts() {
@@ -78,7 +95,6 @@ async function loadProducts() {
   productos = await res.json();
   renderTable();
 }
-loadProducts();
 
 // Render tabla
 function renderTable() {
@@ -115,6 +131,8 @@ function updatePreview() {
 // Guardar producto (nuevo o editado)
 document.getElementById("productForm").addEventListener("submit", async function(e) {
   e.preventDefault();
+  if (!TOKEN) return alert("⚠️ Primero pegá tu token");
+  
   const index = document.getElementById("editIndex").value;
   const nuevo = {
     nombre: document.getElementById("nombre").value,
