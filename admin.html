@@ -74,34 +74,6 @@
     .product-actions button.edit {
       background: #27ae60;
     }
-    /* Vista previa */
-    .preview {
-      margin-top: 20px;
-      text-align: center;
-    }
-    .preview .item {
-      background: #888;
-      border-radius: 12px;
-      overflow: hidden;
-      width: 280px;
-      display: inline-block;
-      text-align: left;
-    }
-    .preview img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .preview h3 {
-      margin: 10px;
-    }
-    .preview p {
-      margin: 0 10px 10px;
-    }
-    .preview .price {
-      font-weight: bold;
-      color: #000;
-    }
   </style>
 </head>
 <body>
@@ -130,17 +102,6 @@
     <button type="submit">Guardar en GitHub</button>
   </form>
 
-  <!-- Vista previa -->
-  <div class="preview">
-    <h2>Vista previa</h2>
-    <div class="item">
-      <img id="prevImg" src="" alt="Vista previa">
-      <h3 id="prevNombre"></h3>
-      <p id="prevDescripcion"></p>
-      <p class="price" id="prevPrecio"></p>
-    </div>
-  </div>
-
   <div class="product-list" id="productList"></div>
 
   <script>
@@ -150,25 +111,7 @@
     const branchName = "main";
     let productos = [];
 
-    // Vista previa dinámica
-    const campos = ["nombre","descripcion","precio","imagen"];
-    campos.forEach(campo => {
-      document.getElementById(campo).addEventListener("input", actualizarVistaPrevia);
-    });
-
-    function actualizarVistaPrevia() {
-      const nombre = document.getElementById("nombre").value;
-      const descripcion = document.getElementById("descripcion").value;
-      const precio = document.getElementById("precio").value;
-      const imagen = document.getElementById("imagen").value;
-
-      document.getElementById("prevNombre").textContent = nombre;
-      document.getElementById("prevDescripcion").textContent = descripcion;
-      document.getElementById("prevPrecio").textContent = precio ? "$" + precio : "";
-      document.getElementById("prevImg").src = imagen ? "img/" + imagen : "";
-    }
-
-    // Cargar productos
+    // Cargar productos existentes
     fetch(`https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branchName}/${filePath}`)
       .then(r => r.json())
       .then(data => {
@@ -176,7 +119,7 @@
         renderProducts();
       });
 
-    // Mostrar lista
+    // Mostrar productos
     function renderProducts() {
       const container = document.getElementById("productList");
       container.innerHTML = "";
@@ -185,7 +128,7 @@
         div.className = "product-item";
         div.innerHTML = `
           <div class="product-info">
-            <strong>${p.nombre}</strong> - ${p.precio}<br>
+            <strong>${p.nombre}</strong> - $${p.precio}<br>
             <small>${p.categoria}</small>
           </div>
           <div class="product-actions">
@@ -197,8 +140,7 @@
       });
     }
 
-    // Guardar o editar
-    let editingIndex = -1;
+    // Agregar o editar producto
     document.getElementById("productForm").addEventListener("submit", async (e) => {
       e.preventDefault();
       const nombre = document.getElementById("nombre").value;
@@ -225,10 +167,10 @@
       await saveToGitHub(token);
       renderProducts();
       document.getElementById("productForm").reset();
-      actualizarVistaPrevia();
     });
 
-    // Editar
+    // Editar producto
+    let editingIndex = -1;
     function editProduct(index) {
       const p = productos[index];
       document.getElementById("nombre").value = p.nombre;
@@ -237,10 +179,9 @@
       document.getElementById("imagen").value = p.imagen.replace("img/","");
       document.getElementById("categoria").value = p.categoria;
       editingIndex = index;
-      actualizarVistaPrevia();
     }
 
-    // Eliminar
+    // Eliminar producto
     async function deleteProduct(index) {
       const token = document.getElementById("token").value;
       if (!token) {
