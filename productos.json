@@ -34,7 +34,7 @@
     "imagen": "img/cl.jpg",
     "categoria": "Cafetería"
   },
-   {
+  {
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "$4700",
@@ -62,14 +62,14 @@
     "imagen": "img/Moka.jpg",
     "categoria": "Cafetería"
   },
-   {
+  {
     "nombre": "Café CARAMEL",
     "descripcion": "caramelo, café, leche espumada",
     "precio": "$5450",
     "imagen": "img/Caramel.jpg",
     "categoria": "Cafetería"
   },
-   {
+  {
     "nombre": "Té con leche",
     "descripcion": "te inti zen",
     "precio": "$4100",
@@ -815,7 +815,7 @@
     "nombre": "Milanesa",
     "descripcion": "DE CARNE CON PAPAS O PURE",
     "precio": "$17.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Menukit.jpg",
     "categoria": "MENU KIDS"
   },
   {
@@ -1042,7 +1042,6 @@
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "TRAGOS"
   },
-
   {
     "nombre": "Aperol Spritz",
     "descripcion": "Aperol Spritz",
