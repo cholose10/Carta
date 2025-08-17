@@ -1,12 +1,5 @@
 [
   {
-    "nombre": "Café expresso",
-    "descripcion": "Café chico",
-    "precio": "3200",
-    "imagen": "img/cafe.jpg",
-    "categoria": "Cafetería"
-  },
-  {
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
     "precio": "$3500",
@@ -34,7 +27,13 @@
     "imagen": "img/Capuchino.jpg",
     "categoria": "Cafetería"
   },
-  
+  {
+    "nombre": "Café expresso",
+    "descripcion": "Café chico",
+    "precio": "3200",
+    "imagen": "img/cafe.jpg",
+    "categoria": "Cafetería"
+  },
   {
     "nombre": "Café MOKA",
     "descripcion": " cacao intenso, café, leche espumada",
@@ -493,8 +492,8 @@
   {
     "nombre": "COBB SALAD",
     "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de pollo.",
-    "precio": "$16.800",
-    "imagen": "img/Cobbsala.jpg",
+    "precio": "16800",
+    "imagen": "img/IMG-20250802-WA0007.jpg",
     "categoria": "ENSALADAS"
   },
   {
