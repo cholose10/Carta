@@ -14,13 +14,6 @@
     "categoria": "Cafetería"
   },
   {
-    "nombre": "Café con leche",
-    "descripcion": "Café Café con leche taradicional",
-    "precio": "$4100",
-    "imagen": "img/cl.jpg",
-    "categoria": "Cafetería"
-  },
-  {
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "$4700",
