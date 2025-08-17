@@ -1,10 +1,10 @@
 [
   {
-    "nombre": "DEL DIA",
-    "descripcion": "MENU",
-    "precio": "$3200",
-    "imagen": "img/.jpg",
-    "categoria": "MENU DE DIA Y SUGERENCIAS"
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "precio": "22.000",
+    "imagen": "img/20250815_132251.jpg",
+    "categoria": "GRILL"
   },
   {
     "nombre": "Café expresso",
