@@ -947,8 +947,8 @@
   {
     "nombre": "PICADITA (para 2 personas)",
     "descripcion": "Pollo rebozado, bastones de muzarella, rabas y papas fritas.Incluye dos porrones de Stella",
-    "precio": "$40.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "40000",
+    "imagen": "img/IMG-20250815-WA0005.jpg",
     "categoria": "PICADAS"
   },
   {
