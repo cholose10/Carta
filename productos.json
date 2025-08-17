@@ -1118,5 +1118,12 @@
     "precio": "$40.000",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "ESPUMANTES"
+  },
+  {
+    "nombre": "MENU del DIA o SUJERENCIAS",
+    "descripcion": "PLATOS POR DIAS",
+    "precio": "80000",
+    "imagen": "img/img/.jpg",
+    "categoria": "MENU del DIA o SUJERENCIAS"
   }
 ]
