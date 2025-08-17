@@ -1,5 +1,12 @@
 [
   {
+    "nombre": "Café expresso",
+    "descripcion": "Café chico",
+    "precio": "3200",
+    "imagen": "img/cafe.jpg",
+    "categoria": "Cafetería"
+  },
+  {
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
     "precio": "$3500",
@@ -27,13 +34,7 @@
     "imagen": "img/Capuchino.jpg",
     "categoria": "Cafetería"
   },
-  {
-    "nombre": "Café expresso",
-    "descripcion": "Café chico",
-    "precio": "3200",
-    "imagen": "img/cafe.jpg",
-    "categoria": "Cafetería"
-  },
+  
   {
     "nombre": "Café MOKA",
     "descripcion": " cacao intenso, café, leche espumada",
