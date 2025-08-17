@@ -296,8 +296,8 @@
   {
     "nombre": "Tarta de POLLO",
     "descripcion": "Pechuga de pollo, puerro, queso sardo, cebolla, masa integral",
-    "precio": "$18000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "18000",
+    "imagen": "img/Tartapollo.jpg",
     "categoria": "Tartas (con ensaladita)"
   },
   {
