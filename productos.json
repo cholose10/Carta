@@ -184,8 +184,8 @@
   {
     "nombre": "Pan de chocolate",
     "descripcion": "masa de croissant con chocolate belga",
-    "precio": "$4700",
-    "imagen": "img/medialunas.jpg",
+    "precio": "4700",
+    "imagen": "img/Pchoco.jpg",
     "categoria": "Pastelería"
   },
   {
