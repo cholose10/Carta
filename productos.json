@@ -730,8 +730,8 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "$30.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "32000",
+    "imagen": "img/IMG-20250816-WA0008.jpg",
     "categoria": "GRILL"
   },
   {
