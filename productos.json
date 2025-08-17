@@ -28,10 +28,10 @@
     "categoria": "Cafetería"
   },
   {
-    "nombre": "Capuccino a la italiana",
-    "descripcion": "Café, leche, crema, canela y cacao",
-    "precio": "$5000",
-    "imagen": "img/Italiano.jpg",
+    "nombre": "Café expresso",
+    "descripcion": "Café chico",
+    "precio": "3200",
+    "imagen": "img/cafe.jpg",
     "categoria": "Cafetería"
   },
   {
