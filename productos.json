@@ -1,12 +1,5 @@
 [
   {
-    "nombre": "Café expresso",
-    "descripcion": "Café tradicional chico",
-    "precio": "$3200",
-    "imagen": "img/Cafe.jpg",
-    "categoria": "Cafetería"
-  },
-  {
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
     "precio": "$3500",
