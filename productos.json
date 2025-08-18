@@ -611,8 +611,8 @@
   {
     "nombre": "RISOTTOS de pollo!",
     "descripcion": "con pollo, calabaza y verduras.",
-    "precio": "$23.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "23000",
+    "imagen": "img/20250816_143144.jpg",
     "categoria": "RISOTTOS"
   },
   {
