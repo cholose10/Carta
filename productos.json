@@ -842,8 +842,8 @@
   {
     "nombre": "Matambrito a la PIZZA",
     "descripcion": "De cerdo, muzarella, tomate y orégano con papas fritas",
-    "precio": "$25.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "25500",
+    "imagen": "img/20250815_132057.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
