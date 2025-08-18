@@ -1,5 +1,12 @@
 [
   {
+    "nombre": "Café expresso",
+    "descripcion": "Café chico",
+    "precio": "3200",
+    "imagen": "img/cafe.jpg",
+    "categoria": "Cafetería"
+  },
+  {
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
     "precio": "$3500",
@@ -25,13 +32,6 @@
     "descripcion": "Café, leche, canela y cacao",
     "precio": "$4900",
     "imagen": "img/Capuchino.jpg",
-    "categoria": "Cafetería"
-  },
-  {
-    "nombre": "Café expresso",
-    "descripcion": "Café chico",
-    "precio": "3200",
-    "imagen": "img/cafe.jpg",
     "categoria": "Cafetería"
   },
   {
