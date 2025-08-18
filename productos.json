@@ -422,8 +422,8 @@
   {
     "nombre": "Burgers",
     "descripcion": "SIMPLE (solo queso) $$15.00,CLÁSICO (lechuga, tomate, jamón y queso) $17.000,BACON (queso cheddar, panceta y tomate) $19.000",
-    "precio": "$...",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "0000",
+    "imagen": "img/20250816_135012.jpg",
     "categoria": "Burgers(100% carne, con papas fritas.La burger puede ser,Not Cow)"
   },
   {
