@@ -436,8 +436,8 @@
   {
     "nombre": "Tortilla de papa y cebolla",
     "descripcion": "Tortilla de papa y cebolla",
-    "precio": "$13.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "13500",
+    "imagen": "img/20250816_134538.jpg",
     "categoria": "Omelettes/Tortillas"
   },
   {
