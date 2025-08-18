@@ -590,8 +590,8 @@
   {
     "nombre": "PARMA",
     "descripcion": "Salsa de tomate, stracciatella, burrata, jamón crudo, albahaca.",
-    "precio": "$32.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "3200",
+    "imagen": "img/20250816_135018.jpg",
     "categoria": "PIZZAS (Estilo napolitano)"
   },
   {
