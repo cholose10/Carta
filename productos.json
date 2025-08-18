@@ -695,8 +695,8 @@
   {
     "nombre": "Pesto con nuez",
     "descripcion": "nuez, ajo y perejil",
-    "precio": "$6.800",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "6800",
+    "imagen": "img/IMG-20250816-WA0011.jpg",
     "categoria": "SALSAS"
   },
   {
