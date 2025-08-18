@@ -835,8 +835,8 @@
   {
     "nombre": "Entraña CRISPY",
     "descripcion": "Rebozado crujiente con ensalada de papa, huevo y mayonesa",
-    "precio": "$28.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "28.000",
+    "imagen": "img/20250816_132244.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
