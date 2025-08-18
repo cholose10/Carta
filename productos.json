@@ -1024,8 +1024,8 @@
   {
     "nombre": "Aperol Spritz",
     "descripcion": "Aperol Spritz",
-    "precio": "$11.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "11500",
+    "imagen": "img/20250816_115330.jpg",
     "categoria": "TRAGOS"
   },
   {
