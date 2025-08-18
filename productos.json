@@ -1015,10 +1015,10 @@
     "categoria": "TRAGOS"
   },
   {
-    "nombre": "JAperol con naranja",
+    "nombre": "perol con naranja",
     "descripcion": "Aperol con naranja",
-    "precio": "$9.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "9000",
+    "imagen": "img/Campati.jpg",
     "categoria": "TRAGOS"
   },
   {
