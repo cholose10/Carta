@@ -870,8 +870,8 @@
   {
     "nombre": "BROCHETTE de Lomo",
     "descripcion": "Con papas fritas  (para 2 personas)",
-    "precio": "$65.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "6500",
+    "imagen": "img/Brochette.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
