@@ -534,8 +534,8 @@
   {
     "nombre": "Filet de Merluza a la romana",
     "descripcion": "con puré mixto",
-    "precio": "$17.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "17500",
+    "imagen": "img/20250816_135027.jpg",
     "categoria": "Otros platos"
   },
   {
