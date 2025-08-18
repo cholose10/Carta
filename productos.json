@@ -513,8 +513,8 @@
   {
     "nombre": "SUIZA",
     "descripcion": "Salsa blanca y queso gratinado Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "$21.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "21000",
+    "imagen": "img/Mizuisa.jpg",
     "categoria": "MILANESAS Ternera o Pollo - Pechuga"
   },
   {
