@@ -7,7 +7,7 @@
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #5a3825; }
     form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
-    input, textarea, select { width: 100%; padding: 8px; margin: 5px 0; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
     button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #6b4e3d; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
@@ -15,21 +15,14 @@
     img { max-width: 60px; border-radius: 5px; }
     .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    #searchBox { margin-top: 15px; padding: 8px; width: 60%; }
-    #resetSearch { margin-left: 10px; background: #555; }
+    #searchBox { margin-top: 15px; padding: 8px; width: 50%; }
   </style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
 
-<form id="tokenForm">
-  <label>Token de GitHub:</label>
-  <input type="password" id="tokenInput" required>
-  <button type="submit">Conectar</button>
-</form>
-
-<form id="productForm" style="display:none;">
+<form id="productForm">
   <input type="hidden" id="editIndex" value="">
   <label>Nombre:</label>
   <input type="text" id="nombre" required>
@@ -59,9 +52,7 @@
 
 <h2>Productos actuales</h2>
 
-<input type="text" id="searchBox" placeholder="Buscar producto por nombre...">
-<button id="resetSearch">Reset búsqueda</button>
-<button id="exportPDF">📄 Exportar Carta a PDF</button>
+<input type="text" id="searchBox" placeholder="🔍 Buscar por plato o categoría...">
 
 <table id="productsTable">
   <thead>
@@ -77,32 +68,26 @@
   <tbody></tbody>
 </table>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script>
-let TOKEN = "";
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
+let TOKEN = "";
 let productos = [];
 let filteredProducts = [];
 
-// Conectar con token
-document.getElementById("tokenForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  TOKEN = document.getElementById("tokenInput").value;
-  document.getElementById("tokenForm").style.display = "none";
-  document.getElementById("productForm").style.display = "block";
-  loadProducts();
-});
+// Pedir token manualmente
+TOKEN = prompt("👉 Ingresá tu token de GitHub para continuar:");
 
 // Cargar productos desde GitHub
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  filteredProducts = [...productos];
+  filteredProducts = productos;
   renderTable();
 }
+loadProducts();
 
 // Render tabla
 function renderTable() {
@@ -124,6 +109,16 @@ function renderTable() {
     tbody.appendChild(tr);
   });
 }
+
+// Buscar por nombre o categoría
+document.getElementById("searchBox").addEventListener("input", function() {
+  const query = this.value.toLowerCase();
+  filteredProducts = productos.filter(p =>
+    p.nombre.toLowerCase().includes(query) ||
+    p.categoria.toLowerCase().includes(query)
+  );
+  renderTable();
+});
 
 // Vista previa en vivo
 ["nombre","descripcion","precio","imagen"].forEach(id => {
@@ -153,8 +148,8 @@ document.getElementById("productForm").addEventListener("submit", async function
     productos[index] = nuevo;
     document.getElementById("editIndex").value = "";
   }
+  filteredProducts = productos;
   await saveToGitHub();
-  filteredProducts = [...productos];
   renderTable();
   this.reset();
   updatePreview();
@@ -176,8 +171,8 @@ function editProduct(index) {
 async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
     productos.splice(index,1);
+    filteredProducts = productos;
     await saveToGitHub();
-    filteredProducts = [...productos];
     renderTable();
   }
 }
@@ -203,48 +198,6 @@ async function saveToGitHub() {
     })
   });
 }
-
-// --- Buscar producto ---
-document.getElementById("searchBox").addEventListener("input", function() {
-  const term = this.value.toLowerCase();
-  filteredProducts = productos.filter(p => p.nombre.toLowerCase().includes(term));
-  renderTable();
-});
-
-// --- Reset búsqueda ---
-document.getElementById("resetSearch").addEventListener("click", () => {
-  document.getElementById("searchBox").value = "";
-  filteredProducts = [...productos];
-  renderTable();
-});
-
-// --- Exportar PDF ---
-document.getElementById("exportPDF").addEventListener("click", () => {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  doc.setFont("helvetica","bold");
-  doc.setFontSize(18);
-  doc.text("Carta Tilo Café", 20, 20);
-  doc.setFontSize(12);
-
-  let y = 30;
-  productos.forEach(p => {
-    doc.setFont("helvetica","bold");
-    doc.text(p.nombre + " - $" + p.precio, 20, y);
-    y += 6;
-    doc.setFont("helvetica","normal");
-    doc.text(p.descripcion, 25, y);
-    y += 10;
-
-    if (y > 270) {
-      doc.addPage();
-      y = 20;
-    }
-  });
-
-  doc.save("Carta_Tilo_Cafe.pdf");
-});
 </script>
 
 </body>
