@@ -205,8 +205,8 @@
   {
     "nombre": "Chipá relleno",
     "descripcion": "Chipá relleno de queso",
-    "precio": "$3500",
-    "imagen": "img/medialunas.jpg",
+    "precio": "3500",
+    "imagen": "img/Chipa.jpg",
     "categoria": "Pastelería"
   },
   {
