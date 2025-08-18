@@ -919,8 +919,8 @@
   {
     "nombre": "APPLE HOT",
     "descripcion": "Apple crumble tibio con helado de vainilla y almendras tostadas",
-    "precio": "$14.700",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "14700",
+    "imagen": "img/img/Apeljot.jpg",
     "categoria": "POSTRES"
   },
   {
