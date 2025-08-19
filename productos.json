@@ -555,8 +555,8 @@
   {
     "nombre": "Rabas a la romana",
     "descripcion": "Rabas a la romana",
-    "precio": "$23.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "23000",
+    "imagen": "img/Rabas.jpg",
     "categoria": "ENTRADITAS"
   },
   {
