@@ -912,8 +912,8 @@
   {
     "nombre": "Helado",
     "descripcion": "(bochas): $8.500 (sabores: dulce de leche, chocolate, americano)",
-    "precio": "$.....",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "0000",
+    "imagen": "img/Helado.jpg",
     "categoria": "POSTRES"
   },
   {
