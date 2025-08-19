@@ -821,8 +821,8 @@
   {
     "nombre": "Pollo TERIYAKI",
     "descripcion": "Pechuga en salsa dulce con arroz salteado y verduras",
-    "precio": "$23.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "23000",
+    "imagen": "img/IMG-20250816-WA0013.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
