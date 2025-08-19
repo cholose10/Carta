@@ -765,8 +765,8 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
-    "precio": "$32.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "32000",
+    "imagen": "img//Matavergrill.jpg",
     "categoria": "GRILL Especiales"
   },
   {
