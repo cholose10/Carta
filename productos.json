@@ -21,13 +21,6 @@
     "categoria": "Cafetería"
   },
   {
-    "nombre": "Café tradional",
-    "descripcion": "Café tradicional",
-    "precio": "$4100",
-    "imagen": "img/cl.jpg",
-    "categoria": "Cafetería"
-  },
-  {
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "$4700",
@@ -653,8 +646,8 @@
   {
     "nombre": "ñoquis al huevo",
     "descripcion": "ñoquis al huevo ",
-    "precio": "$11.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "11000",
+    "imagen": "img//Ñoquis.jpg",
     "categoria": "PASTAS"
   },
   {
