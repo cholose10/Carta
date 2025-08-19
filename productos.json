@@ -849,8 +849,8 @@
   {
     "nombre": "Matambrito a la RIOJANA",
     "descripcion": "De cerdo, cebollitas, morrones, arvejas y huevo frito, con papas fritas",
-    "precio": "$25.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "25500",
+    "imagen": "img/Matrio.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
