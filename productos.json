@@ -807,8 +807,8 @@
   {
     "nombre": "Pollo N.Y",
     "descripcion": "Pollo ahumado, mix de queso, verdeo, tomate y papas fritas",
-    "precio": "$23.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "23000",
+    "imagen": "img//Ny.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
