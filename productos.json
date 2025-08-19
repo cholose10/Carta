@@ -709,8 +709,8 @@
   {
     "nombre": "Pollo (pechuga)",
     "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "$19.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "19500",
+    "imagen": "img/Pechuga.jpg",
     "categoria": "GRILL"
   },
   {
