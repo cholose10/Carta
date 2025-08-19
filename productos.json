@@ -79,8 +79,8 @@
   {
     "nombre": "CE COFFE",
     "descripcion": "doble shot con hielo",
-    "precio": "$4700",
-    "imagen": "img/cafe1.jpg",
+    "precio": "4700",
+    "imagen": "img//20250817_131630.jpg",
     "categoria": "Cafetería"
   },
   {
