@@ -219,8 +219,8 @@
   {
     "nombre": "Budín",
     "descripcion": "zanahoria y canela o limón y amapolas",
-    "precio": "$5300",
-    "imagen": "img/medialunas.jpg",
+    "precio": "5300",
+    "imagen": "img/20250817_124915.jpg",
     "categoria": "Pastelería"
   },
   {
