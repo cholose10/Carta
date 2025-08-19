@@ -464,8 +464,8 @@
   {
     "nombre": "CASA CON POLLO",
     "descripcion": "Mix de verdes, croutones, pollo, parmesano y aderezo César",
-    "precio": "$16.000",
-    "imagen": "img/Caesarpollo.jpg",
+    "precio": "16000",
+    "imagen": "img/IMG-20250802-WA0007.jpg",
     "categoria": "ENSALADAS"
   },
   {
