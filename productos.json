@@ -583,8 +583,8 @@
   {
     "nombre": "NAPOLITANA",
     "descripcion": "Salsa de tomate, stracciatella, jamón y rodajas de tomate.",
-    "precio": "$26.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "26000",
+    "imagen": "img/20250819_125320.jpg",
     "categoria": "PIZZAS (Estilo napolitano)"
   },
   {
