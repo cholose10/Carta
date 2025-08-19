@@ -520,8 +520,8 @@
   {
     "nombre": "NAPOLITANA",
     "descripcion": "Salsa de tomate, jamón y queso Acompañadas con puré, fideos, ensalada o papas fritas",
-    "precio": "$22.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "22000",
+    "imagen": "img/Milafri.jpg",
     "categoria": "MILANESAS Ternera o Pollo - Pechuga"
   },
   {
