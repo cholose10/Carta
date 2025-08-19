@@ -898,8 +898,8 @@
   {
     "nombre": "Flan casero",
     "descripcion": "con crema y dulce de leche. $8.000-$11.000",
-    "precio": "$...",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "0000",
+    "imagen": "img/Flan.jpg",
     "categoria": "POSTRES"
   },
   {
