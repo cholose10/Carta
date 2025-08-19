@@ -814,8 +814,8 @@
   {
     "nombre": "Pollo al CHAMPI",
     "descripcion": "En salsa de hongos con papas fritas",
-    "precio": "$24.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "24000",
+    "imagen": "img/Pechuchapi.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
