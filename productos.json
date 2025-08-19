@@ -597,8 +597,8 @@
   {
     "nombre": "MARGARITA",
     "descripcion": "Salsa de tomate, stracciatella, hojas de albahaca.",
-    "precio": "$23.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "23500",
+    "imagen": "img/20250819_125331.jpg",
     "categoria": "PIZZAS (Estilo napolitano)"
   },
   {
