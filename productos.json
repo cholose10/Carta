@@ -1087,8 +1087,8 @@
   {
     "nombre": "copa de vino",
     "descripcion": "BLANCOS o TINTO",
-    "precio": "$8.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "8000",
+    "imagen": "img/Copa.jpg",
     "categoria": "Copa de vino"
   },
   {
