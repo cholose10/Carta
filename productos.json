@@ -576,8 +576,8 @@
   {
     "nombre": "Farinata recomendado",
     "descripcion": "Fainá con stracciatella, jamón crudo, tomates y albahaca.",
-    "precio": "$20.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "20000",
+    "imagen": "img/20250815_154818.jpg",
     "categoria": "ENTRADITAS"
   },
   {
