@@ -485,8 +485,8 @@
   {
     "nombre": "STRACCIATELLA mozzarella italiana",
     "descripcion": "Mix de verdes, tomates cherries, jamón crudo, mozzarella, tiras de tortilla",
-    "precio": "$28.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "28000",
+    "imagen": "img/20250813_135926 (1).jpg",
     "categoria": "ENSALADAS"
   },
   {
