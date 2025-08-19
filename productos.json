@@ -786,8 +786,8 @@
   {
     "nombre": "MAC and CHEES",
     "descripcion": "Macrrones con queso",
-    "precio": "$17.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "17000",
+    "imagen": "img/20250819_123453.jpg",
     "categoria": "MENU KIDS"
   },
   {
