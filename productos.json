@@ -863,8 +863,8 @@
   {
     "nombre": "Lomo AL CHAMPI",
     "descripcion": "Bife de lomo grillado en salsa de hongos con papas fritas",
-    "precio": "$36.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "36000",
+    "imagen": "img/IMG-20250816-WA0009.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
