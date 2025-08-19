@@ -450,8 +450,8 @@
   {
     "nombre": "Tortilla de espinaca",
     "descripcion": "Tortilla de espinaca",
-    "precio": "$13.700",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "13700",
+    "imagen": "img/20250813_131026 (1).jpg",
     "categoria": "Omelettes/Tortillas"
   },
   {
