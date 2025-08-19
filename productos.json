@@ -716,8 +716,8 @@
   {
     "nombre": "Matambre de cerdo",
     "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "$22.000",
-    "imagen": "img/20250815_132251.jpg",
+    "precio": "22000",
+    "imagen": "img/Matam.jpg",
     "categoria": "GRILL"
   },
   {
