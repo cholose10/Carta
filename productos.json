@@ -884,8 +884,8 @@
   {
     "nombre": "Panqueque de dulce de leche",
     "descripcion": "Panqueque de dulce de leche",
-    "precio": "$13.500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "13500",
+    "imagen": "img/Panque.jpg",
     "categoria": "POSTRES"
   },
   {
