@@ -93,8 +93,8 @@
   {
     "nombre": "FRAPPUCCINO OREO",
     "descripcion": "base de leche ",
-    "precio": "$6400",
-    "imagen": "img/cafe1.jpg",
+    "precio": "6400",
+    "imagen": "img/20250817_104537.jpg",
     "categoria": "Cafetería"
   },
   {
