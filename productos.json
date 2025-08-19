@@ -800,8 +800,8 @@
   {
     "nombre": "Mila PESTO",
     "descripcion": "Milanesa de carne con ñoquis al pesto",
-    "precio": "$19.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "19000",
+    "imagen": "img/Milapesto.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
