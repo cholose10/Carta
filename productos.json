@@ -21,6 +21,13 @@
     "categoria": "Cafetería"
   },
   {
+    "nombre": "Café tradional",
+    "descripcion": "Café tradicional",
+    "precio": "$4100",
+    "imagen": "img/cl.jpg",
+    "categoria": "Cafetería"
+  },
+  {
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "$4700",
