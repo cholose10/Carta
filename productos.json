@@ -562,8 +562,8 @@
   {
     "nombre": "Mozzarellas rebozadas",
     "descripcion": "Mozzarellas rebozadas",
-    "precio": "$16.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "16000",
+    "imagen": "img/20250817_131412.jpg",
     "categoria": "ENTRADITAS"
   },
   {
