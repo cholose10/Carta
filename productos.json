@@ -350,9 +350,9 @@
     "categoria": "Refrescos"
   },
   {
-    "nombre": "Milkshake GUITO",
+    "nombre": "Milkshake OREO",
     "descripcion": "helado de crema, con oreos y crema batida",
-    "precio": "$8400",
+    "precio": "8400",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "Refrescos"
   },
