@@ -828,8 +828,8 @@
   {
     "nombre": "Salmón AZUL",
     "descripcion": "Salmón rosado grillado en salsa crema de queso azul con papas españolas",
-    "precio": "$37.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "37000",
+    "imagen": "img/20250817_142010.jpg",
     "categoria": "PLATOS PRINCIPALES"
   },
   {
