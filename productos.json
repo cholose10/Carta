@@ -569,8 +569,8 @@
   {
     "nombre": "Nachos",
     "descripcion": "Nachos de carne con cheddar y pollo",
-    "precio": "$18.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "18000",
+    "imagen": "img/20250815_155313.jpg",
     "categoria": "ENTRADITAS"
   },
   {
