@@ -72,8 +72,8 @@
   {
     "nombre": "CAFE TILO",
     "descripcion": "café, baileys, leche evaporada y chocolate rallado ",
-    "precio": "$6700",
-    "imagen": "img/cafe1.jpg",
+    "precio": "6700",
+    "imagen": "img/20250819_160159.jpg",
     "categoria": "Cafetería"
   },
   {
