@@ -289,8 +289,8 @@
   {
     "nombre": "Tarta de BRÓCOLI",
     "descripcion": "Brócoli, queso sardo, muzarella, cebolla, masa integral",
-    "precio": "$18000",
-    "imagen": "img/Brócoli.jpg",
+    "precio": "18000",
+    "imagen": "img/Brócoli .jpg",
     "categoria": "Tartas (con ensaladita)"
   },
   {
