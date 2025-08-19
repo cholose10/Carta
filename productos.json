@@ -212,8 +212,8 @@
   {
     "nombre": "Scon de queso",
     "descripcion": "Scon de queso",
-    "precio": "$4200",
-    "imagen": "img/medialunas.jpg",
+    "precio": "42000",
+    "imagen": "img/Sconquso.jpg",
     "categoria": "Pastelería"
   },
   {
