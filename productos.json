@@ -233,8 +233,8 @@
   {
     "nombre": "Alfajor de maicena",
     "descripcion": "Alfajor de maicena (sin TACC)",
-    "precio": "$4300",
-    "imagen": "img/medialunas.jpg",
+    "precio": "4300",
+    "imagen": "img//Maicena.jpg",
     "categoria": "Pastelería"
   },
   {
