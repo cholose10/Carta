@@ -261,8 +261,8 @@
   {
     "nombre": "Plato con frutas de estación",
     "descripcion": "Plato con frutas de estación",
-    "precio": "$8000",
-    "imagen": "img/medialunas.jpg",
+    "precio": "80000",
+    "imagen": "img//Platofrutas.jpg",
     "categoria": "Pastelería"
   },
   {
