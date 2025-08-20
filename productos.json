@@ -198,8 +198,8 @@
   {
     "nombre": "Brownie con nueces blancas",
     "descripcion": "Brownie sin TACC",
-    "precio": "$6500",
-    "imagen": "img/medialunas.jpg",
+    "precio": "6500",
+    "imagen": "img/Brownie.jpg",
     "categoria": "Pastelería"
   },
   {
