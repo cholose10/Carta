@@ -170,8 +170,8 @@
   {
     "nombre": "Medialunas",
     "descripcion": "Medialunas 100% manteca",
-    "precio": "$2000",
-    "imagen": "img/Lumas.jpg",
+    "precio": "2200",
+    "imagen": "img/Luna.jpg",
     "categoria": "Pastelería"
   },
   {
