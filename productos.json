@@ -429,8 +429,8 @@
   {
     "nombre": "Omelette de jamón y queso",
     "descripcion": "Omelette de jamón y queso",
-    "precio": "$13.000",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "13000",
+    "imagen": "img/20250804_132736.jpg",
     "categoria": "Omelettes/Tortillas"
   },
   {
