@@ -317,8 +317,8 @@
   {
     "nombre": "Burritos COMO MEXICANO ",
     "descripcion": " (caliente): Tortilla de trigo con salsa de pollo, relleno de lomo, vegetales y cheddar ",
-    "precio": "$22500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "22500",
+    "imagen": "img/Burritoslomo.jpg",
     "categoria": "Burritos (con papas fritas)"
   },
   {
