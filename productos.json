@@ -366,8 +366,8 @@
   {
     "nombre": "Limonada a la menta con jengibre",
     "descripcion": "Limonada a la menta con jengibre",
-    "precio": "$6200",
-    "imagen": "img/tarta_brocoli.jpg",
+    "precio": "6200",
+    "imagen": "img/Limonada.jpg",
     "categoria": "Refrescos"
   },
   {
