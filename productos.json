@@ -177,8 +177,8 @@
   {
     "nombre": "Cinamon Roll(rol de canela)",
     "descripcion": "roll de canela",
-    "precio": "$4400",
-    "imagen": "img/Rolcanela1.jpg",
+    "precio": "4400",
+    "imagen": "img/Rolcanela.jpg",
     "categoria": "Pastelería"
   },
   {
