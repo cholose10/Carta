@@ -226,8 +226,8 @@
   {
     "nombre": "Alfajor de chocolate",
     "descripcion": "Alfajor de chocolate",
-    "precio": "$4300",
-    "imagen": "img/medialunas.jpg",
+    "precio": "43000",
+    "imagen": "img//Alchoco.jpg",
     "categoria": "Pastelería"
   },
   {
