@@ -240,8 +240,8 @@
   {
     "nombre": "Alfajor de almendras ",
     "descripcion": "Alfajor de almendras ",
-    "precio": "$5200",
-    "imagen": "img/medialunas.jpg",
+    "precio": "52000",
+    "imagen": "img/Almendras.jpg",
     "categoria": "Pastelería"
   },
   {
