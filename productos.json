@@ -380,9 +380,9 @@
   {
     "nombre": "Jamón, stracciatella y tomate ",
     "descripcion": "ciabatta, arabe o miga",
-    "precio": "$1900",
-    "imagen": "img/arabe.jpg",
-    "categoria": "Sandwiches"
+    "categoria": "Sandwiches",
+    "precio": "19000",
+    "imagen": "img/arabe.jpg"
   },
   {
     "nombre": "tostado mixto",
