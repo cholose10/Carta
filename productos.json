@@ -352,9 +352,9 @@
   {
     "nombre": "Milkshake OREO",
     "descripcion": "helado de crema, con oreos y crema batida",
+    "categoria": "Refrescos",
     "precio": "8400",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "Refrescos"
+    "imagen": "img/Mioreo.jpg"
   },
   {
     "nombre": "Licuadas",
