@@ -394,9 +394,9 @@
   {
     "nombre": "Jamón, stracciatella y tomate ",
     "descripcion": "ciabatta, arabe o miga",
-    "precio": "$1900",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "Sandwiches"
+    "categoria": "Sandwiches",
+    "precio": "16000",
+    "imagen": "img/20250820_143727.jpg"
   },
   {
     "nombre": "Pavita, queso y tomate",
