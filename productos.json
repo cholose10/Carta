@@ -576,9 +576,9 @@
   {
     "nombre": "Farinata recomendado",
     "descripcion": "Fainá con stracciatella, jamón crudo, tomates y albahaca.",
+    "categoria": "ENTRADITAS",
     "precio": "20000",
-    "imagen": "img/20250815_154818.jpg",
-    "categoria": "ENTRADITAS"
+    "imagen": "img/Farinata.jpg"
   },
   {
     "nombre": "NAPOLITANA",
