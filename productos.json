@@ -688,9 +688,9 @@
   {
     "nombre": "Boloñesa",
     "descripcion": "salsa con carne",
-    "precio": "$7.700",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS"
+    "categoria": "SALSAS",
+    "precio": "7700",
+    "imagen": "img/Bolo.jpg"
   },
   {
     "nombre": "Pesto con nuez",
