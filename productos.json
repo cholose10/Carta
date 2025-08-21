@@ -702,9 +702,9 @@
   {
     "nombre": "Carbonara",
     "descripcion": "Crema, panceta y verdeo",
-    "precio": "$7.700",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS"
+    "categoria": "SALSAS",
+    "precio": "7700",
+    "imagen": "img/Carbonara.jpg"
   },
   {
     "nombre": "Pollo (pechuga)",
