@@ -9,7 +9,7 @@
   {
     "nombre": "Café expresso jarito",
     "descripcion": "Café americano",
-    "precio": "$3500",
+    "precio": "3500",
     "imagen": "img/Americano.jpg",
     "categoria": "Cafetería"
   },
