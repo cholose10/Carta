@@ -492,9 +492,9 @@
   {
     "nombre": "COBB SALAD",
     "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de pollo.",
+    "categoria": "ENSALADAS",
     "precio": "16800",
-    "imagen": "img/IMG-20250802-WA0007.jpg",
-    "categoria": "ENSALADAS"
+    "imagen": "img/Cpsala.jpg"
   },
   {
     "nombre": "SOLA de POLLO o CARNE",
