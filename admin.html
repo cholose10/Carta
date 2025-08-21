@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Carta Tilo Café</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
-  <style>
-    body { font-family: Arial, sans-serif; margin: 20px; }
-    h1 { color: #5a3825; }
-    form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
-    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-    button { padding: 8px 12px; margin: 5px 5px 0 0; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
-    button:hover { background: #6b4e3d; }
-    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { cursor: pointer; background: #e6d8cf; }
-    img { max-width: 60px; border-radius: 5px; }
-    .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
-    .actions button { margin-right: 5px; }
-    #searchBox { margin-top: 15px; padding: 8px; width: 60%; }
-  </style>
+<meta charset="UTF-8">
+<title>Admin Carta Tilo Café</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; }
+  h1 { color: #5a3825; }
+  form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
+  input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+  button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+  button:hover { background: #6b4e3d; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+  img { max-width: 60px; border-radius: 5px; }
+  .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
+  .actions button { margin-right: 5px; }
+</style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
 
-<label>Token de GitHub:</label>
-<input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
-
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
+  
   <label>Nombre:</label>
   <input type="text" id="nombre" required>
   
@@ -58,19 +51,14 @@
 </div>
 
 <h2>Productos actuales</h2>
-<input type="text" id="searchBox" placeholder="Buscar por nombre o categoría">
-<button onclick="resetSearch()">Reset búsqueda</button>
-<button onclick="exportToPDF()">📄 Exportar PDF</button>
-<button onclick="exportToExcel()">📊 Exportar Excel</button>
-
 <table id="productsTable">
   <thead>
     <tr>
-      <th onclick="sortTable('imagen')">Imagen</th>
-      <th onclick="sortTable('nombre')">Nombre</th>
-      <th onclick="sortTable('descripcion')">Descripción</th>
-      <th onclick="sortTable('categoria')">Categoría</th>
-      <th onclick="sortTable('precio')">Precio</th>
+      <th>Imagen</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Categoría</th>
+      <th>Precio</th>
       <th>Acciones</th>
     </tr>
   </thead>
@@ -83,22 +71,22 @@ const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
-let filteredProductos = [];
+let TOKEN = "";
 
-// Cargar productos desde GitHub
+// Pedir token al usuario
+TOKEN = prompt("Ingresá tu token de GitHub:");
+
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  filteredProductos = [...productos];
   renderTable();
 }
 loadProducts();
 
-// Render tabla
 function renderTable() {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  filteredProductos.forEach((p, index) => {
+  productos.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td><img src="${p.imagen}" alt="${p.nombre}"></td>
@@ -140,20 +128,18 @@ document.getElementById("productForm").addEventListener("submit", async function
   if (index === "") {
     productos.push(nuevo);
   } else {
-    const globalIndex = productos.findIndex(p => p.nombre === filteredProductos[index].nombre && p.categoria === filteredProductos[index].categoria);
-    productos[globalIndex] = nuevo;
+    productos[index] = nuevo;
     document.getElementById("editIndex").value = "";
   }
-  filteredProductos = [...productos];
   await saveToGitHub();
   renderTable();
   this.reset();
   updatePreview();
 });
 
-// Editar
+// Editar producto
 function editProduct(index) {
-  const p = filteredProductos[index];
+  const p = productos[index];
   document.getElementById("nombre").value = p.nombre;
   document.getElementById("descripcion").value = p.descripcion;
   document.getElementById("precio").value = p.precio;
@@ -163,12 +149,10 @@ function editProduct(index) {
   updatePreview();
 }
 
-// Eliminar
+// Eliminar producto
 async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
-    const globalIndex = productos.findIndex(p => p.nombre === filteredProductos[index].nombre && p.categoria === filteredProductos[index].categoria);
-    productos.splice(globalIndex,1);
-    filteredProductos = [...productos];
+    productos.splice(index,1);
     await saveToGitHub();
     renderTable();
   }
@@ -176,18 +160,15 @@ async function deleteProduct(index) {
 
 // Guardar en GitHub
 async function saveToGitHub() {
-  const token = document.getElementById("tokenInput").value;
-  if (!token) { alert("Ingresá tu token"); return; }
-
   const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
   const fileData = await getRes.json();
   const sha = fileData.sha;
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(productos, null, 2))));
-
+  
   await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`, {
     method: "PUT",
     headers: {
-      "Authorization": `token ${token}`,
+      "Authorization": `token ${TOKEN}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -197,77 +178,6 @@ async function saveToGitHub() {
       branch: BRANCH
     })
   });
-}
-
-// Buscar
-document.getElementById("searchBox").addEventListener("input", function() {
-  const q = this.value.toLowerCase();
-  filteredProductos = productos.filter(p => 
-    p.nombre.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q)
-  );
-  renderTable();
-});
-function resetSearch() {
-  document.getElementById("searchBox").value = "";
-  filteredProductos = [...productos];
-  renderTable();
-}
-
-// Ordenar tabla
-function sortTable(key) {
-  filteredProductos.sort((a, b) => {
-    if (a[key] < b[key]) return -1;
-    if (a[key] > b[key]) return 1;
-    return 0;
-  });
-  renderTable();
-}
-
-// Exportar PDF
-function exportToPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-
-  const ordenados = [...productos].sort((a, b) => {
-    if (a.categoria.toLowerCase() < b.categoria.toLowerCase()) return -1;
-    if (a.categoria.toLowerCase() > b.categoria.toLowerCase()) return 1;
-    if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
-    if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
-    return 0;
-  });
-
-  const tableData = ordenados.map(p => [p.categoria, p.nombre, p.descripcion, p.precio]);
-
-  doc.autoTable({
-    head: [["Categoría", "Nombre", "Descripción", "Precio"]],
-    body: tableData,
-    styles: { fontSize: 8 }
-  });
-
-  doc.save("productos.pdf");
-}
-
-// Exportar Excel
-function exportToExcel() {
-  const ordenados = [...productos].sort((a, b) => {
-    if (a.categoria.toLowerCase() < b.categoria.toLowerCase()) return -1;
-    if (a.categoria.toLowerCase() > b.categoria.toLowerCase()) return 1;
-    if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
-    if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
-    return 0;
-  });
-
-  const ws = XLSX.utils.json_to_sheet(
-    ordenados.map(p => ({
-      Categoría: p.categoria,
-      Nombre: p.nombre,
-      Descripción: p.descripcion,
-      Precio: p.precio
-    }))
-  );
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Productos");
-  XLSX.writeFile(wb, "productos.xlsx");
 }
 </script>
 
