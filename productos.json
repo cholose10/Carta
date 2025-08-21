@@ -1024,9 +1024,9 @@
   {
     "nombre": "Aperol Spritz",
     "descripcion": "Aperol Spritz",
+    "categoria": "TRAGOS",
     "precio": "11500",
-    "imagen": "img/20250816_115330.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img/Aprol.jpg"
   },
   {
     "nombre": "HAPPY HOUR",
