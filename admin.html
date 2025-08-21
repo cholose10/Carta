@@ -15,7 +15,8 @@
     img { max-width: 60px; border-radius: 5px; }
     .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    #searchBox { margin-top: 20px; padding: 8px; width: 100%; }
+    #searchContainer { margin-top: 20px; display: flex; gap: 10px; }
+    #searchBox { padding: 8px; flex: 1; }
   </style>
   <!-- Librerías para PDF y Excel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -55,7 +56,10 @@
   <span id="previewPrecio"></span>
 </div>
 
-<input type="text" id="searchBox" placeholder="Buscar por nombre o categoría...">
+<div id="searchContainer">
+  <input type="text" id="searchBox" placeholder="Buscar por nombre o categoría...">
+  <button onclick="resetSearch()">Reset búsqueda</button>
+</div>
 
 <h2>Productos actuales</h2>
 <button onclick="exportPDF()">Exportar a PDF</button>
@@ -204,6 +208,12 @@ document.getElementById("searchBox").addEventListener("input", function() {
   );
   renderTable();
 });
+
+// Reset búsqueda
+function resetSearch() {
+  productosFiltrados = [...productos];
+  renderTable();
+}
 
 // Exportar a PDF
 function exportPDF() {
