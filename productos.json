@@ -856,9 +856,9 @@
   {
     "nombre": "Lomo CACIO E PEPE",
     "descripcion": "Bife de lomo grillado con spaghetti en pimienta y queso",
-    "precio": "$35.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PLATOS PRINCIPALES"
+    "categoria": "PLATOS PRINCIPALES",
+    "precio": "35000",
+    "imagen": "img/Pepe.jpg"
   },
   {
     "nombre": "Lomo AL CHAMPI",
