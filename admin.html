@@ -3,29 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Carta Tilo Café</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #5a3825; }
     form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
     input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-    button { padding: 8px 12px; margin: 5px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button { padding: 8px 12px; margin: 5px 5px 0 0; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #6b4e3d; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-    th { cursor: pointer; }
+    th { cursor: pointer; background: #e6d8cf; }
     img { max-width: 60px; border-radius: 5px; }
     .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    #searchBox, #searchCategory { padding: 6px; margin: 5px 0; width: 48%; }
+    #searchBox { margin-top: 15px; padding: 8px; width: 60%; }
   </style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
 
-<!-- Token manual -->
-<label>Ingresar Token de GitHub:</label>
-<input type="password" id="tokenInput" placeholder="Pega tu token aquí">
+<label>Token de GitHub:</label>
+<input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
 
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
@@ -56,31 +58,24 @@
 </div>
 
 <h2>Productos actuales</h2>
-
-<!-- Buscador -->
-<input type="text" id="searchBox" placeholder="Buscar por nombre...">
-<input type="text" id="searchCategory" placeholder="Buscar por categoría...">
+<input type="text" id="searchBox" placeholder="Buscar por nombre o categoría">
 <button onclick="resetSearch()">Reset búsqueda</button>
-<br>
-<button onclick="exportPDF()">📄 Exportar PDF</button>
-<button onclick="exportExcel()">📊 Exportar Excel</button>
+<button onclick="exportToPDF()">📄 Exportar PDF</button>
+<button onclick="exportToExcel()">📊 Exportar Excel</button>
 
 <table id="productsTable">
   <thead>
     <tr>
-      <th onclick="sortTable('nombre')">Nombre ⬍</th>
-      <th onclick="sortTable('descripcion')">Descripción ⬍</th>
-      <th onclick="sortTable('precio')">Precio ⬍</th>
-      <th onclick="sortTable('categoria')">Categoría ⬍</th>
+      <th onclick="sortTable('imagen')">Imagen</th>
+      <th onclick="sortTable('nombre')">Nombre</th>
+      <th onclick="sortTable('descripcion')">Descripción</th>
+      <th onclick="sortTable('categoria')">Categoría</th>
+      <th onclick="sortTable('precio')">Precio</th>
       <th>Acciones</th>
     </tr>
   </thead>
   <tbody></tbody>
 </table>
-
-<!-- Librerías PDF y Excel -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
 const USERNAME = "cholose10";
@@ -88,27 +83,29 @@ const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
-let sortDirection = 1; 
+let filteredProductos = [];
 
 // Cargar productos desde GitHub
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  renderTable(productos);
+  filteredProductos = [...productos];
+  renderTable();
 }
 loadProducts();
 
 // Render tabla
-function renderTable(list) {
+function renderTable() {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  list.forEach((p, index) => {
+  filteredProductos.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
+      <td><img src="${p.imagen}" alt="${p.nombre}"></td>
       <td>${p.nombre}</td>
       <td>${p.descripcion}</td>
-      <td>$${p.precio}</td>
       <td>${p.categoria}</td>
+      <td>$${p.precio}</td>
       <td class="actions">
         <button onclick="editProduct(${index})">Editar</button>
         <button onclick="deleteProduct(${index})">Eliminar</button>
@@ -143,18 +140,20 @@ document.getElementById("productForm").addEventListener("submit", async function
   if (index === "") {
     productos.push(nuevo);
   } else {
-    productos[index] = nuevo;
+    const globalIndex = productos.findIndex(p => p.nombre === filteredProductos[index].nombre && p.categoria === filteredProductos[index].categoria);
+    productos[globalIndex] = nuevo;
     document.getElementById("editIndex").value = "";
   }
+  filteredProductos = [...productos];
   await saveToGitHub();
-  renderTable(productos);
+  renderTable();
   this.reset();
   updatePreview();
 });
 
 // Editar
 function editProduct(index) {
-  const p = productos[index];
+  const p = filteredProductos[index];
   document.getElementById("nombre").value = p.nombre;
   document.getElementById("descripcion").value = p.descripcion;
   document.getElementById("precio").value = p.precio;
@@ -167,24 +166,28 @@ function editProduct(index) {
 // Eliminar
 async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
-    productos.splice(index,1);
+    const globalIndex = productos.findIndex(p => p.nombre === filteredProductos[index].nombre && p.categoria === filteredProductos[index].categoria);
+    productos.splice(globalIndex,1);
+    filteredProductos = [...productos];
     await saveToGitHub();
-    renderTable(productos);
+    renderTable();
   }
 }
 
 // Guardar en GitHub
 async function saveToGitHub() {
-  const TOKEN = document.getElementById("tokenInput").value;
+  const token = document.getElementById("tokenInput").value;
+  if (!token) { alert("Ingresá tu token"); return; }
+
   const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
   const fileData = await getRes.json();
   const sha = fileData.sha;
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(productos, null, 2))));
-  
+
   await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`, {
     method: "PUT",
     headers: {
-      "Authorization": `token ${TOKEN}`,
+      "Authorization": `token ${token}`,
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
@@ -197,53 +200,71 @@ async function saveToGitHub() {
 }
 
 // Buscar
-document.getElementById("searchBox").addEventListener("input", searchProducts);
-document.getElementById("searchCategory").addEventListener("input", searchProducts);
-
-function searchProducts() {
-  const nameVal = document.getElementById("searchBox").value.toLowerCase();
-  const catVal = document.getElementById("searchCategory").value.toLowerCase();
-  const filtrados = productos.filter(p => 
-    p.nombre.toLowerCase().includes(nameVal) &&
-    p.categoria.toLowerCase().includes(catVal)
+document.getElementById("searchBox").addEventListener("input", function() {
+  const q = this.value.toLowerCase();
+  filteredProductos = productos.filter(p => 
+    p.nombre.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q)
   );
-  renderTable(filtrados);
-}
-
+  renderTable();
+});
 function resetSearch() {
   document.getElementById("searchBox").value = "";
-  document.getElementById("searchCategory").value = "";
-  renderTable(productos);
+  filteredProductos = [...productos];
+  renderTable();
 }
 
-// Ordenar
-function sortTable(field) {
-  productos.sort((a,b) => {
-    if (a[field] < b[field]) return -1 * sortDirection;
-    if (a[field] > b[field]) return 1 * sortDirection;
+// Ordenar tabla
+function sortTable(key) {
+  filteredProductos.sort((a, b) => {
+    if (a[key] < b[key]) return -1;
+    if (a[key] > b[key]) return 1;
     return 0;
   });
-  sortDirection *= -1;
-  renderTable(productos);
+  renderTable();
 }
 
 // Exportar PDF
-function exportPDF() {
+function exportToPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  let y = 10;
-  productos.forEach(p => {
-    doc.text(`Nombre: ${p.nombre}`, 10, y); y+=6;
-    doc.text(`Descripción: ${p.descripcion}`, 10, y); y+=6;
-    doc.text(`Precio: $${p.precio}`, 10, y); y+=6;
-    doc.text(`Categoría: ${p.categoria}`, 10, y); y+=10;
+
+  const ordenados = [...productos].sort((a, b) => {
+    if (a.categoria.toLowerCase() < b.categoria.toLowerCase()) return -1;
+    if (a.categoria.toLowerCase() > b.categoria.toLowerCase()) return 1;
+    if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+    if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+    return 0;
   });
+
+  const tableData = ordenados.map(p => [p.categoria, p.nombre, p.descripcion, p.precio]);
+
+  doc.autoTable({
+    head: [["Categoría", "Nombre", "Descripción", "Precio"]],
+    body: tableData,
+    styles: { fontSize: 8 }
+  });
+
   doc.save("productos.pdf");
 }
 
 // Exportar Excel
-function exportExcel() {
-  const ws = XLSX.utils.json_to_sheet(productos);
+function exportToExcel() {
+  const ordenados = [...productos].sort((a, b) => {
+    if (a.categoria.toLowerCase() < b.categoria.toLowerCase()) return -1;
+    if (a.categoria.toLowerCase() > b.categoria.toLowerCase()) return 1;
+    if (a.nombre.toLowerCase() < b.nombre.toLowerCase()) return -1;
+    if (a.nombre.toLowerCase() > b.nombre.toLowerCase()) return 1;
+    return 0;
+  });
+
+  const ws = XLSX.utils.json_to_sheet(
+    ordenados.map(p => ({
+      Categoría: p.categoria,
+      Nombre: p.nombre,
+      Descripción: p.descripcion,
+      Precio: p.precio
+    }))
+  );
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Productos");
   XLSX.writeFile(wb, "productos.xlsx");
