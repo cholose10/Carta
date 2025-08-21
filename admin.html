@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Admin Carta Tilo Café</title>
-<style>
-  body { font-family: Arial, sans-serif; margin: 20px; }
-  h1 { color: #5a3825; }
-  form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
-  input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-  button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
-  button:hover { background: #6b4e3d; }
-  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
-  th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-  img { max-width: 60px; border-radius: 5px; }
-  .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
-  .actions button { margin-right: 5px; }
-  .search-box { margin: 15px 0; padding: 10px; background: #f1f1f1; border-radius: 8px; }
-  .search-box input { width: auto; display: inline-block; }
-</style>
+  <meta charset="UTF-8">
+  <title>Admin Carta Tilo Café</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { color: #5a3825; }
+    form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+    button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #6b4e3d; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    img { max-width: 60px; border-radius: 5px; }
+    .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
+    .actions button { margin-right: 5px; }
+    #searchBox { margin: 15px 0; padding: 8px; width: 50%; }
+  </style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
 
+<input type="password" id="tokenInput" placeholder="Ingresá tu token de GitHub">
+<button onclick="setToken()">Guardar Token</button>
+
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
-  
   <label>Nombre:</label>
   <input type="text" id="nombre" required>
   
@@ -53,12 +56,8 @@
 </div>
 
 <h2>Productos actuales</h2>
-
-<div class="search-box">
-  <label>🔎 Buscar:</label>
-  <input type="text" id="searchInput" placeholder="Escribí nombre o categoría...">
-  <button onclick="resetSearch()">Reset búsqueda</button>
-</div>
+<input type="text" id="searchBox" placeholder="Buscar por nombre o categoría" oninput="filterTable()">
+<button onclick="resetSearch()">Reset búsqueda</button>
 
 <table id="productsTable">
   <thead>
@@ -74,32 +73,35 @@
   <tbody></tbody>
 </table>
 
+<button onclick="exportPDF()">Exportar a PDF</button>
+<button onclick="exportExcel()">Exportar a Excel</button>
+
 <script>
+let TOKEN = "";
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
-let productosFiltrados = [];
-let TOKEN = "";
 
-// Pedir token
-TOKEN = prompt("Ingresá tu token de GitHub:");
+function setToken() {
+  TOKEN = document.getElementById("tokenInput").value;
+  alert("Token guardado!");
+}
 
 // Cargar productos
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  productosFiltrados = [...productos];
   renderTable();
 }
 loadProducts();
 
 // Render tabla
-function renderTable() {
+function renderTable(data = productos) {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  productosFiltrados.forEach((p, index) => {
+  data.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td><img src="${p.imagen}" alt="${p.nombre}"></td>
@@ -108,12 +110,25 @@ function renderTable() {
       <td>${p.categoria}</td>
       <td>$${p.precio}</td>
       <td class="actions">
-        <button onclick="editProduct(${productos.indexOf(p)})">Editar</button>
-        <button onclick="deleteProduct(${productos.indexOf(p)})">Eliminar</button>
+        <button onclick="editProduct(${index})">Editar</button>
+        <button onclick="deleteProduct(${index})">Eliminar</button>
       </td>
     `;
     tbody.appendChild(tr);
   });
+}
+
+// Buscar
+function filterTable() {
+  const query = document.getElementById("searchBox").value.toLowerCase();
+  const filtrados = productos.filter(p =>
+    p.nombre.toLowerCase().includes(query) || p.categoria.toLowerCase().includes(query)
+  );
+  renderTable(filtrados);
+}
+function resetSearch() {
+  document.getElementById("searchBox").value = "";
+  renderTable();
 }
 
 // Vista previa
@@ -145,13 +160,12 @@ document.getElementById("productForm").addEventListener("submit", async function
     document.getElementById("editIndex").value = "";
   }
   await saveToGitHub();
-  productosFiltrados = [...productos];
   renderTable();
   this.reset();
   updatePreview();
 });
 
-// Editar producto
+// Editar
 function editProduct(index) {
   const p = productos[index];
   document.getElementById("nombre").value = p.nombre;
@@ -163,12 +177,11 @@ function editProduct(index) {
   updatePreview();
 }
 
-// Eliminar producto
+// Eliminar
 async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
     productos.splice(index,1);
     await saveToGitHub();
-    productosFiltrados = [...productos];
     renderTable();
   }
 }
@@ -195,20 +208,30 @@ async function saveToGitHub() {
   });
 }
 
-// --- Búsqueda ---
-document.getElementById("searchInput").addEventListener("input", function() {
-  const term = this.value.toLowerCase();
-  productosFiltrados = productos.filter(p =>
-    p.nombre.toLowerCase().includes(term) ||
-    p.categoria.toLowerCase().includes(term)
-  );
-  renderTable();
-});
+// Exportar PDF
+function exportPDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  let y = 10;
+  productos.forEach(p => {
+    doc.text(`Nombre: ${p.nombre}`, 10, y);
+    y += 6;
+    doc.text(`Descripción: ${p.descripcion}`, 10, y);
+    y += 6;
+    doc.text(`Categoría: ${p.categoria}`, 10, y);
+    y += 6;
+    doc.text(`Precio: $${p.precio}`, 10, y);
+    y += 12;
+  });
+  doc.save("carta.pdf");
+}
 
-function resetSearch() {
-  document.getElementById("searchInput").value = "";
-  productosFiltrados = [...productos];
-  renderTable();
+// Exportar Excel
+function exportExcel() {
+  const ws = XLSX.utils.json_to_sheet(productos);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Carta");
+  XLSX.writeFile(wb, "carta.xlsx");
 }
 </script>
 
