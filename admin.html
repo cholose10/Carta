@@ -7,21 +7,25 @@
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #5a3825; }
     form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
-    input, textarea, select { width: 100%; padding: 8px; margin: 5px 0; }
-    button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+    button { padding: 8px 12px; margin: 5px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #6b4e3d; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { cursor: pointer; }
     img { max-width: 60px; border-radius: 5px; }
     .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    .controls { margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap; }
-    .controls input, .controls select { flex: 1; padding: 8px; }
+    #searchBox, #searchCategory { padding: 6px; margin: 5px 0; width: 48%; }
   </style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
+
+<!-- Token manual -->
+<label>Ingresar Token de GitHub:</label>
+<input type="password" id="tokenInput" placeholder="Pega tu token aquí">
 
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
@@ -53,22 +57,19 @@
 
 <h2>Productos actuales</h2>
 
-<div class="controls">
-  <input type="text" id="searchBox" placeholder="Buscar por nombre...">
-  <select id="categoryFilter">
-    <option value="">-- Filtrar por categoría --</option>
-  </select>
-  <button type="button" onclick="resetFilters()">Mostrar todos</button>
-  <button type="button" onclick="exportPDF()">Exportar PDF</button>
-  <button type="button" onclick="exportExcel()">Exportar Excel</button>
-</div>
+<!-- Buscador -->
+<input type="text" id="searchBox" placeholder="Buscar por nombre...">
+<input type="text" id="searchCategory" placeholder="Buscar por categoría...">
+<button onclick="resetSearch()">Reset búsqueda</button>
+<br>
+<button onclick="exportPDF()">📄 Exportar PDF</button>
+<button onclick="exportExcel()">📊 Exportar Excel</button>
 
 <table id="productsTable">
   <thead>
     <tr>
-      <th>Imagen</th>
       <th onclick="sortTable('nombre')">Nombre ⬍</th>
-      <th>Descripción</th>
+      <th onclick="sortTable('descripcion')">Descripción ⬍</th>
       <th onclick="sortTable('precio')">Precio ⬍</th>
       <th onclick="sortTable('categoria')">Categoría ⬍</th>
       <th>Acciones</th>
@@ -77,37 +78,33 @@
   <tbody></tbody>
 </table>
 
+<!-- Librerías PDF y Excel -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
-let TOKEN = "";
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
-let filtered = [];
+let sortDirection = 1; 
 
-// Cargar productos
+// Cargar productos desde GitHub
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  filtered = [...productos];
-  renderTable();
-  renderCategories();
+  renderTable(productos);
 }
 loadProducts();
 
 // Render tabla
-function renderTable() {
+function renderTable(list) {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  filtered.forEach((p, index) => {
+  list.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td><img src="${p.imagen}" alt="${p.nombre}"></td>
       <td>${p.nombre}</td>
       <td>${p.descripcion}</td>
       <td>$${p.precio}</td>
@@ -119,41 +116,6 @@ function renderTable() {
     `;
     tbody.appendChild(tr);
   });
-}
-
-// Render categorías en select
-function renderCategories() {
-  const select = document.getElementById("categoryFilter");
-  const cats = [...new Set(productos.map(p => p.categoria))];
-  select.innerHTML = '<option value="">-- Filtrar por categoría --</option>';
-  cats.forEach(c => {
-    const opt = document.createElement("option");
-    opt.value = c;
-    opt.textContent = c;
-    select.appendChild(opt);
-  });
-}
-
-// Buscar por nombre
-document.getElementById("searchBox").addEventListener("input", e => {
-  const q = e.target.value.toLowerCase();
-  filtered = productos.filter(p => p.nombre.toLowerCase().includes(q));
-  renderTable();
-});
-
-// Filtrar por categoría
-document.getElementById("categoryFilter").addEventListener("change", e => {
-  const cat = e.target.value;
-  filtered = cat ? productos.filter(p => p.categoria === cat) : [...productos];
-  renderTable();
-});
-
-// Reset filtros
-function resetFilters() {
-  document.getElementById("searchBox").value = "";
-  document.getElementById("categoryFilter").value = "";
-  filtered = [...productos];
-  renderTable();
 }
 
 // Vista previa
@@ -185,44 +147,35 @@ document.getElementById("productForm").addEventListener("submit", async function
     document.getElementById("editIndex").value = "";
   }
   await saveToGitHub();
-  filtered = [...productos];
-  renderTable();
-  renderCategories();
+  renderTable(productos);
   this.reset();
   updatePreview();
 });
 
-// Editar producto
+// Editar
 function editProduct(index) {
-  const p = filtered[index];
-  const realIndex = productos.findIndex(prod => prod.nombre === p.nombre && prod.descripcion === p.descripcion);
+  const p = productos[index];
   document.getElementById("nombre").value = p.nombre;
   document.getElementById("descripcion").value = p.descripcion;
   document.getElementById("precio").value = p.precio;
   document.getElementById("imagen").value = p.imagen.replace("img/","");
   document.getElementById("categoria").value = p.categoria;
-  document.getElementById("editIndex").value = realIndex;
+  document.getElementById("editIndex").value = index;
   updatePreview();
 }
 
-// Eliminar producto
+// Eliminar
 async function deleteProduct(index) {
-  const p = filtered[index];
-  const realIndex = productos.findIndex(prod => prod.nombre === p.nombre && prod.descripcion === p.descripcion);
   if (confirm("¿Eliminar este producto?")) {
-    productos.splice(realIndex,1);
+    productos.splice(index,1);
     await saveToGitHub();
-    filtered = [...productos];
-    renderTable();
-    renderCategories();
+    renderTable(productos);
   }
 }
 
 // Guardar en GitHub
 async function saveToGitHub() {
-  if (!TOKEN) {
-    TOKEN = prompt("Pegá tu token de GitHub:");
-  }
+  const TOKEN = document.getElementById("tokenInput").value;
   const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
   const fileData = await getRes.json();
   const sha = fileData.sha;
@@ -243,26 +196,47 @@ async function saveToGitHub() {
   });
 }
 
-// Ordenar tabla
-function sortTable(key) {
-  filtered.sort((a,b) => {
-    if (key === "precio") return parseFloat(a.precio) - parseFloat(b.precio);
-    return a[key].localeCompare(b[key]);
+// Buscar
+document.getElementById("searchBox").addEventListener("input", searchProducts);
+document.getElementById("searchCategory").addEventListener("input", searchProducts);
+
+function searchProducts() {
+  const nameVal = document.getElementById("searchBox").value.toLowerCase();
+  const catVal = document.getElementById("searchCategory").value.toLowerCase();
+  const filtrados = productos.filter(p => 
+    p.nombre.toLowerCase().includes(nameVal) &&
+    p.categoria.toLowerCase().includes(catVal)
+  );
+  renderTable(filtrados);
+}
+
+function resetSearch() {
+  document.getElementById("searchBox").value = "";
+  document.getElementById("searchCategory").value = "";
+  renderTable(productos);
+}
+
+// Ordenar
+function sortTable(field) {
+  productos.sort((a,b) => {
+    if (a[field] < b[field]) return -1 * sortDirection;
+    if (a[field] > b[field]) return 1 * sortDirection;
+    return 0;
   });
-  renderTable();
+  sortDirection *= -1;
+  renderTable(productos);
 }
 
 // Exportar PDF
-async function exportPDF() {
+function exportPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
-  const rows = [];
-  for (let p of productos) {
-    rows.push([p.nombre, p.descripcion, "$" + p.precio, p.categoria]);
-  }
-  doc.autoTable({
-    head: [["Nombre", "Descripción", "Precio", "Categoría"]],
-    body: rows
+  let y = 10;
+  productos.forEach(p => {
+    doc.text(`Nombre: ${p.nombre}`, 10, y); y+=6;
+    doc.text(`Descripción: ${p.descripcion}`, 10, y); y+=6;
+    doc.text(`Precio: $${p.precio}`, 10, y); y+=6;
+    doc.text(`Categoría: ${p.categoria}`, 10, y); y+=10;
   });
   doc.save("productos.pdf");
 }
