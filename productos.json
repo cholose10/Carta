@@ -632,9 +632,9 @@
   {
     "nombre": "porcion de faina",
     "descripcion": "recomendada para acompañar una pizza",
-    "precio": "$5000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PIZZAS (Estilo napolitano)"
+    "categoria": "PIZZAS (Estilo napolitano)",
+    "precio": "5000",
+    "imagen": "img/Lomoesp.jpg"
   },
   {
     "nombre": "Spaghetti",
