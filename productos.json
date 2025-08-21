@@ -765,9 +765,9 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
+    "categoria": "GRILL Especiales",
     "precio": "32000",
-    "imagen": "img//Matavergrill.jpg",
-    "categoria": "GRILL Especiales"
+    "imagen": "img/Lomoesp.jpg"
   },
   {
     "nombre": "Salmón rosado",
