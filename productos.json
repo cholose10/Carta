@@ -247,9 +247,9 @@
   {
     "nombre": "Mini tarta ",
     "descripcion": "Mini tarta duces",
-    "precio": "$9000",
-    "imagen": "img/medialunas.jpg",
-    "categoria": "Pastelería"
+    "categoria": "Pastelería",
+    "precio": "9000",
+    "imagen": "img//Minitor.jpg"
   },
   {
     "nombre": "Medialuna caliente de jamón y queso",
