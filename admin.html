@@ -3,29 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Carta Tilo Café</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #5a3825; }
-    form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
+    form { background: #f7f3f0; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
     input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-    button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button { padding: 8px 12px; margin: 5px 5px 5px 0; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #6b4e3d; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
     img { max-width: 60px; border-radius: 5px; }
-    .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    #searchContainer { margin-top: 20px; display: flex; gap: 10px; }
-    #searchBox { padding: 8px; flex: 1; }
+    #tokenInput { width: 300px; }
   </style>
-  <!-- Librerías para PDF y Excel -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.23/jspdf.plugin.autotable.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
+
+<label>Token de GitHub:</label>
+<input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
 
 <form id="productForm">
   <input type="hidden" id="editIndex" value="">
@@ -35,36 +33,24 @@
   <label>Descripción:</label>
   <textarea id="descripcion" required></textarea>
   
-  <label>Categoría:</label>
-  <input type="text" id="categoria" required>
-  
   <label>Precio (solo número):</label>
   <input type="number" id="precio" required>
   
-  <label>Imagen (solo nombre, ej: cafe.jpg):</label>
+  <label>Imagen (ej: cafe.jpg):</label>
   <input type="text" id="imagen" required>
+  
+  <label>Categoría:</label>
+  <input type="text" id="categoria" required>
   
   <button type="submit">Guardar Producto</button>
 </form>
 
-<div class="preview" id="previewBox">
-  <h3>Vista previa:</h3>
-  <img id="previewImg" src="" alt="" style="max-width:100px"><br>
-  <strong id="previewNombre"></strong><br>
-  <span id="previewDescripcion"></span><br>
-  <span id="previewCategoria"></span><br>
-  <span id="previewPrecio"></span>
-</div>
-
-<div id="searchContainer">
-  <input type="text" id="searchBox" placeholder="Buscar por nombre o categoría...">
-  <button onclick="resetSearch()">Reset búsqueda</button>
-</div>
+<!-- Botones de Excel -->
+<button onclick="exportExcel()">📤 Exportar Excel</button>
+<input type="file" id="importFile" accept=".xlsx" onchange="importExcel(event)">
+<label for="importFile"><button>📥 Importar Excel</button></label>
 
 <h2>Productos actuales</h2>
-<button onclick="exportPDF()">Exportar a PDF</button>
-<button onclick="exportExcel()">Exportar a Excel</button>
-
 <table id="productsTable">
   <thead>
     <tr>
@@ -80,19 +66,16 @@
 </table>
 
 <script>
-const TOKEN = prompt("Ingresá tu token de GitHub:");
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
-let productosFiltrados = [];
 
 // Cargar productos desde GitHub
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
-  productosFiltrados = [...productos];
   renderTable();
 }
 loadProducts();
@@ -101,7 +84,7 @@ loadProducts();
 function renderTable() {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  productosFiltrados.forEach((p, index) => {
+  productos.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td><img src="${p.imagen}" alt="${p.nombre}"></td>
@@ -118,68 +101,53 @@ function renderTable() {
   });
 }
 
-// Vista previa en vivo
-["nombre","descripcion","precio","imagen","categoria"].forEach(id => {
-  document.getElementById(id).addEventListener("input", updatePreview);
-});
-function updatePreview() {
-  document.getElementById("previewImg").src = "img/" + document.getElementById("imagen").value;
-  document.getElementById("previewNombre").textContent = document.getElementById("nombre").value;
-  document.getElementById("previewDescripcion").textContent = document.getElementById("descripcion").value;
-  document.getElementById("previewCategoria").textContent = document.getElementById("categoria").value;
-  document.getElementById("previewPrecio").textContent = "$" + document.getElementById("precio").value;
-}
-
-// Guardar producto (nuevo o editado)
+// Guardar producto
 document.getElementById("productForm").addEventListener("submit", async function(e) {
   e.preventDefault();
   const index = document.getElementById("editIndex").value;
   const nuevo = {
     nombre: document.getElementById("nombre").value,
     descripcion: document.getElementById("descripcion").value,
-    categoria: document.getElementById("categoria").value,
     precio: document.getElementById("precio").value,
-    imagen: "img/" + document.getElementById("imagen").value
+    imagen: "img/" + document.getElementById("imagen").value,
+    categoria: document.getElementById("categoria").value
   };
   if (index === "") {
     productos.push(nuevo);
   } else {
-    const realIndex = productos.indexOf(productosFiltrados[index]);
-    productos[realIndex] = nuevo;
+    productos[index] = nuevo;
     document.getElementById("editIndex").value = "";
   }
   await saveToGitHub();
-  productosFiltrados = [...productos];
   renderTable();
   this.reset();
-  updatePreview();
 });
 
 // Editar producto
 function editProduct(index) {
-  const p = productosFiltrados[index];
+  const p = productos[index];
   document.getElementById("nombre").value = p.nombre;
   document.getElementById("descripcion").value = p.descripcion;
-  document.getElementById("categoria").value = p.categoria;
   document.getElementById("precio").value = p.precio;
   document.getElementById("imagen").value = p.imagen.replace("img/","");
+  document.getElementById("categoria").value = p.categoria;
   document.getElementById("editIndex").value = index;
-  updatePreview();
 }
 
 // Eliminar producto
 async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
-    const realIndex = productos.indexOf(productosFiltrados[index]);
-    productos.splice(realIndex,1);
+    productos.splice(index,1);
     await saveToGitHub();
-    productosFiltrados = [...productos];
     renderTable();
   }
 }
 
 // Guardar en GitHub
 async function saveToGitHub() {
+  const TOKEN = document.getElementById("tokenInput").value;
+  if (!TOKEN) { alert("Pegá tu token de GitHub primero."); return; }
+
   const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
   const fileData = await getRes.json();
   const sha = fileData.sha;
@@ -200,45 +168,41 @@ async function saveToGitHub() {
   });
 }
 
-// Buscar por nombre o categoría
-document.getElementById("searchBox").addEventListener("input", function() {
-  const term = this.value.toLowerCase();
-  productosFiltrados = productos.filter(p =>
-    p.nombre.toLowerCase().includes(term) || p.categoria.toLowerCase().includes(term)
-  );
-  renderTable();
-});
-
-// Reset búsqueda
-function resetSearch() {
-  productosFiltrados = [...productos];
-  renderTable();
-}
-
-// Exportar a PDF
-function exportPDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-  doc.text("Carta Tilo Café", 14, 15);
-  doc.autoTable({
-    head: [["Nombre", "Descripción", "Categoría", "Precio"]],
-    body: productos.map(p => [p.nombre, p.descripcion, p.categoria, "$" + p.precio]),
-    startY: 20
-  });
-  doc.save("Carta_TiloCafe.pdf");
-}
-
-// Exportar a Excel
+// Exportar Excel
 function exportExcel() {
-  const ws = XLSX.utils.json_to_sheet(productos.map(p => ({
+  const data = productos.map(p => ({
     Nombre: p.nombre,
     Descripción: p.descripcion,
     Categoría: p.categoria,
-    Precio: "$" + p.precio
-  })));
+    Precio: p.precio
+  }));
+  const ws = XLSX.utils.json_to_sheet(data);
   const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, "Carta");
-  XLSX.writeFile(wb, "Carta_TiloCafe.xlsx");
+  XLSX.utils.book_append_sheet(wb, ws, "Productos");
+  XLSX.writeFile(wb, "productos.xlsx");
+}
+
+// Importar Excel
+async function importExcel(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = async (e) => {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, { type: "array" });
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const imported = XLSX.utils.sheet_to_json(sheet);
+    productos = imported.map(r => ({
+      nombre: r.Nombre || "",
+      descripcion: r.Descripción || "",
+      categoria: r.Categoría || "",
+      precio: r.Precio || "",
+      imagen: "img/default.jpg"
+    }));
+    await saveToGitHub();
+    renderTable();
+  };
+  reader.readAsArrayBuffer(file);
 }
 </script>
 
