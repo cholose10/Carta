@@ -16,6 +16,7 @@
     img { max-width: 60px; border-radius: 5px; }
     .actions button { margin-right: 5px; }
     #tokenInput { width: 300px; }
+    #searchBox { margin: 15px 0; padding: 8px; width: 300px; }
   </style>
 </head>
 <body>
@@ -50,6 +51,10 @@
 <input type="file" id="importFile" accept=".xlsx" onchange="importExcel(event)">
 <label for="importFile"><button>📥 Importar Excel</button></label>
 
+<!-- Buscador -->
+<input type="text" id="searchBox" placeholder="🔎 Buscar por nombre o categoría" oninput="renderTable()">
+<button onclick="resetSearch()">Reset</button>
+
 <h2>Productos actuales</h2>
 <table id="productsTable">
   <thead>
@@ -80,25 +85,36 @@ async function loadProducts() {
 }
 loadProducts();
 
-// Render tabla
+// Render tabla con buscador
 function renderTable() {
+  const search = document.getElementById("searchBox").value.toLowerCase();
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  productos.forEach((p, index) => {
-    const tr = document.createElement("tr");
-    tr.innerHTML = `
-      <td><img src="${p.imagen}" alt="${p.nombre}"></td>
-      <td>${p.nombre}</td>
-      <td>${p.descripcion}</td>
-      <td>${p.categoria}</td>
-      <td>$${p.precio}</td>
-      <td class="actions">
-        <button onclick="editProduct(${index})">Editar</button>
-        <button onclick="deleteProduct(${index})">Eliminar</button>
-      </td>
-    `;
-    tbody.appendChild(tr);
-  });
+  productos
+    .filter(p => 
+      p.nombre.toLowerCase().includes(search) || 
+      p.categoria.toLowerCase().includes(search)
+    )
+    .forEach((p, index) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td><img src="${p.imagen}" alt="${p.nombre}"></td>
+        <td>${p.nombre}</td>
+        <td>${p.descripcion}</td>
+        <td>${p.categoria}</td>
+        <td>$${p.precio}</td>
+        <td class="actions">
+          <button onclick="editProduct(${index})">Editar</button>
+          <button onclick="deleteProduct(${index})">Eliminar</button>
+        </td>
+      `;
+      tbody.appendChild(tr);
+    });
+}
+
+function resetSearch() {
+  document.getElementById("searchBox").value = "";
+  renderTable();
 }
 
 // Guardar producto
