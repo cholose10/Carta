@@ -722,10 +722,10 @@
   },
   {
     "nombre": "Bife de chorizo",
-    "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "28.000",
+    "descripcion": "Con frita, pure, ensalada o arroz",
     "imagen": "img/20250815_151841.jpg",
-    "categoria": "GRILL"
+    "categoria": "GRILL",
+    "precio": "28.000"
   },
   {
     "nombre": "Bife de lomo",
@@ -1230,5 +1230,19 @@
     "imagen": "img/Matam.jpg",
     "categoria": "GRILL",
     "precio": "22.000"
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/20250815_151841.jpg",
+    "categoria": "GRILL",
+    "precio": "28.000"
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/20250815_151841.jpg",
+    "categoria": "GRILL",
+    "precio": "$28.000"
   }
 ]
