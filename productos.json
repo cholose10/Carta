@@ -715,10 +715,10 @@
   },
   {
     "nombre": "Matambre de cerdo",
-    "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "22000",
+    "descripcion": "Con frita, pure, ensalada o arroz",
     "imagen": "img/Matam.jpg",
-    "categoria": "GRILL"
+    "categoria": "GRILL",
+    "precio": "22000"
   },
   {
     "nombre": "Bife de chorizo",
@@ -1195,5 +1195,40 @@
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "SALSAS",
     "precio": "$9500"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "22.000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22.000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "22.000"
   }
 ]
