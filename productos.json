@@ -1125,5 +1125,145 @@
     "imagen": "img/img/.jpg",
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "25000"
+  },
+  {
+    "nombre": "Medialunas",
+    "descripcion": "Medialunas 100% manteca",
+    "imagen": "img/Luna.jpg",
+    "categoria": "Pastelería",
+    "precio": "2200"
+  },
+  {
+    "nombre": "Medialunas",
+    "descripcion": "Medialunas 100% manteca",
+    "imagen": "img/Luna.jpg",
+    "categoria": "Pastelería",
+    "precio": "2200"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18500"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18500"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "$9500"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "22.000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22.000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "$22000"
+  },
+  {
+    "nombre": "Matambre de cerdo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Matam.jpg",
+    "categoria": "GRILL",
+    "precio": "22.000"
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/20250815_151841.jpg",
+    "categoria": "GRILL",
+    "precio": "28.000"
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/20250815_151841.jpg",
+    "categoria": "GRILL",
+    "precio": "$28.000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32.000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32.000"
   }
 ]
