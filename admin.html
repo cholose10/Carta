@@ -3,41 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>Admin Carta Tilo Café</title>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 20px; }
     h1 { color: #5a3825; }
     form { background: #f7f3f0; padding: 15px; border-radius: 10px; }
     input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
-    button { padding: 8px 12px; margin-top: 10px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button { padding: 8px 12px; margin: 5px 5px 0 0; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
     button:hover { background: #6b4e3d; }
     table { width: 100%; border-collapse: collapse; margin-top: 20px; }
     th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
     img { max-width: 60px; border-radius: 5px; }
     .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
     .actions button { margin-right: 5px; }
-    #search { margin-top: 20px; padding: 8px; width: 100%; }
+    #searchBox { margin: 15px 0; padding: 8px; width: 50%; }
   </style>
 </head>
 <body>
 
 <h1>Admin Carta Tilo Café</h1>
 
+<!-- Token -->
+<label>Token de GitHub:</label>
+<input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
+
 <form id="productForm">
-  <input type="hidden" id="editId" value="">
+  <input type="hidden" id="editIndex" value="">
   <label>Nombre:</label>
   <input type="text" id="nombre" required>
   
   <label>Descripción:</label>
   <textarea id="descripcion" required></textarea>
   
+  <label>Categoría:</label>
+  <input type="text" id="categoria" required>
+  
   <label>Precio (solo número):</label>
   <input type="number" id="precio" required>
   
   <label>Imagen (solo nombre de archivo, ej: cafe.jpg):</label>
   <input type="text" id="imagen" required>
-  
-  <label>Categoría:</label>
-  <input type="text" id="categoria" required>
   
   <button type="submit">Guardar Producto</button>
 </form>
@@ -47,11 +52,17 @@
   <img id="previewImg" src="" alt="" style="max-width:100px"><br>
   <strong id="previewNombre"></strong><br>
   <span id="previewDescripcion"></span><br>
+  <span id="previewCategoria"></span><br>
   <span id="previewPrecio"></span>
 </div>
 
 <h2>Productos actuales</h2>
-<input type="text" id="search" placeholder="Buscar por nombre o categoría...">
+<input type="text" id="searchBox" placeholder="Buscar por nombre o categoría...">
+
+<div>
+  <button onclick="exportToExcel()">📤 Exportar Excel</button>
+  <input type="file" id="importFile" accept=".xlsx" onchange="importFromExcel(event)">
+</div>
 
 <table id="productsTable">
   <thead>
@@ -68,14 +79,13 @@
 </table>
 
 <script>
-const TOKEN = "TU_TOKEN_AQUI";
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
 const BRANCH = "main";
 let productos = [];
 
-// Cargar productos desde GitHub
+// --- Cargar productos desde GitHub ---
 async function loadProducts() {
   const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
   productos = await res.json();
@@ -83,11 +93,11 @@ async function loadProducts() {
 }
 loadProducts();
 
-// Render tabla
+// --- Render tabla ---
 function renderTable(lista) {
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
-  lista.forEach(p => {
+  lista.forEach((p, index) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td><img src="${p.imagen}" alt="${p.nombre}"></td>
@@ -96,42 +106,42 @@ function renderTable(lista) {
       <td>${p.categoria}</td>
       <td>$${p.precio}</td>
       <td class="actions">
-        <button onclick="editProduct('${p.id}')">Editar</button>
-        <button onclick="deleteProduct('${p.id}')">Eliminar</button>
+        <button onclick="editProduct(${index})">Editar</button>
+        <button onclick="deleteProduct(${index})">Eliminar</button>
       </td>
     `;
     tbody.appendChild(tr);
   });
 }
 
-// Vista previa en vivo
-["nombre","descripcion","precio","imagen"].forEach(id => {
+// --- Vista previa ---
+["nombre","descripcion","categoria","precio","imagen"].forEach(id => {
   document.getElementById(id).addEventListener("input", updatePreview);
 });
 function updatePreview() {
   document.getElementById("previewImg").src = "img/" + document.getElementById("imagen").value;
   document.getElementById("previewNombre").textContent = document.getElementById("nombre").value;
   document.getElementById("previewDescripcion").textContent = document.getElementById("descripcion").value;
+  document.getElementById("previewCategoria").textContent = document.getElementById("categoria").value;
   document.getElementById("previewPrecio").textContent = "$" + document.getElementById("precio").value;
 }
 
-// Guardar producto (nuevo o editado)
+// --- Guardar producto ---
 document.getElementById("productForm").addEventListener("submit", async function(e) {
   e.preventDefault();
-  const id = document.getElementById("editId").value || Date.now().toString();
+  const index = document.getElementById("editIndex").value;
   const nuevo = {
-    id: id,
     nombre: document.getElementById("nombre").value,
     descripcion: document.getElementById("descripcion").value,
+    categoria: document.getElementById("categoria").value,
     precio: document.getElementById("precio").value,
-    imagen: "img/" + document.getElementById("imagen").value,
-    categoria: document.getElementById("categoria").value
+    imagen: "img/" + document.getElementById("imagen").value
   };
-  if (document.getElementById("editId").value === "") {
+  if (index === "") {
     productos.push(nuevo);
   } else {
-    productos = productos.map(p => p.id === id ? nuevo : p);
-    document.getElementById("editId").value = "";
+    productos[index] = nuevo;
+    document.getElementById("editIndex").value = "";
   }
   await saveToGitHub();
   renderTable(productos);
@@ -139,30 +149,31 @@ document.getElementById("productForm").addEventListener("submit", async function
   updatePreview();
 });
 
-// Editar producto
-function editProduct(id) {
-  const p = productos.find(p => p.id === id);
-  if (!p) return;
+// --- Editar producto ---
+function editProduct(index) {
+  const p = productos[index];
   document.getElementById("nombre").value = p.nombre;
   document.getElementById("descripcion").value = p.descripcion;
+  document.getElementById("categoria").value = p.categoria;
   document.getElementById("precio").value = p.precio;
   document.getElementById("imagen").value = p.imagen.replace("img/","");
-  document.getElementById("categoria").value = p.categoria;
-  document.getElementById("editId").value = p.id;
+  document.getElementById("editIndex").value = index;
   updatePreview();
 }
 
-// Eliminar producto
-async function deleteProduct(id) {
+// --- Eliminar producto ---
+async function deleteProduct(index) {
   if (confirm("¿Eliminar este producto?")) {
-    productos = productos.filter(p => p.id !== id);
+    productos.splice(index,1);
     await saveToGitHub();
     renderTable(productos);
   }
 }
 
-// Guardar en GitHub
+// --- Guardar en GitHub ---
 async function saveToGitHub() {
+  const TOKEN = document.getElementById("tokenInput").value.trim();
+  if (!TOKEN) { alert("Pegá tu token primero"); return; }
   const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
   const fileData = await getRes.json();
   const sha = fileData.sha;
@@ -183,14 +194,58 @@ async function saveToGitHub() {
   });
 }
 
-// Buscar productos
-document.getElementById("search").addEventListener("input", function() {
-  const q = this.value.toLowerCase();
+// --- Buscar productos ---
+document.getElementById("searchBox").addEventListener("input", function() {
+  const term = this.value.toLowerCase();
   const filtrados = productos.filter(p => 
-    p.nombre.toLowerCase().includes(q) || p.categoria.toLowerCase().includes(q)
+    p.nombre.toLowerCase().includes(term) || 
+    p.categoria.toLowerCase().includes(term)
   );
   renderTable(filtrados);
 });
+
+// --- Exportar Excel ---
+function exportToExcel() {
+  const ws = XLSX.utils.json_to_sheet(productos.map(p => ({
+    Nombre: p.nombre,
+    Descripción: p.descripcion,
+    Categoría: p.categoria,
+    Precio: p.precio
+  })));
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Productos");
+  XLSX.writeFile(wb, "productos.xlsx");
+}
+
+// --- Importar Excel ---
+async function importFromExcel(event) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onload = async function(e) {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, {type:"array"});
+    const sheet = workbook.Sheets[workbook.SheetNames[0]];
+    const rows = XLSX.utils.sheet_to_json(sheet);
+    rows.forEach(row => {
+      const nuevo = {
+        nombre: row.Nombre || "",
+        descripcion: row.Descripción || "",
+        categoria: row.Categoría || "",
+        precio: row.Precio || "",
+        imagen: "img/" + (row.Imagen || "default.jpg")
+      };
+      const index = productos.findIndex(p => p.nombre === nuevo.nombre);
+      if (index >= 0) {
+        productos[index] = nuevo;
+      } else {
+        productos.push(nuevo);
+      }
+    });
+    await saveToGitHub();
+    renderTable(productos);
+  };
+  reader.readAsArrayBuffer(file);
+}
 </script>
 
 </body>
