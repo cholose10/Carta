@@ -469,11 +469,11 @@
     "precio": "16000"
   },
   {
-    "nombre": "CASA CON POLLO crujiente",
-    "descripcion": "TMix de verdes, croutones, pollo crujiente, parmesano y aderezo César.",
-    "precio": "$17.000",
+    "nombre": "CAESAR CON POLLO CRUJIENTE",
+    "descripcion": "TMix de verdes, croutones, pollo crujiente, parmesano y aderezo Caesar.",
     "imagen": "img/Causarcranch.jpg",
-    "categoria": "ENSALADAS"
+    "categoria": "ENSALADAS",
+    "precio": "$17.000"
   },
   {
     "nombre": "CASA Con langostinos rebozados",
