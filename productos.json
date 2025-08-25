@@ -548,9 +548,9 @@
   {
     "nombre": "Empanadas",
     "descripcion": "carne o jamón y queso",
-    "precio": "$17.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "ENTRADITAS"
+    "imagen": "img/Empa.jpg",
+    "categoria": "ENTRADITAS",
+    "precio": "$17.000"
   },
   {
     "nombre": "Rabas a la romana",
