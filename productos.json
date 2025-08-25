@@ -729,10 +729,10 @@
   },
   {
     "nombre": "Bife de lomo",
-    "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "32000",
+    "descripcion": "Con frita, pure, ensalada o arroz",
     "imagen": "img/IMG-20250816-WA0008.jpg",
-    "categoria": "GRILL"
+    "categoria": "GRILL",
+    "precio": "32000"
   },
   {
     "nombre": "Salmón rosado",
