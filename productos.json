@@ -736,7 +736,7 @@
   },
   {
     "nombre": "Salmón rosado",
-    "descripcion": "Con frita, pure, esnsalada o arroz",
+    "descripcion": "Con frita, pure, ensalada o arroz",
     "imagen": "img/Salmón.jpg",
     "categoria": "GRILL",
     "precio": "$32.000"
@@ -1244,5 +1244,26 @@
     "imagen": "img/20250815_151841.jpg",
     "categoria": "GRILL",
     "precio": "$28.000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32.000"
+  },
+  {
+    "nombre": "Salmón rosado",
+    "descripcion": "Con frita, pure, ensalada o arroz",
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32.000"
   }
 ]
