@@ -170,9 +170,9 @@
   {
     "nombre": "Medialunas",
     "descripcion": "Medialunas 100% manteca",
-    "precio": "2200",
     "imagen": "img/Luna.jpg",
-    "categoria": "Pastelería"
+    "categoria": "Pastelería",
+    "precio": "2200"
   },
   {
     "nombre": "Cinamon Roll(rol de canela)",
@@ -1125,5 +1125,19 @@
     "imagen": "img/img/.jpg",
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "25000"
+  },
+  {
+    "nombre": "Medialunas",
+    "descripcion": "Medialunas 100% manteca",
+    "imagen": "img/Luna.jpg",
+    "categoria": "Pastelería",
+    "precio": "2200"
+  },
+  {
+    "nombre": "Medialunas",
+    "descripcion": "Medialunas 100% manteca",
+    "imagen": "img/Luna.jpg",
+    "categoria": "Pastelería",
+    "precio": "2200"
   }
 ]
