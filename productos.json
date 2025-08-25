@@ -190,10 +190,10 @@
   },
   {
     "nombre": "Cookies",
-    "descripcion": "cookces vinilla con chocolate, chocolate+chocolate",
-    "precio": "$4600",
+    "descripcion": "cookies vinilla con chocolate, chocolate+chocolate",
     "imagen": "img/medialunas.jpg",
-    "categoria": "Pastelería"
+    "categoria": "Pastelería",
+    "precio": "$4600"
   },
   {
     "nombre": "Brownie con nueces blancas",
