@@ -476,11 +476,11 @@
     "precio": "$17.000"
   },
   {
-    "nombre": "CASA Con langostinos rebozados",
-    "descripcion": "TMix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo César.",
-    "precio": "$18.500",
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "TMix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "ENSALADAS"
+    "categoria": "ENSALADAS",
+    "precio": "$18.500"
   },
   {
     "nombre": "STRACCIATELLA mozzarella italiana",
