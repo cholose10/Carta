@@ -708,10 +708,10 @@
   },
   {
     "nombre": "Pollo (pechuga)",
-    "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "19500",
+    "descripcion": "Con frita, pure, ensalada o arroz",
     "imagen": "img/Pechuga.jpg",
-    "categoria": "GRILL"
+    "categoria": "GRILL",
+    "precio": "19500"
   },
   {
     "nombre": "Matambre de cerdo",
