@@ -744,9 +744,9 @@
   {
     "nombre": "Pollo (pechuga)",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
-    "precio": "$21.500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILL Especiales"
+    "imagen": "img/Espepollo.jpg",
+    "categoria": "GRILL Especiales",
+    "precio": "$21.500"
   },
   {
     "nombre": "Matambre de cerdo",
