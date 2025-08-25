@@ -659,10 +659,10 @@
   },
   {
     "nombre": "Sorrentinos de ossobuco al vino tinto",
-    "descripcion": "Rellenos de ossobuco al vino tinto",
-    "precio": "$11.000",
+    "descripcion": "Rellenos de osobuco al vino tinto",
     "imagen": "img/Sonren.jpg",
-    "categoria": "PASTAS"
+    "categoria": "PASTAS",
+    "precio": "$11.000"
   },
   {
     "nombre": "salsa banca - fileto",
