@@ -617,10 +617,10 @@
   },
   {
     "nombre": "RISOTTOS Langostinos !",
-    "descripcion": "con verdura, noeces y almendras.",
-    "precio": "$25.000",
+    "descripcion": "con verdura, nueces y almendras.",
     "imagen": "img/Risotolangos.jpg",
-    "categoria": "RISOTTOS"
+    "categoria": "RISOTTOS",
+    "precio": "$25.000"
   },
   {
     "nombre": "RISOTTOS Lomo!",
