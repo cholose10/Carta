@@ -1,94 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Carta Tilo Café</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; background: #fafafa; }
+    h1 { color: #5a3825; }
+    form { background: #f7f3f0; padding: 15px; border-radius: 10px; margin-bottom: 20px; }
+    input, textarea { width: 100%; padding: 8px; margin: 5px 0; }
+    button { padding: 8px 12px; margin: 5px; background: #8c6954; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #6b4e3d; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; background: white; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    img { max-width: 60px; border-radius: 5px; }
+    .preview { margin-top: 10px; padding: 10px; background: #eee; border-radius: 5px; }
+    .actions button { margin-right: 5px; }
+    .search-box { margin: 15px 0; }
+  </style>
+</head>
+<body>
+
+<h1>Admin Carta Tilo Café</h1>
+
+<form id="productForm">
+  <input type="hidden" id="editIndex" value="">
+  <label>Nombre:</label>
+  <input type="text" id="nombre" required>
+  
+  <label>Descripción:</label>
+  <textarea id="descripcion" required></textarea>
+  
+  <label>Categoría:</label>
+  <input type="text" id="categoria" required>
+  
+  <label>Precio (solo número):</label>
+  <input type="number" id="precio" required>
+  
+  <button type="submit">Guardar Producto</button>
+</form>
+
+<div class="preview" id="previewBox">
+  <h3>Vista previa:</h3>
+  <strong id="previewNombre"></strong><br>
+  <span id="previewDescripcion"></span><br>
+  <span id="previewCategoria"></span><br>
+  <span id="previewPrecio"></span>
+</div>
+
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Buscar por nombre o categoría...">
+  <button onclick="resetBusqueda()">Reset búsqueda</button>
+</div>
+
+<button onclick="exportarExcel()">Exportar Excel</button>
+<input type="file" id="importExcel" accept=".xlsx" onchange="importarExcel(event)">
+
+<h2>Productos actuales</h2>
+<table id="productsTable">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Categoría</th>
+      <th>Precio</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
 <script>
-  let productos = [];
-  let ordenAsc = true;
+let productos = [];
 
-  const form = document.getElementById("formProducto");
-  const tabla = document.querySelector("#tabla tbody");
-  const editIndex = document.getElementById("editIndex");
-
-  // ✅ Guardar producto
-  form.addEventListener("submit", e => {
-    e.preventDefault();
-    const producto = {
-      nombre: document.getElementById("nombre").value.trim(),
-      descripcion: document.getElementById("descripcion").value.trim(),
-      categoria: document.getElementById("categoria").value.trim(),
-      precio: parseFloat(document.getElementById("precio").value)
-    };
-
-    if(editIndex.value === "") {
-      // Nuevo → Evitar duplicado por nombre
-      const idx = productos.findIndex(p => p.nombre.toLowerCase() === producto.nombre.toLowerCase());
-      if(idx !== -1){
-        productos[idx] = producto; // lo actualiza
-      } else {
-        productos.push(producto); // lo agrega
-      }
-    } else {
-      productos[editIndex.value] = producto; // Editar sin duplicar
-      editIndex.value = "";
-    }
-
-    form.reset();
-    mostrarProductos();
+// ✅ Render tabla
+function renderTable(lista = productos) {
+  const tbody = document.querySelector("#productsTable tbody");
+  tbody.innerHTML = "";
+  lista.forEach((p, i) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${p.nombre}</td>
+      <td>${p.descripcion}</td>
+      <td>${p.categoria}</td>
+      <td>$${p.precio}</td>
+      <td class="actions">
+        <button onclick="editProduct(${i})">Editar</button>
+        <button onclick="deleteProduct(${i})">Eliminar</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
   });
+}
 
-  // ✅ Mostrar productos
-  function mostrarProductos(lista = productos) {
-    tabla.innerHTML = "";
-    lista.forEach((p, i) => {
-      const fila = `
-        <tr>
-          <td>${p.nombre}</td>
-          <td>${p.descripcion}</td>
-          <td>${p.categoria}</td>
-          <td>$${p.precio.toFixed(2)}</td>
-          <td>
-            <button onclick="editarProducto(${i})">Editar</button>
-            <button onclick="eliminarProducto(${i})">Eliminar</button>
-          </td>
-        </tr>`;
-      tabla.innerHTML += fila;
+// ✅ Vista previa
+["nombre","descripcion","categoria","precio"].forEach(id => {
+  document.getElementById(id).addEventListener("input", updatePreview);
+});
+function updatePreview() {
+  document.getElementById("previewNombre").textContent = document.getElementById("nombre").value;
+  document.getElementById("previewDescripcion").textContent = document.getElementById("descripcion").value;
+  document.getElementById("previewCategoria").textContent = document.getElementById("categoria").value;
+  document.getElementById("previewPrecio").textContent = "$" + document.getElementById("precio").value;
+}
+
+// ✅ Guardar producto
+document.getElementById("productForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const producto = {
+    nombre: document.getElementById("nombre").value.trim(),
+    descripcion: document.getElementById("descripcion").value.trim(),
+    categoria: document.getElementById("categoria").value.trim(),
+    precio: parseFloat(document.getElementById("precio").value)
+  };
+  const idx = document.getElementById("editIndex").value;
+  if(idx === "") {
+    productos.push(producto);
+  } else {
+    productos[idx] = producto;
+    document.getElementById("editIndex").value = "";
+  }
+  e.target.reset();
+  updatePreview();
+  renderTable();
+});
+
+// ✅ Editar
+function editProduct(i) {
+  const p = productos[i];
+  document.getElementById("nombre").value = p.nombre;
+  document.getElementById("descripcion").value = p.descripcion;
+  document.getElementById("categoria").value = p.categoria;
+  document.getElementById("precio").value = p.precio;
+  document.getElementById("editIndex").value = i;
+  updatePreview();
+}
+
+// ✅ Eliminar
+function deleteProduct(i) {
+  if(confirm("¿Eliminar este producto?")) {
+    productos.splice(i,1);
+    renderTable();
+  }
+}
+
+// ✅ Buscar
+document.getElementById("searchInput").addEventListener("input", function() {
+  const texto = this.value.toLowerCase();
+  const filtrados = productos.filter(p => 
+    p.nombre.toLowerCase().includes(texto) || 
+    p.categoria.toLowerCase().includes(texto)
+  );
+  renderTable(filtrados);
+});
+function resetBusqueda() {
+  document.getElementById("searchInput").value = "";
+  renderTable();
+}
+
+// ✅ Exportar Excel
+function exportarExcel() {
+  const ws = XLSX.utils.json_to_sheet(productos);
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Carta");
+  XLSX.writeFile(wb, "productos.xlsx");
+}
+
+// ✅ Importar Excel (evita duplicados por nombre)
+function importarExcel(e) {
+  const archivo = e.target.files[0];
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const data = new Uint8Array(e.target.result);
+    const libro = XLSX.read(data, {type: "array"});
+    const hoja = libro.Sheets[libro.SheetNames[0]];
+    const nuevos = XLSX.utils.sheet_to_json(hoja);
+
+    nuevos.forEach(nuevo => {
+      const idx = productos.findIndex(p => p.nombre.toLowerCase() === nuevo.nombre.toLowerCase());
+      if(idx !== -1) {
+        productos[idx] = nuevo; // actualizar existente
+      } else {
+        productos.push(nuevo); // agregar nuevo
+      }
     });
-  }
-
-  // ✅ Editar
-  function editarProducto(i) {
-    const p = productos[i];
-    document.getElementById("nombre").value = p.nombre;
-    document.getElementById("descripcion").value = p.descripcion;
-    document.getElementById("categoria").value = p.categoria;
-    document.getElementById("precio").value = p.precio;
-    editIndex.value = i;
-  }
-
-  // ✅ Eliminar (funciona incluso si hay filtros)
-  function eliminarProducto(i) {
-    productos.splice(i, 1);
-    mostrarProductos();
-  }
-
-  // ✅ Importar Excel sin duplicados
-  function importarExcel(e) {
-    const archivo = e.target.files[0];
-    const reader = new FileReader();
-    reader.onload = function(e) {
-      const data = new Uint8Array(e.target.result);
-      const libro = XLSX.read(data, {type: "array"});
-      const hoja = libro.Sheets[libro.SheetNames[0]];
-      const nuevos = XLSX.utils.sheet_to_json(hoja);
-
-      nuevos.forEach(nuevo => {
-        const idx = productos.findIndex(p => p.nombre.toLowerCase() === nuevo.nombre.toLowerCase());
-        if(idx !== -1){
-          productos[idx] = nuevo; // Actualiza existente
-        } else {
-          productos.push(nuevo); // Agrega si no existe
-        }
-      });
-
-      mostrarProductos();
-    };
-    reader.readAsArrayBuffer(archivo);
-  }
+    renderTable();
+  };
+  reader.readAsArrayBuffer(archivo);
+}
 </script>
+
+</body>
+</html>
