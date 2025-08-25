@@ -226,9 +226,9 @@
   {
     "nombre": "Alfajor de chocolate",
     "descripcion": "Alfajor de chocolate",
-    "precio": "43000",
     "imagen": "img//Alchoco.jpg",
-    "categoria": "Pastelería"
+    "categoria": "Pastelería",
+    "precio": "4300"
   },
   {
     "nombre": "Alfajor de maicena",
