@@ -238,11 +238,11 @@
     "categoria": "Pastelería"
   },
   {
-    "nombre": "Alfajor de almendras ",
-    "descripcion": "Alfajor de almendras ",
-    "precio": "52000",
+    "nombre": "Alfajor de almendras",
+    "descripcion": "Alfajor de almendras",
     "imagen": "img/Almendras.jpg",
-    "categoria": "Pastelería"
+    "categoria": "Pastelería",
+    "precio": "5200"
   },
   {
     "nombre": "Mini tarta ",
