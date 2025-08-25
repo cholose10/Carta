@@ -57,10 +57,10 @@
   },
   {
     "nombre": "Submarino",
-    "descripcion": "leche espumada y berra de chocolate",
-    "precio": "$4700",
+    "descripcion": "leche espumada y barra de chocolate",
     "imagen": "img/Submarino .jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería",
+    "precio": "$4700"
   },
   {
     "nombre": "Leche caliente o fría",
