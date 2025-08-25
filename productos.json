@@ -1120,10 +1120,10 @@
     "categoria": "ESPUMANTES"
   },
   {
-    "nombre": "MENU del DIA o SUJERENCIAS",
+    "nombre": "MENU del DIA o SUGERENCIAS",
     "descripcion": "PLATOS POR DIAS",
-    "precio": "80000",
     "imagen": "img/img/.jpg",
-    "categoria": "MENU del DIA o SUJERENCIAS"
+    "categoria": "MENU del DIA o SUGERENCIAS",
+    "precio": "25000"
   }
 ]
