@@ -737,9 +737,9 @@
   {
     "nombre": "Salmón rosado",
     "descripcion": "Con frita, pure, esnsalada o arroz",
-    "precio": "$32.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILL"
+    "imagen": "img/Salmón.jpg",
+    "categoria": "GRILL",
+    "precio": "$32.000"
   },
   {
     "nombre": "Pollo (pechuga)",
