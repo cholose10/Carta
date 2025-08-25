@@ -53,7 +53,7 @@
       padding: 20px;
     }
     .item {
-      background: #888;
+      background: #fff;
       border-radius: 12px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       overflow: hidden;
@@ -78,21 +78,10 @@
       font-weight: bold;
       color: #000;
     }
-    /* Aviso Safari */
-    #safariTip {
-      display: none;
-      background: #fff4d1;
-      color: #5a4302;
-      padding: 10px;
-      font-size: 0.9rem;
-      text-align: center;
-      border-bottom: 1px solid #e0c77d;
-    }
   </style>
 </head>
 <body>
- 
-<!-- FOTO GRANDE ARRIBA -->
+  <!-- FOTO GRANDE ARRIBA -->
   <header>
     <img src="img/logo1.png" alt="Tilo Café" class="banner-img" />
   </header>
@@ -105,7 +94,6 @@
   <script>
     let productos = [];
 
-    // Cargar productos
     fetch('productos.json')
       .then(response => response.json())
       .then(data => {
@@ -141,12 +129,6 @@
         `;
         container.appendChild(item);
       });
-    }
-
-    // Detectar Safari
-    const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-    if (isSafari) {
-      document.getElementById('safariTip').style.display = 'block';
     }
   </script>
 </body>
