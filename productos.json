@@ -1265,12 +1265,5 @@
     "imagen": "img/Salmón.jpg",
     "categoria": "GRILL",
     "precio": "$32.000"
-  },
-  {
-    "nombre": "salsa banca - fileto",
-    "descripcion": "alsa blanca - fileto",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS",
-    "precio": "$6.000"
   }
 ]
