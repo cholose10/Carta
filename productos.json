@@ -772,9 +772,9 @@
   {
     "nombre": "Salmón rosado",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
-    "precio": "$34.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "GRILL Especiales"
+    "imagen": "img/Blu.jpg",
+    "categoria": "GRILL Especiales",
+    "precio": "$34.000"
   },
   {
     "nombre": "NUGGETS",
