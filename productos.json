@@ -1118,5 +1118,12 @@
     "categoria": "ESPUMANTES",
     "precio": "40.000",
     "imagen": "img/jpg"
+  },
+  {
+    "nombre": "MENU del DIA o SUGERENCIAS",
+    "descripcion": "menú del día platón + bebida +postre o café, Sugerencia solo es plato",
+    "categoria": "MENU del DIA o SUGERENCIAS",
+    "precio": "00000",
+    "imagen": "img/img/.jpg"
   }
 ]
