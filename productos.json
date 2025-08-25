@@ -673,10 +673,10 @@
   },
   {
     "nombre": "Alfredo Pollo",
-    "descripcion": "salsa banca con Pollo",
-    "precio": "$7.500",
+    "descripcion": "salsa blanca con Pollo",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS"
+    "categoria": "SALSAS",
+    "precio": "$7.500"
   },
   {
     "nombre": "Alfredo langostinos",
