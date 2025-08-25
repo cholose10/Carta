@@ -477,7 +477,7 @@
   },
   {
     "nombre": "CAESAR Con Langostinos rebozados",
-    "descripcion": "TMix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "ENSALADAS",
     "precio": "$18.500"
@@ -1139,5 +1139,26 @@
     "imagen": "img/Luna.jpg",
     "categoria": "Pastelería",
     "precio": "2200"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18500"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18500"
+  },
+  {
+    "nombre": "CAESAR Con Langostinos rebozados",
+    "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "ENSALADAS",
+    "precio": "18.500"
   }
 ]
