@@ -1251,19 +1251,5 @@
     "imagen": "img/Salmón.jpg",
     "categoria": "GRILL",
     "precio": "$32000"
-  },
-  {
-    "nombre": "Salmón rosado",
-    "descripcion": "Con frita, pure, ensalada o arroz",
-    "imagen": "img/Salmón.jpg",
-    "categoria": "GRILL",
-    "precio": "$32.000"
-  },
-  {
-    "nombre": "Salmón rosado",
-    "descripcion": "Con frita, pure, ensalada o arroz",
-    "imagen": "img/Salmón.jpg",
-    "categoria": "GRILL",
-    "precio": "$32.000"
   }
 ]
