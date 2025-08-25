@@ -680,10 +680,10 @@
   },
   {
     "nombre": "Alfredo langostinos",
-    "descripcion": "salsa banca con langostinos",
-    "precio": "$9.500",
+    "descripcion": "salsa blanca con langostinos",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS"
+    "categoria": "SALSAS",
+    "precio": "$9.500"
   },
   {
     "nombre": "Boloñesa",
@@ -1160,5 +1160,40 @@
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "ENSALADAS",
     "precio": "18.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "9.500"
+  },
+  {
+    "nombre": "Alfredo langostinos",
+    "descripcion": "salsa blanca con langostinos",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "SALSAS",
+    "precio": "$9500"
   }
 ]
