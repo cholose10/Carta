@@ -209,7 +209,6 @@
     "imagen": "img/Pchoco.jpg",
     "categoria": "Pastelería"
   },
-  
   {
     "nombre": "Cookies",
     "descripcion": "cookies vainilla con chocolate, chocolate+chocolate",
@@ -460,21 +459,21 @@
     "descripcion": "SIMPLE (solo queso)",
     "precio": "15000",
     "imagen": "img/20250816_135012.jpg",
-    "categoria":  "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
+    "categoria": "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
   },
   {
     "nombre": "Burgers CLÁSICO",
     "descripcion": "CLÁSICO (lechuga, tomate, jamón y queso)",
     "precio": "17000",
     "imagen": "img/20250816_135012.jpg",
-    "categoria":  "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
+    "categoria": "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
   },
   {
     "nombre": "Burgers BACON",
     "descripcion": "BACON (queso cheddar, panceta y tomate)",
     "precio": "19000",
     "imagen": "img/20250816_135012.jpg",
-    "categoria":  "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
+    "categoria": "Burgers(100% carne, con fritas.La burger puede ser Not Cow)"
   },
   {
     "nombre": "Omelette de jamón y queso",
@@ -991,13 +990,6 @@
     "nombre": "PICADITA (para 2 personas)",
     "descripcion": "Con salsa de americano y dulce de leche",
     "precio": "48.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "PICADAS"
-  },
-  {
-    "nombre": "PICADITA (para 2 personas)",
-    "descripcion": "Pollo rebozado, bastones de muzarella, rabas y papas fritas.Incluye dos porrones de Stella",
-    "precio": "40.000",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "PICADAS"
   },
