@@ -213,7 +213,7 @@
     "nombre": "Cookies",
     "descripcion": "cookies vainilla con chocolate, chocolate+chocolate",
     "precio": "4600",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Kokis.jpg",
     "categoria": "Pastelería"
   },
   {
@@ -276,7 +276,7 @@
     "nombre": "Medialuna caliente de jamón y queso",
     "descripcion": "Medialuna caliente de jamón y queso",
     "precio": "4200",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "img/Lujyq.jpg",
     "categoria": "Pastelería"
   },
   {
@@ -346,7 +346,7 @@
     "nombre": "línea Coca-Cola",
     "descripcion": "zeros y clacicas",
     "precio": "3500",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/20250830_141813.jpg",
     "categoria": "Refrescos"
   },
   {
@@ -367,7 +367,7 @@
     "nombre": "Jugo exprimido de naranja",
     "descripcion": "exprimido de naranja",
     "precio": "6200",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/20250830_142147.jpg",
     "categoria": "Refrescos"
   },
   {
@@ -527,7 +527,7 @@
   {
     "nombre": "CAESAR Con Langostinos rebozados",
     "descripcion": "Mix de verdes, croutones, Con langostinos rebozados, parmesano y aderezo Caesar.",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Caesarlangis.jpg",
     "categoria": "ENSALADAS",
     "precio": "18.500"
   },
@@ -535,7 +535,7 @@
     "nombre": "STRACCIATELLA mozzarella italiana",
     "descripcion": "Mix de verdes, tomates cherries, jamón crudo, mozzarella, tiras de tortilla",
     "precio": "28000",
-    "imagen": "img/20250813_135926 (1).jpg",
+    "imagen": "img/Estrachatelaens.jpg",
     "categoria": "ENSALADAS"
   },
   {
@@ -962,7 +962,7 @@
     "nombre": "Ensalada de frutas ",
     "descripcion": "con bocha de helado. $11.000-$14.000",
     "precio": "$....",
-    "imagen": "img/tarta_brocoli.jpg",
+    "imagen": "img/Ensfruta.jpg",
     "categoria": "POSTRES"
   },
   {
