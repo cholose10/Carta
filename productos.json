@@ -1017,9 +1017,9 @@
   {
     "nombre": "Jack Daniel’s",
     "descripcion": "Jack Daniel’s",
-    "precio": "13.500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img/Daniel’s.jpg",
+    "categoria": "TRAGOS",
+    "precio": "13.500"
   },
   {
     "nombre": "Johnny Walker Black",
@@ -1174,5 +1174,12 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
+  },
+  {
+    "nombre": "Jack Daniel’s",
+    "descripcion": "Jack Daniel’s",
+    "imagen": "img/Daniel’s.jpg",
+    "categoria": "TRAGOS",
+    "precio": "13.500"
   }
 ]
