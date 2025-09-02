@@ -34,9 +34,6 @@
     th { background: #f0e8e3; }
     td img { max-width: 60px; border-radius: 6px; display:block; }
 
-    .actions button { margin-right: 5px; }
-
-    /* Vista previa */
     .preview { background: #fff; border: 1px solid #e8e2de; border-radius: 12px; padding: 12px; }
     .preview h3{ margin: 0 0 8px; font-size: 1.05rem; }
     .card { border: 1px solid #e6ded9; border-radius: 10px; overflow: hidden; }
@@ -46,6 +43,7 @@
     .prev-desc { font-size: 0.92rem; margin-bottom: 6px; color:#3d2a1e; }
     .prev-meta { display:flex; justify-content: space-between; font-size: 0.9rem; }
     .prev-price { font-weight: 700; }
+    .muted { color:#777; font-size:.9rem; }
   </style>
 </head>
 <body>
@@ -54,8 +52,9 @@
 
 <div class="toolbar">
   <label for="tokenInput">Token de GitHub:</label>
-  <input type="password" id="tokenInput" placeholder="Pegá tu token aquí">
-  <button onclick="exportExcel()">📤 Exportar Excel</button>
+  <input type="password" id="tokenInput" placeholder="Pegá tu token aquí (repo contents:write)">
+  <span class="muted">Rama: <code id="branchLabel">main</code></span>
+  <button id="btnExport" onclick="exportExcel()">📤 Exportar Excel</button>
 
   <input type="file" id="importFile" accept=".xlsx" style="display:none" onchange="importExcel(event)">
   <label for="importFile"><button type="button">📥 Importar Excel</button></label>
@@ -85,7 +84,8 @@
     <label>Categoría:</label>
     <input type="text" id="categoria" required>
 
-    <button type="submit">Guardar Producto</button>
+    <button type="submit" id="saveBtn">Guardar Producto</button>
+    <span id="status" class="muted"></span>
   </form>
 
   <!-- Vista previa -->
@@ -121,21 +121,44 @@
 </table>
 
 <script>
+/** CONFIGURACIÓN DEL REPO **/
 const USERNAME = "cholose10";
 const REPO = "Carta";
 const FILE_PATH = "productos.json";
-const BRANCH = "main";
+const BRANCH = "main"; // si tu repo usa "master", cambialo aquí
+document.getElementById('branchLabel').textContent = BRANCH;
+
 let productos = [];
 
-// --------- Cargar productos desde GitHub ----------
+/* Utilidad */
+const wait = (ms)=> new Promise(r=>setTimeout(r, ms));
+const asMoney = (v)=> {
+  const s = String(v ?? '').trim();
+  if (!s) return '—';
+  return s.startsWith('$') ? s : ('$' + s);
+};
+
+/* ---------- Cargar productos (sin caché) ---------- */
 async function loadProducts() {
-  const res = await fetch(`https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}`);
-  productos = await res.json();
+  const url = `https://raw.githubusercontent.com/${USERNAME}/${REPO}/${BRANCH}/${FILE_PATH}?t=${Date.now()}`;
+  const res = await fetch(url, { cache: "no-store" });
+  if (!res.ok) {
+    console.error("No se pudo leer productos.json", res.status, await res.text());
+    alert("No se pudo leer productos.json. ¿Existe en el repo y en la rama correcta?");
+    return;
+  }
+  try {
+    productos = await res.json();
+  } catch (e) {
+    console.error("JSON inválido en productos.json", e);
+    alert("productos.json tiene un formato inválido (JSON).");
+    return;
+  }
   renderTable();
 }
 loadProducts();
 
-// --------- Vista previa en vivo ----------
+/* ---------- Vista previa ---------- */
 function updatePreview() {
   const nombre = document.getElementById('nombre').value.trim();
   const descripcion = document.getElementById('descripcion').value.trim();
@@ -146,42 +169,35 @@ function updatePreview() {
   document.getElementById('prevNombre').textContent = nombre || '—';
   document.getElementById('prevDescripcion').textContent = descripcion || '—';
   document.getElementById('prevCategoria').textContent = categoria || '—';
-  const showPrice = (precio.startsWith('$') ? precio : (precio ? '$' + precio : '—'));
-  document.getElementById('prevPrecio').textContent = showPrice;
-
-  const src = imagen ? ('img/' + imagen) : '';
-  document.getElementById('prevImg').src = src;
+  document.getElementById('prevPrecio').textContent = asMoney(precio);
+  document.getElementById('prevImg').src = imagen ? ('img/' + imagen) : '';
 }
 ['nombre','descripcion','precio','imagen','categoria'].forEach(id=>{
   document.getElementById(id).addEventListener('input', updatePreview);
 });
 updatePreview();
 
-// --------- Render tabla con buscador (índice real) ----------
+/* ---------- Tabla con buscador (usa índice real) ---------- */
 function renderTable() {
-  const search = document.getElementById("searchBox").value.toLowerCase();
+  const search = (document.getElementById("searchBox").value || "").toLowerCase();
   const tbody = document.querySelector("#productsTable tbody");
   tbody.innerHTML = "";
 
-  // mantenemos el índice real del array para evitar bugs al editar/eliminar con búsqueda
   const items = productos
     .map((p, i) => ({ p, i }))
     .filter(({p}) =>
-      (p.nombre||'').toLowerCase().includes(search) ||
-      (p.categoria||'').toLowerCase().includes(search)
+      (p.nombre || "").toLowerCase().includes(search) ||
+      (p.categoria || "").toLowerCase().includes(search)
     );
 
   items.forEach(({p, i}) => {
-    const priceDisplay = (String(p.precio||'').trim().startsWith('$'))
-      ? String(p.precio).trim()
-      : ('$' + (p.precio ?? ''));
     const tr = document.createElement("tr");
     tr.innerHTML = `
-      <td><img src="${p.imagen}" alt="${p.nombre}"></td>
-      <td>${p.nombre||''}</td>
-      <td>${p.descripcion||''}</td>
-      <td>${p.categoria||''}</td>
-      <td>${priceDisplay}</td>
+      <td><img src="${p.imagen || ''}" alt="${p.nombre || ''}"></td>
+      <td>${p.nombre || ''}</td>
+      <td>${p.descripcion || ''}</td>
+      <td>${p.categoria || ''}</td>
+      <td>${asMoney(p.precio)}</td>
       <td class="actions">
         <button onclick="editProduct(${i})">Editar</button>
         <button onclick="deleteProduct(${i})">Eliminar</button>
@@ -196,14 +212,16 @@ function resetSearch(){
   renderTable();
 }
 
-// --------- Guardar (crear/actualizar) ----------
+/* ---------- Guardar (crear/actualizar) ---------- */
 document.getElementById("productForm").addEventListener("submit", async function(e) {
   e.preventDefault();
+  const saveBtn = document.getElementById('saveBtn');
+  const status = document.getElementById('status');
+
   const index = document.getElementById("editIndex").value;
   const nuevo = {
     nombre: document.getElementById("nombre").value.trim(),
     descripcion: document.getElementById("descripcion").value.trim(),
-    // guardamos la imagen con el prefijo img/
     imagen: "img/" + document.getElementById("imagen").value.trim(),
     categoria: document.getElementById("categoria").value.trim(),
     precio: document.getElementById("precio").value.trim()
@@ -216,92 +234,128 @@ document.getElementById("productForm").addEventListener("submit", async function
     document.getElementById("editIndex").value = "";
   }
 
-  await saveToGitHub();
-  renderTable();
-  this.reset();
-  updatePreview();
+  try {
+    saveBtn.disabled = true; status.textContent = "Guardando...";
+    await saveToGitHub();
+    status.textContent = "Guardado ✔";
+    await wait(500);
+    await loadProducts(); // recargar sin caché
+    this.reset();
+    updatePreview();
+  } catch (err) {
+    console.error(err);
+    alert("No se pudo guardar en GitHub. Revisá el token/permiso/rama.\n" + (err.message || err));
+    status.textContent = "Error";
+  } finally {
+    saveBtn.disabled = false;
+    await wait(800);
+    status.textContent = "";
+  }
 });
 
-// --------- Editar ----------
+/* ---------- Editar ---------- */
 function editProduct(realIndex) {
   const p = productos[realIndex];
   document.getElementById("nombre").value = p.nombre || '';
   document.getElementById("descripcion").value = p.descripcion || '';
   document.getElementById("precio").value = p.precio || '';
-  // quitamos el prefijo img/ para que el campo muestre solo el archivo
-  document.getElementById("imagen").value = (p.imagen||'').replace(/^img\//,'');
+  document.getElementById("imagen").value = (p.imagen || '').replace(/^img\//,'');
   document.getElementById("categoria").value = p.categoria || '';
   document.getElementById("editIndex").value = realIndex;
 
   updatePreview();
-  // scroll al formulario cuando edita en móviles
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// --------- Eliminar ----------
+/* ---------- Eliminar ---------- */
 async function deleteProduct(realIndex) {
-  if (confirm("¿Eliminar este producto?")) {
-    productos.splice(realIndex, 1);
+  if (!confirm("¿Eliminar este producto?")) return;
+  productos.splice(realIndex, 1);
+  try {
+    document.getElementById('status').textContent = "Guardando...";
     await saveToGitHub();
-    renderTable();
+    await wait(400);
+    await loadProducts();
+  } catch(err) {
+    console.error(err);
+    alert("No se pudo eliminar en GitHub. " + (err.message || err));
+  } finally {
+    document.getElementById('status').textContent = "";
   }
 }
 
-// --------- Guardar en GitHub ----------
+/* ---------- Guardar en GitHub (robusto) ---------- */
 async function saveToGitHub() {
-  const TOKEN = document.getElementById("tokenInput").value.trim();
-  if (!TOKEN) { alert("Pegá tu token de GitHub primero."); throw new Error("No token"); }
+  const TOKEN = (document.getElementById("tokenInput").value || "").trim();
+  if (!TOKEN) { throw new Error("Pegá tu token de GitHub en el campo superior."); }
 
-  // obtenemos SHA actual (si existe)
+  // 1) Buscar SHA actual (por rama)
   let sha = undefined;
   try {
-    const getRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`);
-    if (getRes.ok) {
-      const fileData = await getRes.json();
-      sha = fileData.sha;
+    const meta = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}?ref=${BRANCH}`, {
+      headers: { "Accept": "application/vnd.github+json" }
+    });
+    if (meta.ok) {
+      const json = await meta.json();
+      sha = json.sha;
     }
-  } catch(e) { /* archivo nuevo o error de red */ }
+  } catch (_) {}
 
+  // 2) Preparar contenido
   const content = btoa(unescape(encodeURIComponent(JSON.stringify(productos, null, 2))));
 
-  const putRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`, {
+  // 3) Intentar con Bearer
+  const body = {
+    message: "Actualizar productos",
+    content,
+    sha,
+    branch: BRANCH
+  };
+  let putRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`, {
     method: "PUT",
     headers: {
-      "Authorization": `token ${TOKEN}`,
+      "Authorization": `Bearer ${TOKEN}`,
+      "Accept": "application/vnd.github+json",
       "Content-Type": "application/json"
     },
-    body: JSON.stringify({
-      message: "Actualizar productos",
-      content: content,
-      sha: sha,
-      branch: BRANCH
-    })
+    body: JSON.stringify(body)
   });
 
+  // 4) Si 401, reintentar con 'token ' (para PAT clásico)
+  if (putRes.status === 401) {
+    putRes = await fetch(`https://api.github.com/repos/${USERNAME}/${REPO}/contents/${FILE_PATH}`, {
+      method: "PUT",
+      headers: {
+        "Authorization": `token ${TOKEN}`,
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
+    });
+  }
+
   if (!putRes.ok) {
-    const err = await putRes.text();
-    alert("Error guardando en GitHub:\n" + err);
-    throw new Error(err);
+    const errTxt = await putRes.text();
+    throw new Error(`GitHub respondió ${putRes.status}. Detalle: ${errTxt}`);
   }
 }
 
-// --------- Exportar Excel (solo texto, columnas: Nombre | Descripción | Categoría | Precio) ----------
+/* ---------- Exportar Excel (solo texto) ---------- */
 function exportExcel() {
   const data = productos.map(p => ({
     "Nombre": p.nombre || "",
     "Descripción": p.descripcion || "",
     "Categoría": p.categoria || "",
-    "Precio": (p.precio || "")
+    "Precio": p.precio || ""
   }));
   const ws = XLSX.utils.json_to_sheet(data, { skipHeader:false });
   const wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Productos");
-  // ancho de columnas
   ws['!cols'] = [{wch:26},{wch:50},{wch:24},{wch:12}];
   XLSX.writeFile(wb, "productos.xlsx");
 }
 
-// --------- Importar Excel (solo texto) ----------
+/* ---------- Importar Excel (solo texto) ---------- */
 async function importExcel(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -316,11 +370,19 @@ async function importExcel(event) {
       descripcion: r["Descripción"] ?? "",
       categoria: r["Categoría"] ?? "",
       precio: r["Precio"] ?? "",
-      // si no viene imagen en Excel, dejamos una por defecto
       imagen: "img/default.jpg"
     }));
-    await saveToGitHub();
-    renderTable();
+    try {
+      document.getElementById('status').textContent = "Guardando...";
+      await saveToGitHub();
+      await wait(400);
+      await loadProducts();
+    } catch(err) {
+      console.error(err);
+      alert("No se pudo importar/guardar el Excel. " + (err.message || err));
+    } finally {
+      document.getElementById('status').textContent = "";
+    }
   };
   reader.readAsArrayBuffer(file);
 }
