@@ -195,6 +195,14 @@
     "imagen": "img/Luna.jpg",
     "categoria": "Pastelería"
   },
+  
+  {
+    "nombre": "factura",
+    "descripcion": "mermelada y membrillo",
+    "precio": "2200",
+    "imagen": "img/20250902_085539(1).jpg",
+    "categoria": "Pastelería"
+  },
   {
     "nombre": "Cinamon Roll(rol de canela)",
     "descripcion": "roll de canela",
@@ -213,7 +221,7 @@
     "nombre": "Cookies",
     "descripcion": "cookies vainilla con chocolate, chocolate+chocolate",
     "precio": "4600",
-    "imagen": "img/Kokis.jpg",
+    "imagen": "img/20250902_085341.jpg",
     "categoria": "Pastelería"
   },
   {
