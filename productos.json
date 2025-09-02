@@ -351,10 +351,10 @@
   },
   {
     "nombre": "Agua local filtrada y mineralizada",
-    "descripcion": " agua fria, natural y con gas",
-    "precio": "500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "Refrescos"
+    "descripcion": "agua fria, natural y con gas",
+    "imagen": "img//20250830_142147.jpg",
+    "categoria": "Refrescos",
+    "precio": "5000"
   },
   {
     "nombre": "Adicional con limón",
