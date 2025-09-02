@@ -1174,12 +1174,5 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
-  },
-  {
-    "nombre": "SMOKE",
-    "descripcion": "Salsa de tomate, mermelada de bacon, cheddar Acompañadas con puré, fideos, ensalada o papas fritas",
-    "imagen": "img/Smuk.jpg",
-    "categoria": "MILANESAS Ternera o Pollo - Pechuga",
-    "precio": "22.000"
   }
 ]
