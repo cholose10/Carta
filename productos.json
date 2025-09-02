@@ -1017,7 +1017,7 @@
   {
     "nombre": "Jack Daniel’s",
     "descripcion": "Jack Daniel’s",
-    "imagen": "img/Daniel’s.jpg",
+    "imagen": "img//Daniel’s.jpg",
     "categoria": "TRAGOS",
     "precio": "13.500"
   },
@@ -1180,6 +1180,13 @@
     "descripcion": "Jack Daniel’s",
     "imagen": "img/Daniel’s.jpg",
     "categoria": "TRAGOS",
-    "precio": "13.500"
+    "precio": "13500"
+  },
+  {
+    "nombre": "Jack Daniel’s",
+    "descripcion": "Jack Daniel’s",
+    "imagen": "img/Daniel’s.jpg",
+    "categoria": "TRAGOS",
+    "precio": "13500"
   }
 ]
