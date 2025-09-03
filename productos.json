@@ -1045,7 +1045,7 @@
   {
     "nombre": "Fernet con Coca-Cola",
     "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/img/Ferne.jpg",
+    "imagen": "img//Ferne.jpg",
     "categoria": "TRAGOS",
     "precio": "11.000"
   },
@@ -1174,40 +1174,5 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
-  },
-  {
-    "nombre": "Fernet con Coca-Cola",
-    "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11.000"
-  },
-  {
-    "nombre": "Fernet con Coca-Cola",
-    "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11000"
-  },
-  {
-    "nombre": "Fernet con Coca-Cola",
-    "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11000"
-  },
-  {
-    "nombre": "Fernet con Coca-Cola",
-    "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11000"
-  },
-  {
-    "nombre": "Fernet con Coca-Cola",
-    "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img/Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11.000"
   }
 ]
