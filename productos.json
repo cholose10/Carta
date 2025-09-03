@@ -1174,5 +1174,12 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
+  },
+  {
+    "nombre": "factura",
+    "descripcion": "Pasteleras o membrillo",
+    "precio": "22000",
+    "imagen": "img/20250902_085539(1).jpg",
+    "categoria": "Pastelería"
   }
 ]
