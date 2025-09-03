@@ -1052,7 +1052,7 @@
   {
     "nombre": "Gin Tonic Beefeater",
     "descripcion": "Gin Tonic Beefeater",
-    "imagen": "img//Ginton.jpg",
+    "imagen": "img/Ginton.jpg",
     "categoria": "TRAGOS",
     "precio": "11.000"
   },
@@ -1174,12 +1174,5 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
-  },
-  {
-    "nombre": "Gin Tonic Beefeater",
-    "descripcion": "Gin Tonic Beefeater",
-    "imagen": "img//Ginton.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11.000"
   }
 ]
