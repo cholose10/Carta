@@ -1029,11 +1029,11 @@
     "precio": "14.500"
   },
   {
-    "nombre": "JJohnny Walker Red",
+    "nombre": "Johnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "precio": "12.500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img//Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12.500"
   },
   {
     "nombre": "Licor Baileys",
@@ -1045,9 +1045,9 @@
   {
     "nombre": "Fernet con Coca-Cola",
     "descripcion": "Fernet con Coca-Cola",
-    "imagen": "img//Ferne.jpg",
-    "categoria": "TRAGOS",
-    "precio": "11.000"
+    "precio": "11.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "TRAGOS"
   },
   {
     "nombre": "Gin Tonic Beefeater",
