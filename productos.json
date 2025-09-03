@@ -1024,9 +1024,9 @@
   {
     "nombre": "Johnny Walker Black",
     "descripcion": "Johnny Walker Black",
-    "precio": "14.500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img/Black.jpg",
+    "categoria": "TRAGOS",
+    "precio": "14.500"
   },
   {
     "nombre": "JJohnny Walker Red",
