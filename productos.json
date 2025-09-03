@@ -1038,7 +1038,7 @@
   {
     "nombre": "Licor Baileys",
     "descripcion": "Licor Baileys",
-    "imagen": "img//Ferne.jpg",
+    "imagen": "img//vsdvdv.jpg",
     "categoria": "TRAGOS",
     "precio": "11.000"
   },
@@ -1174,5 +1174,12 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
+  },
+  {
+    "nombre": "Licor Baileys",
+    "descripcion": "Licor Baileys",
+    "imagen": "img//vsdvdv.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
   }
 ]
