@@ -1031,7 +1031,7 @@
   {
     "nombre": "JJohnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "imagen": "img//Ret.jpg",
+    "imagen": "img/Ret.jpg",
     "categoria": "TRAGOS",
     "precio": "12.500"
   },
@@ -1178,12 +1178,26 @@
   {
     "nombre": "JJohnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "imagen": "img//Ret.jpg",
+    "imagen": "img/Ret.jpg",
     "categoria": "TRAGOS",
     "precio": "12500"
   },
   {
     "nombre": "JJohnny Walker Red",
+    "descripcion": "Johnny Walker Red",
+    "imagen": "img/Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12500"
+  },
+  {
+    "nombre": "JJohnny Walker Red",
+    "descripcion": "Johnny Walker Red",
+    "imagen": "img/Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12500"
+  },
+  {
+    "nombre": "Johnny Walker Red",
     "descripcion": "Johnny Walker Red",
     "imagen": "img/Ret.jpg",
     "categoria": "TRAGOS",
