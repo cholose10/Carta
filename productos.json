@@ -1038,16 +1038,16 @@
   {
     "nombre": "Licor Baileys",
     "descripcion": "Licor Baileys",
-    "imagen": "img//vsdvdv.jpg",
+    "imagen": "img//Ferne.jpg",
     "categoria": "TRAGOS",
     "precio": "11.000"
   },
   {
     "nombre": "Fernet con Coca-Cola",
     "descripcion": "Fernet con Coca-Cola",
-    "precio": "11.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img/img/Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
   },
   {
     "nombre": "Gin Tonic Beefeater",
@@ -1176,9 +1176,37 @@
     "imagen": "img/img/.jpg"
   },
   {
-    "nombre": "Licor Baileys",
-    "descripcion": "Licor Baileys",
-    "imagen": "img//vsdvdv.jpg",
+    "nombre": "Fernet con Coca-Cola",
+    "descripcion": "Fernet con Coca-Cola",
+    "imagen": "img/Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
+  },
+  {
+    "nombre": "Fernet con Coca-Cola",
+    "descripcion": "Fernet con Coca-Cola",
+    "imagen": "img/Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11000"
+  },
+  {
+    "nombre": "Fernet con Coca-Cola",
+    "descripcion": "Fernet con Coca-Cola",
+    "imagen": "img/Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11000"
+  },
+  {
+    "nombre": "Fernet con Coca-Cola",
+    "descripcion": "Fernet con Coca-Cola",
+    "imagen": "img/Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11000"
+  },
+  {
+    "nombre": "Fernet con Coca-Cola",
+    "descripcion": "Fernet con Coca-Cola",
+    "imagen": "img/Ferne.jpg",
     "categoria": "TRAGOS",
     "precio": "11.000"
   }
