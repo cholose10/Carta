@@ -1031,16 +1031,16 @@
   {
     "nombre": "JJohnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "imagen": "img/Ret.jpg",
-    "categoria": "TRAGOS",
-    "precio": "12.500"
+    "precio": "12.500",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "TRAGOS"
   },
   {
     "nombre": "Licor Baileys",
     "descripcion": "Licor Baileys",
-    "precio": "11.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img//Ferne.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
   },
   {
     "nombre": "Fernet con Coca-Cola",
@@ -1174,33 +1174,5 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
-  },
-  {
-    "nombre": "JJohnny Walker Red",
-    "descripcion": "Johnny Walker Red",
-    "imagen": "img/Ret.jpg",
-    "categoria": "TRAGOS",
-    "precio": "12500"
-  },
-  {
-    "nombre": "JJohnny Walker Red",
-    "descripcion": "Johnny Walker Red",
-    "imagen": "img/Ret.jpg",
-    "categoria": "TRAGOS",
-    "precio": "12500"
-  },
-  {
-    "nombre": "JJohnny Walker Red",
-    "descripcion": "Johnny Walker Red",
-    "imagen": "img/Ret.jpg",
-    "categoria": "TRAGOS",
-    "precio": "12500"
-  },
-  {
-    "nombre": "Johnny Walker Red",
-    "descripcion": "Johnny Walker Red",
-    "imagen": "img/Ret.jpg",
-    "categoria": "TRAGOS",
-    "precio": "12500"
   }
 ]
