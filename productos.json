@@ -25,7 +25,7 @@
     "nombre": "Café con leche tradicional",
     "descripcion": "Café con leche tradicional",
     "precio": "4100",
-    "imagen": "img/doble.jpg",
+    "imagen":"Cafechechu.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -312,14 +312,14 @@
     "nombre": "Porción de tostadas",
     "descripcion": "Porción de tostadas, blancas o de salvado con semillas",
     "precio": "3200",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "Tosta.jpg",
     "categoria": "Pastelería"
   },
   {
     "nombre": "Porción de mermelada",
     "descripcion": "Porción de mermelada, manteca, queso blanco, miel o aderezo",
     "precio": "1700",
-    "imagen": "img/medialunas.jpg",
+    "imagen": "Dip.jpg",
     "categoria": "Pastelería"
   },
   {
