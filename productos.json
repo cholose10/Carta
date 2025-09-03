@@ -1031,9 +1031,9 @@
   {
     "nombre": "JJohnny Walker Red",
     "descripcion": "Johnny Walker Red",
-    "precio": "12.500",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img//Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12.500"
   },
   {
     "nombre": "Licor Baileys",
@@ -1174,5 +1174,19 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
+  },
+  {
+    "nombre": "JJohnny Walker Red",
+    "descripcion": "Johnny Walker Red",
+    "imagen": "img//Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12500"
+  },
+  {
+    "nombre": "JJohnny Walker Red",
+    "descripcion": "Johnny Walker Red",
+    "imagen": "img/Ret.jpg",
+    "categoria": "TRAGOS",
+    "precio": "12500"
   }
 ]
