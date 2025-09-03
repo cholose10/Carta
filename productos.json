@@ -1057,11 +1057,11 @@
     "categoria": "TRAGOS"
   },
   {
-    "nombre": "Botella de Gancia",
+    "nombre": "Batigo de Gancia",
     "descripcion": "Botella de Gancia",
-    "precio": "9.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img/Gancia.jpg",
+    "categoria": "TRAGOS",
+    "precio": "9.000"
   },
   {
     "nombre": "Aperol con naranja",
