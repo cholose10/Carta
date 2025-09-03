@@ -38,21 +38,28 @@
   {
     "nombre": "Capuccino",
     "descripcion": "Café, leche, canela y cacao",
-    "precio": "4900",
+    "precio": "5000",
+    "imagen": "img/Capuchino.jpg",
+    "categoria": "Cafetería"
+  },
+  {
+    "nombre": "Capuccino italiana",
+    "descripcion":"Capuccino italiana",
+    "precio": "5100",
     "imagen": "img/Capuchino.jpg",
     "categoria": "Cafetería"
   },
   {
     "nombre": "Café MOKA",
     "descripcion": " cacao intenso, café, leche espumada",
-    "precio": "5450",
+    "precio": "5550",
     "imagen": "img/Moka.jpg",
     "categoria": "Cafetería"
   },
   {
     "nombre": "Café CARAMEL",
     "descripcion": "caramelo, café, leche espumada",
-    "precio": "5450",
+    "precio": "5550",
     "imagen": "img/Caramel.jpg",
     "categoria": "Cafetería"
   },
