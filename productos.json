@@ -1052,16 +1052,16 @@
   {
     "nombre": "Gin Tonic Beefeater",
     "descripcion": "Gin Tonic Beefeater",
-    "precio": "11.000",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "TRAGOS"
+    "imagen": "img//Ginton.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
   },
   {
-    "nombre": "Batigo de Gancia",
+    "nombre": "Botella de Gancia",
     "descripcion": "Botella de Gancia",
-    "imagen": "img/Gancia.jpg",
-    "categoria": "TRAGOS",
-    "precio": "9.000"
+    "precio": "9.000",
+    "imagen": "img/tarta_brocoli.jpg",
+    "categoria": "TRAGOS"
   },
   {
     "nombre": "Aperol con naranja",
@@ -1174,5 +1174,12 @@
     "categoria": "MENU del DIA o SUGERENCIAS",
     "precio": "00000",
     "imagen": "img/img/.jpg"
+  },
+  {
+    "nombre": "Gin Tonic Beefeater",
+    "descripcion": "Gin Tonic Beefeater",
+    "imagen": "img//Ginton.jpg",
+    "categoria": "TRAGOS",
+    "precio": "11.000"
   }
 ]
