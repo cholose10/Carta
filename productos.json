@@ -499,7 +499,7 @@
   {
     "nombre": "Tortilla de papa y cebolla",
     "descripcion": "Tortilla de papa y cebolla",
-    "precio": "13500",
+    "precio": "15500",
     "imagen": "img/20250816_134538.jpg",
     "categoria": "Omelettes/Tortillas"
   },
@@ -513,7 +513,7 @@
   {
     "nombre": "Tortilla de espinaca",
     "descripcion": "Tortilla de espinaca",
-    "precio": "13700",
+    "precio": "15700",
     "imagen": "img/20250813_131026 (1).jpg",
     "categoria": "Omelettes/Tortillas"
   },
@@ -554,10 +554,10 @@
   },
   {
     "nombre": "COBB SALAD",
-    "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de pollo.",
-    "categoria": "ENSALADAS",
+    "descripcion": "Mix de verdes, pollo, huevo, queso azul, tomate y salsa de palta.",
     "precio": "16800",
-    "imagen": "img/Cpsala.jpg"
+    "imagen": "img/Cpsala.jpg",
+    "categoria": "ENSALADAS"
   },
   {
     "nombre": "SOLA de POLLO o CARNE",
