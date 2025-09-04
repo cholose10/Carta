@@ -835,16 +835,16 @@
   {
     "nombre": "Bife de lomo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
-    "categoria": "GRILL Especiales",
-    "precio": "32000",
-    "imagen": "img/Lomoesp.jpg"
+    "precio": "34000",
+    "imagen": "img/Lomoesp.jpg",
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "Salmón rosado",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
+    "precio": "36.000",
     "imagen": "img/Blu.jpg",
-    "categoria": "GRILL Especiales",
-    "precio": "34.000"
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "NUGGETS",
