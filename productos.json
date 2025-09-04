@@ -275,21 +275,21 @@
   {
     "nombre": "Alfajor de almendras",
     "descripcion": "Alfajor de almendras",
+    "precio": "5500",
     "imagen": "img/Almendras.jpg",
-    "categoria": "Pastelería",
-    "precio": "5200"
+    "categoria": "Pastelería"
   },
   {
     "nombre": "Mini tarta ",
     "descripcion": "Mini tarta duces",
-    "categoria": "Pastelería",
-    "precio": "9000",
-    "imagen": "img//Minitor.jpg"
+    "precio": "9200",
+    "imagen": "img//Minitor.jpg",
+    "categoria": "Pastelería"
   },
   {
     "nombre": "Medialuna caliente de jamón y queso",
     "descripcion": "Medialuna caliente de jamón y queso",
-    "precio": "4200",
+    "precio": "4400",
     "imagen": "img/Lujyq.jpg",
     "categoria": "Pastelería"
   },
