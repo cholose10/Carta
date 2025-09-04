@@ -142,14 +142,14 @@
   {
     "nombre": "AVOCADO",
     "descripcion": "tostada con huevos revueltos, crema de palta y semillas",
-    "precio": "14500",
+    "precio": "14700",
     "imagen": "img/20250806_094923.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
   {
     "nombre": "REVUELTO",
     "descripcion": "Huevos revueltos con jamón y queso, una tostada para acompañar",
-    "precio": "13200",
+    "precio": "13400",
     "imagen": "img//Resultado.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
@@ -163,7 +163,7 @@
   {
     "nombre": "FRENCH TOAST DULCE",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, queso crema, frutas de estación y dip de miel",
-    "precio": "14200",
+    "precio": "14400",
     "imagen": "img/20250819_113846.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
