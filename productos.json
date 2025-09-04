@@ -240,7 +240,7 @@
   {
     "nombre": "Chipá relleno",
     "descripcion": "Chipá relleno de queso",
-    "precio": "3500",
+    "precio": "3700",
     "imagen": "img/Chipa.jpg",
     "categoria": "Pastelería"
   },
@@ -254,21 +254,21 @@
   {
     "nombre": "Budín",
     "descripcion": "zanahoria y canela, limón y amapolas, chocolate y cafe",
+    "precio": "5500",
     "imagen": "img/20250817_124915.jpg",
-    "categoria": "Pastelería",
-    "precio": "5300"
+    "categoria": "Pastelería"
   },
   {
     "nombre": "Alfajor de chocolate",
     "descripcion": "Alfajor de chocolate",
+    "precio": "4500",
     "imagen": "img//Alchoco.jpg",
-    "categoria": "Pastelería",
-    "precio": "4300"
+    "categoria": "Pastelería"
   },
   {
     "nombre": "Alfajor de maicena",
     "descripcion": "Alfajor de maicena (sin TACC)",
-    "precio": "4300",
+    "precio": "4500",
     "imagen": "img//Maicena.jpg",
     "categoria": "Pastelería"
   },
