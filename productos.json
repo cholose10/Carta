@@ -20,12 +20,11 @@
     "imagen": "img/20250813_094842.jpg",
     "categoria": "Cafetería"
   },
-  
   {
     "nombre": "Café con leche tradicional",
     "descripcion": "Café con leche tradicional",
     "precio": "4100",
-    "imagen":"img/Cafechechu.jpg",
+    "imagen": "img/Cafechechu.jpg",
     "categoria": "Cafetería"
   },
   {
@@ -44,7 +43,7 @@
   },
   {
     "nombre": "Capuccino italiana",
-    "descripcion":"Capuccino italiana",
+    "descripcion": "Capuccino italiana",
     "precio": "5100",
     "imagen": "img/Capuchino.jpg",
     "categoria": "Cafetería"
@@ -60,7 +59,7 @@
     "nombre": "Café CARAMEL",
     "descripcion": "caramelo, café, leche espumada",
     "precio": "5550",
-    "imagen": "img/Caramel.jpg",
+    "imagen": "img//20250903_144413.jpg",
     "categoria": "Cafetería"
   },
   {
