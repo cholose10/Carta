@@ -170,7 +170,7 @@
   {
     "nombre": "FRENCH TOAST SALADO",
     "descripcion": "Tostadas marinadas en huevo, con canela y azúcar, con bacon, palta y huevo revuelto",
-    "precio": "14200",
+    "precio": "15000",
     "imagen": "img/20250819_113925.jpg",
     "categoria": "Desayunos y meriendas (Todos incluyen infusión y vasito de jugo o limonada)"
   },
@@ -212,7 +212,7 @@
   {
     "nombre": "Cinamon Roll(rol de canela)",
     "descripcion": "roll de canela",
-    "precio": "4400",
+    "precio": "4500",
     "imagen": "img/Rolcanela.jpg",
     "categoria": "Pastelería"
   },
