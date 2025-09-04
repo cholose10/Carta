@@ -793,9 +793,9 @@
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Con frita, pure, ensalada o arroz",
+    "precio": "29.000",
     "imagen": "img/20250815_151841.jpg",
-    "categoria": "GRILL",
-    "precio": "28.000"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Bife de lomo",
@@ -807,9 +807,9 @@
   {
     "nombre": "Salmón rosado",
     "descripcion": "Con frita, pure, ensalada o arroz",
+    "precio": "34.000",
     "imagen": "img/Salmón.jpg",
-    "categoria": "GRILL",
-    "precio": "32.000"
+    "categoria": "GRILL"
   },
   {
     "nombre": "Pollo (pechuga)",
@@ -821,7 +821,7 @@
   {
     "nombre": "Matambre de cerdo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
-    "precio": "24000",
+    "precio": "25000",
     "imagen": "img//Matavergrill.jpg",
     "categoria": "GRILL Especiales"
   },
