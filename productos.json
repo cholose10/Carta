@@ -427,11 +427,11 @@
     "precio": "14.000"
   },
   {
-    "nombre": "Jamón, stracciatella y tomate ",
-    "descripcion": "ciabatta, arabe o miga",
-    "categoria": "Sandwiches",
-    "precio": "16000",
-    "imagen": "img/20250820_143727.jpg"
+    "nombre": "Jamón crudo, stracciatella y tomate ",
+    "descripcion": "Jamón crudo, stracciatella y tomate ",
+    "precio": "19000",
+    "imagen": "img/20250820_143727.jpg",
+    "categoria": "Sandwiches"
   },
   {
     "nombre": "Pavita, queso y tomate",
