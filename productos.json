@@ -219,21 +219,21 @@
   {
     "nombre": "Pan de chocolate",
     "descripcion": "masa de croissant con chocolate belga",
-    "precio": "4700",
+    "precio": "4800",
     "imagen": "img/Pchoco.jpg",
     "categoria": "Pastelería"
   },
   {
     "nombre": "Cookies",
     "descripcion": "cookies vainilla con chocolate, chocolate+chocolate",
+    "precio": "4800",
     "imagen": "img/20250902_085341.jpg",
-    "categoria": "Pastelería",
-    "precio": "4600"
+    "categoria": "Pastelería"
   },
   {
     "nombre": "Brownie con nueces blancas",
     "descripcion": "Brownie sin TACC",
-    "precio": "6500",
+    "precio": "6700",
     "imagen": "img/Brownie.jpg",
     "categoria": "Pastelería"
   },
