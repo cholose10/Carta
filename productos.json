@@ -107,16 +107,16 @@
   {
     "nombre": "FRAPPUCCINO OREO",
     "descripcion": "base de leche ",
-    "precio": "6400",
+    "precio": "6600",
     "imagen": "img/20250817_104537.jpg",
     "categoria": "Cafetería"
   },
   {
     "nombre": "FRAPPUCCINO OREO",
     "descripcion": "base de Café",
-    "categoria": "Cafetería",
-    "precio": "6400",
-    "imagen": "img/20250815_154308.jpg"
+    "precio": "6600",
+    "imagen": "img/20250815_154308.jpg",
+    "categoria": "Cafetería"
   },
   {
     "nombre": "Medialunas",
