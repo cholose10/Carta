@@ -413,11 +413,11 @@
     "categoria": "Refrescos"
   },
   {
-    "nombre": "Jamón, stracciatella y tomate ",
+    "nombre": "Jamón cocido, queso y tomate ",
     "descripcion": "ciabatta, arabe o miga",
-    "categoria": "Sandwiches",
-    "precio": "19000",
-    "imagen": "img/arabe.jpg"
+    "precio": "13000",
+    "imagen": "img/arabe.jpg",
+    "categoria": "Sandwiches"
   },
   {
     "nombre": "tostado mixto",
