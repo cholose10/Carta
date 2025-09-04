@@ -296,14 +296,14 @@
   {
     "nombre": "Plato con frutas de estación",
     "descripcion": "Plato con frutas de estación",
-    "precio": "8000",
+    "precio": "8200",
     "imagen": "img//Platofrutas.jpg",
     "categoria": "Pastelería"
   },
   {
     "nombre": "Yogurt ",
-    "descripcion": "Yogurt $4.500Yogurt con granola $7.000Yogurt Forte (con frutas y granola) $10.500",
-    "precio": "10500",
+    "descripcion": "Yogurt $5000Yogurt con granola $8.000Yogurt Forte (con frutas y granola) $12.000",
+    "precio": "12.000",
     "imagen": "img/IMG-20250802-WA0010.jpg",
     "categoria": "Pastelería"
   },
