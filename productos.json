@@ -737,9 +737,9 @@
   {
     "nombre": "fileto",
     "descripcion": "fileto",
-    "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS",
-    "precio": "6.000"
+    "precio": "6.000",
+    "imagen": "img/20250903_124659.jpg",
+    "categoria": "SALSAS"
   },
   {
     "nombre": "Alfredo Pollo",
