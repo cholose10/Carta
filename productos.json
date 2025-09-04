@@ -729,10 +729,10 @@
   },
   {
     "nombre": "salsa blanca",
-    "descripcion": "alsa blanca",
+    "descripcion": "Salsa blanca",
+    "precio": "6.000",
     "imagen": "img/tarta_brocoli.jpg",
-    "categoria": "SALSAS",
-    "precio": "6.000"
+    "categoria": "SALSAS"
   },
   {
     "nombre": "fileto",
