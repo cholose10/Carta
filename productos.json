@@ -982,7 +982,7 @@
   {
     "nombre": "Helado",
     "descripcion": "(bochas): $8.500 (sabores: dulce de leche, chocolate, americano)",
-    "precio": "0000",
+    "precio": "8.500",
     "imagen": "img/Helado.jpg",
     "categoria": "POSTRES"
   },
