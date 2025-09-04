@@ -721,11 +721,11 @@
     "categoria": "PASTAS"
   },
   {
-    "nombre": "Sorrentinos de ossobuco al vino tinto",
-    "descripcion": "Rellenos de osobuco al vino tinto",
+    "nombre": "Sorrentinos de muzzarella y jamón",
+    "descripcion": "Sorrentinos de muzzarella y jamón",
+    "precio": "11.000",
     "imagen": "img/Sonren.jpg",
-    "categoria": "PASTAS",
-    "precio": "11.000"
+    "categoria": "PASTAS"
   },
   {
     "nombre": "salsa blanca",
