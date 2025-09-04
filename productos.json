@@ -373,28 +373,28 @@
   {
     "nombre": "Adicional con limón",
     "descripcion": "Adicional con limón",
-    "precio": "4000",
+    "precio": "400",
     "imagen": "img/20250903_093625.jpg",
     "categoria": "Refrescos"
   },
   {
     "nombre": "Jugo exprimido de naranja",
     "descripcion": "exprimido de naranja",
+    "precio": "6500",
     "imagen": "img/Exprimido.jpg",
-    "categoria": "Refrescos",
-    "precio": "6200"
+    "categoria": "Refrescos"
   },
   {
     "nombre": "Milkshake OREO",
     "descripcion": "helado de crema, con oreos y crema batida",
-    "categoria": "Refrescos",
-    "precio": "8400",
-    "imagen": "img/Mioreo.jpg"
+    "precio": "8800",
+    "imagen": "img/Mioreo.jpg",
+    "categoria": "Refrescos"
   },
   {
     "nombre": "Licuadas",
     "descripcion": "con frutas de estacion(base de agua, leche o exprimido",
-    "precio": "6400",
+    "precio": "7000",
     "imagen": "img/20250903_110035.jpg",
     "categoria": "Refrescos"
   },
