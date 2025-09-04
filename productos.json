@@ -408,9 +408,9 @@
   {
     "nombre": "Limonada ",
     "descripcion": "Limonada simple",
-    "categoria": "Refrescos",
-    "precio": "5700",
-    "imagen": "img/Limosim.jpg"
+    "precio": "6200",
+    "imagen": "img/Limosim.jpg",
+    "categoria": "Refrescos"
   },
   {
     "nombre": "Jamón, stracciatella y tomate ",
@@ -464,7 +464,7 @@
   {
     "nombre": "Sandwiches Lomito BACON",
     "descripcion": "BACON (queso cheddar, panceta y tomate)",
-    "precio": "2600",
+    "precio": "26000",
     "imagen": "img/tarta_brocoli.jpg",
     "categoria": "Lomitos (fritas)"
   },
