@@ -828,9 +828,9 @@
   {
     "nombre": "Bife de chorizo",
     "descripcion": "Acompañado con espinaca, papas a la crema o verduras grilladas",
+    "precio": "31.000",
     "imagen": "img//Bifepapa.jpg",
-    "categoria": "GRILL Especiales",
-    "precio": "28.000"
+    "categoria": "GRILL Especiales"
   },
   {
     "nombre": "Bife de lomo",
