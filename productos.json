@@ -4,13 +4,13 @@
     "descripcion": "Café chico",
     "precio": "3200",
     "imagen": "img/cafe.jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería☕️"
   },
   {
     "nombre": "Café expresso jarrito",
     "descripcion": "Café americano",
     "imagen": "img/Americano.jpg",
-    "categoria": "Cafetería",
+    "categoria": "Cafetería☕️",
     "precio": "3500"
   },
   {
@@ -18,28 +18,28 @@
     "descripcion": "Café descafeinado",
     "precio": "3700",
     "imagen": "img/20250813_094842.jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería☕️"
   },
   {
     "nombre": "Café con leche tradicional",
     "descripcion": "Café con leche tradicional",
     "precio": "4100",
     "imagen": "img/Cafechechu.jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería☕️"
   },
   {
     "nombre": "Café expresso Doble",
     "descripcion": "Café expresso Doble",
     "precio": "4800",
     "imagen": "img/doble.jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería☕️"
   },
   {
     "nombre": "Capuccino",
     "descripcion": "Café, leche, canela y cacao",
     "precio": "5000",
     "imagen": "img/Capuchino.jpg",
-    "categoria": "Cafetería"
+    "categoria": "Cafetería☕️"
   },
   {
     "nombre": "Capuccino italiana",
