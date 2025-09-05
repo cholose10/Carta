@@ -1,156 +1,79 @@
 [
   {
-    "nombre": "Ejemplo Expreso",
-    "descripcion": "Café negro en taza",
-    "precio": "$3500",
+    "nombre": "Expreso Jarrito",
+    "descripcion": "Café en jarro",
+    "precio": "3500",
     "imagen": "img/expreso.jpg",
     "categoria": "☕ Cafetería"
   },
   {
-    "nombre": "Ejemplo Tostadas",
-    "descripcion": "Pan tostado con manteca y mermelada",
-    "precio": "$4200",
-    "imagen": "img/tostadas.jpg",
+    "nombre": "Medialunas",
+    "descripcion": "Clásicas de manteca",
+    "precio": "2800",
+    "imagen": "img/medialuna.jpg",
     "categoria": "🥐 Desayunos y meriendas"
   },
   {
-    "nombre": "Ejemplo Cheesecake",
-    "descripcion": "Torta de queso con frutos rojos",
-    "precio": "$5500",
+    "nombre": "Cheesecake Frutos Rojos",
+    "descripcion": "Tarta cremosa con frutos rojos",
+    "precio": "4500",
     "imagen": "img/cheesecake.jpg",
     "categoria": "🍰 Pastelería"
   },
   {
-    "nombre": "Ejemplo Sandwich",
-    "descripcion": "Sandwich de jamón y queso",
-    "precio": "$4800",
-    "imagen": "img/sandwich.jpg",
+    "nombre": "Sándwich de Lomito",
+    "descripcion": "Lomito con lechuga, tomate y papas",
+    "precio": "6800",
+    "imagen": "img/lomito.jpg",
     "categoria": "🥪 Sándwiches"
   },
   {
-    "nombre": "Ejemplo Tarta",
-    "descripcion": "Tarta de verduras casera",
-    "precio": "$5200",
-    "imagen": "img/tarta.jpg",
-    "categoria": "🥧 Tartas"
-  },
-  {
-    "nombre": "Ejemplo Burrito",
-    "descripcion": "Burrito con carne y vegetales",
-    "precio": "$6000",
-    "imagen": "img/burrito.jpg",
-    "categoria": "🌯 Burritos"
-  },
-  {
-    "nombre": "Ejemplo Refresco",
-    "descripcion": "Gaseosa cola 500ml",
-    "precio": "$2500",
-    "imagen": "img/refresco.jpg",
-    "categoria": "🥤 Refrescos"
-  },
-  {
-    "nombre": "Ejemplo Burger",
-    "descripcion": "Hamburguesa completa",
-    "precio": "$7000",
-    "imagen": "img/burger.jpg",
-    "categoria": "🍔 Lomitos o Burgers"
-  },
-  {
-    "nombre": "Ejemplo Omelet",
-    "descripcion": "Omelet de jamón y queso",
-    "precio": "$5800",
-    "imagen": "img/omelet.jpg",
-    "categoria": "🍳 Omelet / Tortillas"
-  },
-  {
-    "nombre": "Ejemplo Ensalada",
-    "descripcion": "Ensalada fresca de vegetales",
-    "precio": "$4800",
-    "imagen": "img/ensalada.jpg",
-    "categoria": "🥗 Ensaladas"
-  },
-  {
-    "nombre": "Ejemplo Milanesa",
-    "descripcion": "Milanesa con papas fritas",
-    "precio": "$7500",
-    "imagen": "img/milanesa.jpg",
-    "categoria": "🍖 Milanesas"
-  },
-  {
-    "nombre": "Ejemplo Kids",
-    "descripcion": "Plato para niños con nuggets",
-    "precio": "$5200",
-    "imagen": "img/kids.jpg",
-    "categoria": "👶 Menú Kids"
-  },
-  {
-    "nombre": "Ejemplo Especialidad",
-    "descripcion": "Plato de la casa",
-    "precio": "$9000",
-    "imagen": "img/especialidad.jpg",
-    "categoria": "⭐ Especialidades"
-  },
-  {
-    "nombre": "Ejemplo Entrada",
-    "descripcion": "Picada de fiambres",
-    "precio": "$6500",
-    "imagen": "img/entrada.jpg",
-    "categoria": "🥟 Entradas"
-  },
-  {
-    "nombre": "Ejemplo Pizza",
-    "descripcion": "Pizza muzzarella",
-    "precio": "$8000",
+    "nombre": "Pizza Muzzarella",
+    "descripcion": "Pizza a la piedra con muzzarella",
+    "precio": "7200",
     "imagen": "img/pizza.jpg",
     "categoria": "🍕 Pizzas"
   },
   {
-    "nombre": "Ejemplo Risotto",
-    "descripcion": "Risotto de hongos",
-    "precio": "$8500",
+    "nombre": "Milanesa Napolitana",
+    "descripcion": "Con jamón, queso y salsa",
+    "precio": "7800",
+    "imagen": "img/milanesa.jpg",
+    "categoria": "🍖 Milanesas"
+  },
+  {
+    "nombre": "Risotto de Hongos",
+    "descripcion": "Risotto cremoso con hongos frescos",
+    "precio": "8200",
     "imagen": "img/risotto.jpg",
     "categoria": "🍚 Risottos"
   },
   {
-    "nombre": "Ejemplo Pasta",
-    "descripcion": "Ravioles de ricota",
-    "precio": "$8700",
-    "imagen": "img/pasta.jpg",
-    "categoria": "🍝 Pastas"
+    "nombre": "Ensalada César",
+    "descripcion": "Con pollo, crutones y aderezo césar",
+    "precio": "5400",
+    "imagen": "img/cesar.jpg",
+    "categoria": "🥗 Ensaladas"
   },
   {
-    "nombre": "Ejemplo Salsa",
-    "descripcion": "Salsa bolognesa",
-    "precio": "$2500",
-    "imagen": "img/salsa.jpg",
-    "categoria": "🥫 Salsas"
-  },
-  {
-    "nombre": "Ejemplo Grill",
-    "descripcion": "Carne grillada con papas",
-    "precio": "$9500",
-    "imagen": "img/grill.jpg",
-    "categoria": "🥩 Grill"
-  },
-  {
-    "nombre": "Ejemplo Postre",
-    "descripcion": "Helado 2 bochas",
-    "precio": "$3800",
-    "imagen": "img/postre.jpg",
+    "nombre": "Helado Artesanal",
+    "descripcion": "Copa con dos bochas a elección",
+    "precio": "3000",
+    "imagen": "img/helado.jpg",
     "categoria": "🍨 Postres"
   },
   {
-    "nombre": "Ejemplo Menú Día",
-    "descripcion": "Plato del día + bebida",
-    "precio": "$10500",
+    "nombre": "Menú del Día",
+    "descripcion": "Entrada + plato principal + bebida",
+    "precio": "9500",
     "imagen": "img/menu-dia.jpg",
-    "categoria": "📅 Menú del día"
+    "categoria": "📋 Menú del día"
   },
   {
-    "nombre": "Ejemplo Sugerencia",
-    "descripcion": "Sugerencia del chef",
-    "precio": "$9700",
+    "nombre": "Sugerencia del Chef",
+    "descripcion": "Plato especial recomendado",
+    "precio": "8900",
     "imagen": "img/sugerencia.jpg",
-    "categoria": "💡 Sugerencias del día"
+    "categoria": "⭐ Sugerencia del día"
   }
 ]
