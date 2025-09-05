@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carta Tilo Café</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -81,20 +81,23 @@
   </style>
 </head>
 <body>
-  <!-- Logo -->
+  <!-- FOTO GRANDE ARRIBA -->
   <header>
-    <img src="img/Logo99.jpg" alt="Tilo Café" class="banner-img" />
+    <img src="img/logo1.png" alt="Tilo Café" class="banner-img" />
   </header>
 
   <div class="banner">¡Bienvenidos a Tilo Café Agüero 2298!</div>
 
-  <!-- Categorías con emojis -->
+  <!-- Botones de categorías -->
   <div class="categories" id="category-buttons"></div>
+
+  <!-- Lista de productos -->
   <div class="item-list" id="product-list"></div>
 
   <script>
     let productos = [];
 
+    // Cargar productos desde productos.json
     fetch('productos.json')
       .then(response => response.json())
       .then(data => {
@@ -103,55 +106,20 @@
         renderProducts('Todos');
       });
 
+    // Renderizar categorías dinámicamente
     function renderCategories() {
-      const categorias = [
-        'Todos',
-        '☕ Cafetería',
-        '🥐 Desayunos y meriendas',
-        '➕ Adicionales de café',
-        '🍰 Pastelería',
-        '🥧 Tartas',
-        '🌯 Burritos',
-        '🥤 Refrescos',
-        '🥪 Sandwiches',
-        '🥩 Lomitos',
-        '🍔 Burgers',
-        '🍳 Omelettes/Tortillas',
-        '🥗 Ensaladas',
-        '🍗 Milanesas',
-        '🍲 Otros platos',
-        '🥟 Entraditas',
-        '🍕 Pizzas',
-        '🍚 Risottos',
-        '🍝 Pastas',
-        '🥫 Salsas',
-        '🔥 Grill',
-        '👨‍👩‍👧 Menu Kids',
-        '🍽️ Platos principales',
-        '🍮 Postres',
-        '🥓 Picadas',
-        '🍺 Cervezas',
-        '🍸 Tragos',
-        '🍻 Happy Hour',
-        '🍷 Vinos Bodega Rutini - La Rural',
-        '🍷 Vinos Bodega Salentein',
-        '🍇 Vinos Blancos',
-        '🥂 Copa de vino',
-        '🌹 Rosé vino',
-        '🥂 Espumantes',
-        '📋 Menu del día y sugerencias'
-      ];
-
+      const categorias = ['Todos', ...new Set(productos.map(p => p.categoria))];
       const container = document.getElementById('category-buttons');
       container.innerHTML = '';
       categorias.forEach(cat => {
         const btn = document.createElement('button');
         btn.textContent = cat;
-        btn.onclick = () => renderProducts(cat.replace(/^[^\s]+\s/, ''));
+        btn.onclick = () => renderProducts(cat);
         container.appendChild(btn);
       });
     }
 
+    // Renderizar productos
     function renderProducts(categoria) {
       const container = document.getElementById('product-list');
       container.innerHTML = '';
@@ -159,11 +127,14 @@
       filtrados.forEach(p => {
         const item = document.createElement('div');
         item.className = 'item';
+        const priceDisplay = (String(p.precio||'').trim().startsWith('$'))
+          ? String(p.precio).trim()
+          : ('$' + (p.precio ?? ''));
         item.innerHTML = `
           <img src="${p.imagen}" alt="${p.nombre}">
           <h3>${p.nombre}</h3>
           <p>${p.descripcion}</p>
-          <p class="price">$${p.precio}</p>
+          <p class="price">${priceDisplay}</p>
         `;
         container.appendChild(item);
       });
